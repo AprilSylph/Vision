@@ -115,13 +115,16 @@
                 height: 17px;
                 padding: 0 9px;
                 width: 249px;
-            }
+            }{block:ShowHeaderImage}
+            aside#sidebar form#search::before{
+                content: "\EA99\2002";
+                font-family: tumblr-icons, None;
+            }{/block:ShowHeaderImage}
             aside#sidebar form#search input{
                 background: none;{block:IfNotBackgroundImage}{block:HideHeaderImage}
                 text-align: center;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
                 border-width: 0px;
-                width: 100%;
-                font-family: tumblr-icons, {font:Font};
+                width: calc(100% - 2em);
                 color: {block:IfCustomColors}{color:Title}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
             aside#sidebar form#search input:focus{
@@ -363,7 +366,7 @@
         <aside id="sidebar">
             {block:IfSearchBar}
                 <form id="search" action="/search" method="get">
-                    <input type="text" name="q" placeholder="&#60057; {lang:Search}" autocomplete="off" value="{SearchQuery}"/>
+                    <input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
                 </form>
             {/block:IfSearchBar}
             <a href="{BlogURL}">
