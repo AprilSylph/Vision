@@ -248,7 +248,7 @@
             .note blockquote a{
                 font-weight: normal;
             }{/block:IfNotBackgroundImage}
-            .likebutton, .reblogbutton {
+            .like_button, .reblog_button {
                 float: right;
                 margin: 0 5px;
             }
@@ -665,13 +665,9 @@
                                 <a href="{Permalink}#notes" class="notecount">{NoteCountWithLabel}</a>
                             {/block:NoteCount}
                             {block:Date}
-                                <div class="likebutton">
-                                    {LikeButton color="grey"}
-                                </div>
+                                {LikeButton color="grey"}
                                 &emsp;
-                                <div class="reblogbutton">
-                                    {ReblogButton color="grey"}
-                                </div>
+                                {ReblogButton color="grey"}
                             {/block:Date}
                             {block:PostNotes}
                             <section id="notes">
