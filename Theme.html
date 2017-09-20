@@ -316,13 +316,17 @@
             h2.quote::after{
                 content: "”";
             }
+            a.link {
+                display: block;{block:IfNotBackgroundImage}
+                text-decoration: none;{/block:IfNotBackgroundImage}
+            }
             a.link h3{
-                color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}black{/block:IfNotBackgroundImage};
+                color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}black;
+                text-decoration: underline{/block:IfNotBackgroundImage};
             }
             a.link blockquote{
                 color: {block:IfBackgroundImage}{block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}black{/block:IfNotBackgroundImage};
                 font-weight: normal;
-                text-decoration: none;
             }
             span.linkhost{
                 white-space: nowrap;
