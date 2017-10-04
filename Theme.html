@@ -49,12 +49,37 @@
             	    url("/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.ttf") format("truetype"),
             	    url("http://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.svg#tumblr-icons") format("svg");
             }
+			@font-face {
+				font-family: Calluna;
+				src: url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.eot?3=&v=f685dc881c60c298ea22a73fe505b88a");
+				src: url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.eot?3%3F=&v=f685dc881c60c298ea22a73fe505b88a#iefix") format("embedded-opentype"),url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.woff?3=&v=760a50f4d098e59aebaf0f0e58ae2cc8") format("woff"),url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.ttf?3=&v=5ace789439bff3b27f8d4112725531da") format("truetype"),url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.svg?3=&v=5b95c481dd7411c6e112143d6646bd9b#_.regular") format("svg");
+				font-weight: 700;
+				font-style: italic;
+			}
+			@font-face {
+				font-family: Fairwater;
+				src: url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff2?v=b7ab7a58cded3365889a447bfd9e9c45") format("woff2"),url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff?v=96e975b7468359e6f67086305577e43e") format("woff");
+				font-weight: 400;
+				font-style: normal;
+			}
             body{
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
                 font-size: 0.875em;
                 font-family: {font:Font};
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
+			p.npf_quirky{
+				font-family: Fairwater, serif;
+				font-size: 1.71428571429em;
+				line-height: 1.3em;
+				margin: 0;
+			}
+			p.npf_chat{
+				font-family: Courier, monospace;
+			}
+			p.npf_quote{
+				font-family: Calluna, sans-serif;
+			}
             a{
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
                 text-decoration: none;
