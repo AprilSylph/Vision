@@ -136,11 +136,19 @@
                 {/block:HideHeaderImage}
                 border-radius: 3px;
                 {block:IfNotBackgroundImage}{block:ShowHeaderImage}border: 1px {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors} solid;{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
-            }{block:IfSearchBar}
+            }{block:ShowHeaderImage}
+            div#headerlink{
+                position: absolute;
+                {block:IfSearchBar}top: calc(15px + 1.4em);
+                height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
+                height: 160px;{/block:IfNotSearchBar}
+                left: 0;
+                width: 100%;
+            }{/block:ShowHeaderImage}{block:IfSearchBar}
             aside#sidebar form#search{
                 position: absolute;
                 top: 15px;
-                height: 17px;
+                height: 1.4em;
                 padding: 0 9px;
                 width: 249px;
             }{block:ShowHeaderImage}
@@ -408,6 +416,9 @@
                 </form>
             {/block:IfSearchBar}
             <a href="{BlogURL}">
+                {block:ShowHeaderImage}
+                    <div id="headerlink"></div>
+                {/block:ShowHeaderImage}
                 {block:ShowAvatar}
                     <img src="{PortraitURL-64}" id="avatar" class="{AvatarShape}">
                 {/block:ShowAvatar}
