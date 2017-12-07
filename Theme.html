@@ -80,7 +80,7 @@
 			p.npf_quote{
 				font-family: Calluna, sans-serif;
 			}
-            a{
+            a, .like_button, .reblog_button{
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
                 text-decoration: none;
             }
@@ -107,7 +107,7 @@
             article header a{
                 white-space: nowrap;
             }{block:IfNotBackgroundImage}
-            article header a, article footer a{
+            article header a, article footer a, .like_button, .reblog_button{
                 color: #a7a7a7;
                 font-weight: bold;
                 text-decoration: none;
@@ -293,9 +293,30 @@
             .note blockquote a{
                 font-weight: normal;
             }{/block:IfNotBackgroundImage}
-            .like_button, .reblog_button {
+            .like_button, .reblog_button{
                 float: right;
-                margin: 0 5px;
+                margin-left: 12px;
+            }
+            .like_button iframe, .reblog_button svg{
+                opacity: 0;
+                z-index: 1;
+            }
+            .like_button::before, .reblog_button::before{
+                font-family: tumblr-icons, None;
+                font-size: 24px;
+                font-weight: normal;
+                position: absolute;
+                margin: -5px 0 0 -3px;
+            }
+            .reblog_button::before{
+                content: "\EA8F";
+            }
+            .like_button::before{
+                content: "\EA4E";
+            }
+            .like_button.liked::before{
+                content: "\EA4F";
+                color: #d95e40;
             }
             div#pagination{
                 text-align: center;
