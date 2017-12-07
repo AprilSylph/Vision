@@ -163,6 +163,9 @@
                 width: calc(100% - 2em);
                 color: {block:IfCustomColors}{color:Title}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
+            aside#sidebar form#search input::placeholder{
+                color: {block:IfCustomColors}{color:Title}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+            }
             aside#sidebar form#search input:focus{
                 outline: none;
             }{/block:IfSearchBar}{block:IfWidgetCode}
