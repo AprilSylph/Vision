@@ -39,28 +39,41 @@
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <meta name="description" content="{MetaDescription}">
         <style title="Vision Theme">            @font-face {
-            	font-family: "tumblr-icons";
-            	font-style: normal;
-            	font-weight: normal;
-            	src:
-            	    url("http://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.eot?#iefix") format("embedded-opentype"),
-            	    url("http://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.woff2") format("woff2"),
-            	    url("http://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.woff") format("woff"),
-            	    url("/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.ttf") format("truetype"),
-            	    url("http://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.svg#tumblr-icons") format("svg");
+                font-family: "tumblr-icons";
+                font-style: normal;
+                font-weight: normal;
+                src:
+                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.eot?#iefix") format("embedded-opentype"),
+                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.woff2") format("woff2"),
+                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.woff") format("woff"),
+                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.ttf") format("truetype"),
+                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.svg#tumblr-icons") format("svg");
             }
 			@font-face {
-				font-family: Calluna;
-				src: url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.eot?3=&v=f685dc881c60c298ea22a73fe505b88a");
-				src: url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.eot?3%3F=&v=f685dc881c60c298ea22a73fe505b88a#iefix") format("embedded-opentype"),url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.woff?3=&v=760a50f4d098e59aebaf0f0e58ae2cc8") format("woff"),url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.ttf?3=&v=5ace789439bff3b27f8d4112725531da") format("truetype"),url("https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.svg?3=&v=5b95c481dd7411c6e112143d6646bd9b#_.regular") format("svg");
+				font-family: "Calluna";
+				font-style: normal;
 				font-weight: 700;
-				font-style: italic;
+				src:
+					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.eot?3%3F=&v=4d396676b5b7013e8062b0306fb6df25#iefix") format("embedded-opentype"),
+					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.woff?3=&v=cfbfc0fbbd321fd3635b9d1fb3abd7da") format("woff"),
+					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.ttf?3=&v=66795c1b09c6ecba8d96d158e5f25e4e") format("truetype"),
+					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.svg?3=&v=becfe0f2e977ae23541d14051460730e#CallunaBlckRegular") format("svg");
 			}
 			@font-face {
-				font-family: Fairwater;
-				src: url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff2?v=b7ab7a58cded3365889a447bfd9e9c45") format("woff2"),url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff?v=96e975b7468359e6f67086305577e43e") format("woff");
-				font-weight: 400;
+				font-family: "Fairwater";
 				font-style: normal;
+				font-weight: 400;
+				src:
+					url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff2?v=b7ab7a58cded3365889a447bfd9e9c45") format("woff2"),
+					url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff?v=96e975b7468359e6f67086305577e43e") format("woff");
+			}
+			@font-face {
+				font-family: "Source Code Pro";
+				font-style: normal;
+				font-weight: 400;
+				src:
+					url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff2?v=c2bb363563f7a15a4c0fe91cf951a67c") format("woff2"),
+					url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff?v=c5fa36698a378c9c64711cec95efd69e") format("woff");
 			}
             body{
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
@@ -75,7 +88,7 @@
 				margin: 0;
 			}
 			p.npf_chat{
-				font-family: Courier, monospace;
+				font-family: Source Code Pro, monospace;
 			}
 			p.npf_quote{
 				font-family: Calluna, sans-serif;
