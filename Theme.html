@@ -280,6 +280,11 @@
                 padding: 5px 0;
                 max-width: 465px;
             }
+            ol.notes a.avatar_frame{
+                position: relative;
+                top: 3px;
+                margin-right: 10px;
+            }
             ol.notes img.avatar{
                 border-radius: 2px;
             }
@@ -289,16 +294,11 @@
             ol.notes div.retags{
                 margin-left: 26px;
             }
-            ol.notes span.action{
-                position: relative;
-                top: -3px;
-                left: 10px;
-            }
             ol.notes span.answer_content{
                 display: block;
-                border-left: 3px solid;
+                border-left: 3px solid {block:IfBackgroundImage}{block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#eeeeee{/block:IfNotBackgroundImage};
                 padding-left: 1em;
-                margin: 10px 21px 5px;
+                margin: 10px 31px 5px;
             }{block:IfNotBackgroundImage}
             .note a{
                 color: #000000;
