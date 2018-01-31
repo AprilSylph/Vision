@@ -10,4 +10,4 @@ This theme aims to be as data-efficient as possible, sending no data to the brow
 It is also free of Javascript at its base - Tumblr adds scripts necessary for inter-blog interaction.
 
 # Credit
-The header image used in the logo and [preview blog](https://vision.sylph.tech) (and previously as the default background image) is originally found [here](https://unsplash.com/photos/R3pUGn5YiTg), and used freely as per the [Unsplash Licence](https://unsplash.com/license).
+The header image used in the logo and [preview blog](https://vision-theme.tumblr.com) (and previously as the default background image) is originally found [here](https://unsplash.com/photos/R3pUGn5YiTg), and used freely as per the [Unsplash Licence](https://unsplash.com/license).
