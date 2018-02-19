@@ -5,7 +5,7 @@
     {block:ReadMe}
     <!--
     Hello user!
-        If you are looking to edit the theme code or are installing anything such as custom cursors, please consider using the Custom CSS under Advanced Options instead of pasting it directly into the theme code. This way, the theme can continue to receive updates and your modification will persist between theme changes.
+        If you are looking to edit the theme code, please consider using the Custom CSS under Advanced Options instead of pasting it directly into the theme code. This way, the theme can continue to receive updates and your modification will persist between theme changes. Take a look at the wiki on GitHub for some easy mods, or send an email for anything else! (Links to both available on the installation page).
     Thanks for reading!
         - April
     -->
@@ -37,88 +37,19 @@
         <title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/3qUp4dkfk/vision_core.css">
         <meta name="description" content="{MetaDescription}">
-        <style title="Vision Theme">            @font-face {
-                font-family: "tumblr-icons";
-                font-style: normal;
-                font-weight: normal;
-                src:
-                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.eot?#iefix") format("embedded-opentype"),
-                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.woff2") format("woff2"),
-                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.woff") format("woff"),
-                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.ttf") format("truetype"),
-                    url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_dcc03a80fac1495a3b7354ef27df77c8.svg#tumblr-icons") format("svg");
-            }
-			@font-face {
-				font-family: "Calluna";
-				font-style: normal;
-				font-weight: 700;
-				src:
-					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.eot?3%3F=&v=4d396676b5b7013e8062b0306fb6df25#iefix") format("embedded-opentype"),
-					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.woff?3=&v=cfbfc0fbbd321fd3635b9d1fb3abd7da") format("woff"),
-					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.ttf?3=&v=66795c1b09c6ecba8d96d158e5f25e4e") format("truetype"),
-					url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.svg?3=&v=becfe0f2e977ae23541d14051460730e#CallunaBlckRegular") format("svg");
-			}
-			@font-face {
-				font-family: "Fairwater";
-				font-style: normal;
-				font-weight: 400;
-				src:
-					url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff2?v=b7ab7a58cded3365889a447bfd9e9c45") format("woff2"),
-					url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff?v=96e975b7468359e6f67086305577e43e") format("woff");
-			}
-			@font-face {
-				font-family: "Source Code Pro";
-				font-style: normal;
-				font-weight: 400;
-				src:
-					url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff2?v=c2bb363563f7a15a4c0fe91cf951a67c") format("woff2"),
-					url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff?v=c5fa36698a378c9c64711cec95efd69e") format("woff");
-			}
+        <style id="Options">
             body{
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
-                font-size: 0.875em;
                 font-family: {font:Font};
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
-			p.npf_quirky{
-				font-family: Fairwater, serif;
-				font-size: 1.71428571429em;
-				line-height: 1.3em;
-				margin: 0;
-			}
-			p.npf_chat{
-				font-family: Source Code Pro, monospace;
-			}
-			p.npf_quote{
-				font-family: Calluna, sans-serif;
-			}
             a, .like_button, .reblog_button{
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-                text-decoration: none;
-            }
-            a.tumblr_blog{
-                text-decoration: underline;
-            }
-            .tmblr-lightbox img.lightbox-image{
-                max-width: none;
             }
             span.reblog-icon{
-                font-family: tumblr-icons, None;
-                font-size: 1.35714286em; 
-                line-height: 0.736842105em;
-                color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#a7a7a7{/block:ifNotBackgroundImage};
-            }
-            span.reblog-icon::before{
-                content: "\EA92";
-                position: relative;
-                top: 0.105263158em;
-            }
-            span.published::before{
-                content: "submitted by";
-            }
-            article header a{
-                white-space: nowrap;
+                color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#a7a7a7{/block:IfNotBackgroundImage};
             }{block:IfNotBackgroundImage}
             article header a, article footer a, .like_button, .reblog_button{
                 color: #a7a7a7;
@@ -130,271 +61,55 @@
                 font-weight: normal;
                 text-decoration: underline;
             }{/block:IfNotBackgroundImage}
-            img, iframe, figure{
-                max-width: 100%;
-            }
-            p.tmblr-attribution{
-                margin-top: 0;
-            }
-            pre{
-                overflow: scroll;
-            }
-            aside#sidebar{
-                position: fixed;
+            #sidebar {
                 {select:Sidebar}
-                width: 270px;
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
-                text-align: center;
                 {block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
                 {/block:HideHeaderImage}
-                border-radius: 3px;
                 {block:IfNotBackgroundImage}{block:ShowHeaderImage}border: 1px {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors} solid;{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
             }{block:ShowHeaderImage}
             div#headerlink{
-                position: absolute;
                 {block:IfSearchBar}top: calc(15px + 1.4em);
                 height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
                 height: 160px;{/block:IfNotSearchBar}
-                left: 0;
-                width: 100%;
-            }{/block:ShowHeaderImage}{block:IfSearchBar}
-            aside#sidebar form#search{
-                position: absolute;
-                top: 15px;
-                height: 1.4em;
-                padding: 0 9px;
-                width: 249px;
-            }{block:ShowHeaderImage}
-            aside#sidebar form#search::before{
-                content: "\EA99\2002";
-                font-family: tumblr-icons, None;
             }{/block:ShowHeaderImage}
-            aside#sidebar form#search input{
-                background: none;{block:IfNotBackgroundImage}{block:HideHeaderImage}
+            aside#sidebar form#search input{{block:IfNotBackgroundImage}{block:HideHeaderImage}
                 text-align: center;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
-                border-width: 0px;
-                width: calc(100% - 2em);
                 color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
             aside#sidebar form#search input::placeholder{
                 color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-            }
-            aside#sidebar form#search input:focus{
-                outline: none;
-            }{/block:IfSearchBar}{block:IfWidgetCode}
-            aside#widget{
-                position: absolute;
-                max-width: 280px;
-                margin: 10px -5px 0;
-                overflow-x: hidden;
-            }{/block:IfWidgetCode}
+            }{/block:IfSearchBar}
             img#avatar{
                 background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
                 border: 3px solid {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
             }
-            img.circle{
-                border-radius: 64px;
-            }
-            img.square{
-                border-radius: 6px;
-            }
             h1#blogtitle{
-                margin: 0 10px;
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
                 font-family: {TitleFont};
                 font-weight: {TitleFontWeight};
             }
-            div#description{
-                margin: 3px 10px 0;
-                word-wrap: break-word;
-                font-size: 0.8571428571428571em;
-            }
-            div#description p{
-                margin: 0;
-            }
-            nav{
-                margin: 1em 10px;
-            }
-            nav a{
-                font-weight: bold;
-                margin: 0 0.3em;
-                display: inline-block;
-                max-width: 240px;
-                word-wrap: break-word;
-            }
-            blockquote{
+            blockquote, ol.notes span.answer_content {
                 border-left: 3px solid {block:IfBackgroundImage}{block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#eeeeee{/block:IfNotBackgroundImage};
-                padding-left: 1em;
-                margin: 1em 0;
-            }
-            blockquote img{
-                height: auto;
-            }
-            #content{
-                min-width: 250px;
-                position: relative;
-                width: 560px;
-                margin: 0 auto;
             }
             article.post{
-                word-wrap: break-word;
                 background-color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}white;
                 color: black{/block:IfNotBackgroundImage};
-                padding: 15px;
-                margin: 15px;
-                border-radius: 3px;
-            }
-            .sourcelogo{
-                display: inline-block;
-                float: right;
-                margin: 0 0 0 1em;
-            }
-            p.datetime{
-                font-size: 0.857142857em;
-                margin: 0.416666667em 0px;
-            }
-            article.post header{
-                margin-bottom: 1em;
-            }
-            article.post footer, 
-            section.controls{
-                margin-top: 1em;
-            }
-            section.tags a.tag{
-                margin-right: 0.5em;
-                font-weight: normal;
-            }
-            section.tags a.tag::before{
-                content: "#";
-            }
-            ol.notes{
-                padding: 0;
-                margin-bottom: 0;
-                list-style-type: none;
-                max-width: 500px;
-                max-height: 700px;
-                overflow-x: hidden;
-                overflow-y: auto;
-            }
-            ol.notes li.note{
-                padding: 5px 0;
-                max-width: 465px;
-            }
-            ol.notes a.avatar_frame{
-                position: relative;
-                top: 3px;
-                margin-right: 10px;
-            }
-            ol.notes img.avatar{
-                border-radius: 2px;
-            }
-            ol.notes blockquote{
-                margin: 10px 31px 5px;
-            }
-            ol.notes div.retags{
-                margin-left: 26px;
-            }
-            ol.notes span.answer_content{
-                display: block;
-                border-left: 3px solid {block:IfBackgroundImage}{block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#eeeeee{/block:IfNotBackgroundImage};
-                padding-left: 1em;
-                margin: 10px 31px 5px;
             }{block:IfNotBackgroundImage}
             .note a{
                 color: #000000;
-            }
-            .note blockquote a{
-                font-weight: normal;
             }{/block:IfNotBackgroundImage}
-            .like_button, .reblog_button{
-                float: right;
-                margin-left: 12px;
-            }
-            .like_button iframe, .reblog_button svg{
-                opacity: 0;
-                z-index: 1;
-            }
-            .like_button::before, .reblog_button::before{
-                font-family: tumblr-icons, None;
-                font-size: 24px;
-                font-weight: normal;
-                position: absolute;
-                margin: -5px 0 0 -3px;
-            }
-            .reblog_button::before{
-                content: "\EA8F";
-            }
-            .like_button::before{
-                content: "\EA4E";
-            }
-            .like_button.liked::before{
-                content: "\EA4F";
-                color: #d95e40;
-            }
             div#pagination{
-                text-align: center;
                 padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
             }
             div#prevpage, div#nextpage, div#pageno{
-                display: inline-block;
-                margin: 0 15px;
-                font-weight: bold;
                 {block:IfNotSidebarPagination}padding: 0.5em;{block:IfBackgroundImage}
                 border: 2px solid;{/block:IfBackgroundImage}{/block:IfNotSidebarPagination}
-                border-radius: 3px;
                 background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-            }
-            div#prevpage{
-                opacity: 0;
-                float: left;
-            }
-            div#nextpage{
-                opacity: 0;
-                float: right;
-            }
-            a div#prevpage{
-                opacity: 1;
-            }
-            a div#nextpage{
-                opacity: 1;
-            }
-            img#credit{
-                position: fixed;
-                right: 10px;
-                bottom: 10px;
             }{block:IfHidePostsTagged}{block:IndexPage}
             article.{text:Hide Posts Tagged}{
                 display: none;
             }{/block:IndexPage}{/block:IfHidePostsTagged}
-            img.photopost, img.panorama, img.linkimage{
-                width: 100%;
-            }
-            p.exif, p.plays{
-                font-size: 0.857142857em;
-                margin: 0;
-                text-align: center;
-            }
-            h2{
-                font-size: 1.28571429em;
-            }
-            h2.short{
-                font-size: 3.42857143em;
-                margin: 0.3125em 0;
-            }
-            h2.medium{
-                font-size: 2.57142857em;
-                margin: 0.416666667em 0;
-            }
-            h2.long{
-                font-weight: normal;
-                margin: 0.625em 0;
-            }
-            h2.quote::before{
-                content: "“";
-            }
-            h2.quote::after{
-                content: "”";
-            }
             a.link {
                 display: block;{block:IfNotBackgroundImage}
                 text-decoration: none;{/block:IfNotBackgroundImage}
@@ -405,43 +120,12 @@
             }
             a.link blockquote{
                 color: {block:IfBackgroundImage}{block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}black{/block:IfNotBackgroundImage};
-                font-weight: normal;
-            }
-            span.linkhost{
-                display: inline-block;
-            }
-            iframe.tumblr_audio_player{
-                max-height: 85px;
-            }
-            a.asker, a.answerer{
-                font-weight: bold;
-                text-decoration: none;
-            }
-            div.answertub{
-                margin: 1em 0;
             }
             div.answerbox{
-                display: block;
                 border: 1px solid {block:IfBackgroundImage}{block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}gray{/block:IfNotBackgroundImage};
-                border-radius: 5px;
-                padding: 14px;
-                margin-right: 70px;
-            }
-            div.answerbox p{
-                margin: 0;
-            }
-            div.answerbox img, div.answerbox iframe{
-                height: auto;
-            }
-            p.separator{
-                line-height: 0.5em;
-            }
-            img.askicon{
-                float: right;
-                border-radius: 3px;
             }
         </style>
-        <style id="Custom CSS">{CustomCSS}</style>
+        <style title="Custom CSS">{CustomCSS}</style>
     </head>
     <body>
         <aside id="sidebar">
