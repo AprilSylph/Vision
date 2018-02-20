@@ -37,7 +37,8 @@
         <title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/3qUp4dkfk/vision_core.css">
+        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/MqRp4fen4/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/6v3p4f941/vision_plain.css">{/block:IfNotBackgroundImage}
         <meta name="description" content="{MetaDescription}">
         <style id="Options">
             body{
@@ -45,22 +46,12 @@
                 font-family: {font:Font};
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
-            a, .like_button, .reblog_button{
+            a{block:IfBackgroundImage}, .like_button, .reblog_button{/block:IfBackgroundImage} {
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-            }
+            }{block:IfBackgroundImage}
             span.reblog-icon{
-                color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#a7a7a7{/block:IfNotBackgroundImage};
-            }{block:IfNotBackgroundImage}
-            article header a, article footer a, .like_button, .reblog_button{
-                color: #a7a7a7;
-                font-weight: bold;
-                text-decoration: none;
-            }
-            article a{
-                color: #000000;
-                font-weight: normal;
-                text-decoration: underline;
-            }{/block:IfNotBackgroundImage}
+                color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
+            }{/block:IfBackgroundImage}
             #sidebar {
                 {select:Sidebar}
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
@@ -88,17 +79,13 @@
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
                 font-family: {TitleFont};
                 font-weight: {TitleFontWeight};
-            }
+            }{block:IfBackgroundImage}
             blockquote, ol.notes span.answer_content {
-                border-left: 3px solid {block:IfBackgroundImage}{block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}#eeeeee{/block:IfNotBackgroundImage};
+                border-left: 3px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
             article.post{
-                background-color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}white;
-                color: black{/block:IfNotBackgroundImage};
-            }{block:IfNotBackgroundImage}
-            .note a{
-                color: #000000;
-            }{/block:IfNotBackgroundImage}
+                background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+            }{/block:IfBackgroundImage}
             div#pagination{
                 padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
             }
@@ -109,21 +96,16 @@
             }{block:IfHidePostsTagged}{block:IndexPage}
             article.{text:Hide Posts Tagged}{
                 display: none;
-            }{/block:IndexPage}{/block:IfHidePostsTagged}
-            a.link {
-                display: block;{block:IfNotBackgroundImage}
-                text-decoration: none;{/block:IfNotBackgroundImage}
-            }
+            }{/block:IndexPage}{/block:IfHidePostsTagged}{block:IfBackgroundImage}
             a.link h3{
-                color: {block:IfBackgroundImage}{block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}black;
-                text-decoration: underline{/block:IfNotBackgroundImage};
+                color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
             }
             a.link blockquote{
-                color: {block:IfBackgroundImage}{block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}black{/block:IfNotBackgroundImage};
+                color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
             div.answerbox{
-                border: 1px solid {block:IfBackgroundImage}{block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors}{/block:IfBackgroundImage}{block:IfNotBackgroundImage}gray{/block:IfNotBackgroundImage};
-            }
+                border: 1px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+            }{/block:IfBackgroundImage}
         </style>
         <style title="Custom CSS">{CustomCSS}</style>
     </head>

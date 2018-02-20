@@ -288,6 +288,9 @@ h2.quote::before {
 h2.quote::after {
 	content: "”";
 }
+a.link {
+	display: block;
+}
 a.link blockquote {
 	font-weight: normal;
 }
