@@ -4,7 +4,7 @@ article {
 }
 article a, 
 article header time a {
-	color: #000000;
+	color: black;
 	font-weight: normal;
 	text-decoration: underline;
 }
@@ -35,5 +35,5 @@ blockquote, li.note .answer_content {
 	border-left: 3px solid #eeeeee;
 }
 li.note a{
-	color: #000000;
+	color: black;
 }

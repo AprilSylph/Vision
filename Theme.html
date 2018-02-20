@@ -5,7 +5,7 @@
     {block:ReadMe}
     <!--
     Hello user!
-        If you are looking to edit the theme code, please consider using the Custom CSS under Advanced Options instead of pasting it directly into the theme code. This way, the theme can continue to receive updates and your modification will persist between theme changes. Take a look at the wiki on GitHub for some easy mods, or send an email for anything else! (Links to both available on the installation page).
+        If you are looking to edit the theme code, please consider using the Custom CSS under Advanced Options instead. This way, the theme can continue to receive updates and your modifications (such as custom cursors) will persist between theme changes. Take a look at the wiki on GitHub for some easy mods, or send an email for anything else! (Links to both available on the installation page).
     Thanks for reading!
         - April
     -->
@@ -37,11 +37,11 @@
         <title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/MqRp4fen4/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/jJSp4gxkg/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/6v3p4f941/vision_plain.css">{/block:IfNotBackgroundImage}
         <meta name="description" content="{MetaDescription}">
-        <style id="Options">
-            body{
+        <style id="vision_dynamic">
+            body {
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
                 font-family: {font:Font};
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
@@ -49,7 +49,7 @@
             a{block:IfBackgroundImage}, .like_button, .reblog_button{/block:IfBackgroundImage} {
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
             }{block:IfBackgroundImage}
-            span.reblog-icon{
+            span.reblog-icon {
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
             }{/block:IfBackgroundImage}
             #sidebar {
@@ -59,51 +59,54 @@
                 {/block:HideHeaderImage}
                 {block:IfNotBackgroundImage}{block:ShowHeaderImage}border: 1px {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors} solid;{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
             }{block:ShowHeaderImage}
-            div#headerlink{
+            #headerlink {
                 {block:IfSearchBar}top: calc(15px + 1.4em);
                 height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
                 height: 160px;{/block:IfNotSearchBar}
             }{/block:ShowHeaderImage}
-            aside#sidebar form#search input{{block:IfNotBackgroundImage}{block:HideHeaderImage}
-                text-align: center;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
-                color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+            #sidebar #search input {
+                color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};{block:IfNotBackgroundImage}{block:HideHeaderImage}
+                text-align: center;
             }
-            aside#sidebar form#search input::placeholder{
+            #search::before {
+                display: none;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
+            }
+            #sidebar #search input::placeholder {
                 color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }{/block:IfSearchBar}
-            img#avatar{
+            #avatar {
                 background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
                 border: 3px solid {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
             }
-            h1#blogtitle{
+            #blogtitle {
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
                 font-family: {TitleFont};
                 font-weight: {TitleFontWeight};
             }{block:IfBackgroundImage}
-            blockquote, ol.notes span.answer_content {
+            blockquote, li.note .answer_content {
                 border-left: 3px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
-            article.post{
+            article {
                 background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
             }{/block:IfBackgroundImage}
-            div#pagination{
+            #pagination {
                 padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
             }
-            div#prevpage, div#nextpage, div#pageno{
+            #prevpage, #nextpage, #pageno {
                 {block:IfNotSidebarPagination}padding: 0.5em;{block:IfBackgroundImage}
                 border: 2px solid;{/block:IfBackgroundImage}{/block:IfNotSidebarPagination}
                 background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
             }{block:IfHidePostsTagged}{block:IndexPage}
-            article.{text:Hide Posts Tagged}{
+            article.{text:Hide Posts Tagged} {
                 display: none;
             }{/block:IndexPage}{/block:IfHidePostsTagged}{block:IfBackgroundImage}
-            a.link h3{
+            a.link h3 {
                 color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
             }
-            a.link blockquote{
+            a.link blockquote {
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }
-            div.answerbox{
+            div.answerbox {
                 border: 1px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
             }{/block:IfBackgroundImage}
         </style>
