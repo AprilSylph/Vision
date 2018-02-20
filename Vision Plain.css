@@ -1,0 +1,39 @@
+article {
+	color: black;
+	background-color: white;
+}
+article a, 
+article header time a {
+	color: #000000;
+	font-weight: normal;
+	text-decoration: underline;
+}
+article header a,
+article footer a,
+.like_button, .reblog_button {
+	color: #a7a7a7;
+	font-weight: bold;
+	text-decoration: none;
+}
+span.reblog-icon {
+	color: #a7a7a7;
+}
+a.link {
+	text-decoration: none;
+}
+a.link h3 {
+	color: black;
+	text-decoration: underline;
+}
+a.link blockquote {
+	color: black;
+}
+div.answerbox {
+	border: 1px solid gray;
+}
+blockquote, li.note .answer_content {
+	border-left: 3px solid #eeeeee;
+}
+li.note a{
+	color: #000000;
+}
