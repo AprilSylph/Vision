@@ -283,10 +283,10 @@ h2.long {
 	margin: 0.625em 0;
 }
 h2.quote::before {
-	content: "“";
+	content: "\201C";
 }
 h2.quote::after {
-	content: "”";
+	content: "\201D";
 }
 a.link {
 	display: block;
