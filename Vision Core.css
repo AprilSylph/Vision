@@ -294,6 +294,9 @@ a.link {
 a.link blockquote {
 	font-weight: normal;
 }
+span.linktitle {
+	margin-right: 1em;
+}
 span.linkhost {
 	display: inline-block;
 }

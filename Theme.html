@@ -37,7 +37,7 @@
         <title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/jJSp4gxkg/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/0W3p4vkox/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/6v3p4f941/vision_plain.css">{/block:IfNotBackgroundImage}
         <meta name="description" content="{MetaDescription}">
         <style id="vision_dynamic">
@@ -338,7 +338,7 @@
                     {block:Link}
                         <a class="link" href="{URL}" target="{Target}">
                             <h3>
-                                {Name}&nbsp;&#187;{block:Host}<span class="linkhost">&emsp;[{block:Author}{Author}, {/block:Author}{Host}]</span>{/block:Host}
+                                <span class="linktitle">{Name}&nbsp;&#187;</span>{block:Host}<span class="linkhost">[{block:Author}{Author}, {/block:Author}{Host}]</span>{/block:Host}
                             </h3>
                             {block:Thumbnail}
                                 <img src="{Thumbnail-HighRes}" class="linkimage"/>
