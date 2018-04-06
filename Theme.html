@@ -57,7 +57,7 @@
                 background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
                 {block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
                 {/block:HideHeaderImage}
-                {block:IfNotBackgroundImage}{block:ShowHeaderImage}border: 1px {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors} solid;{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
+                {block:IfNotBackgroundImage}{block:ShowHeaderImage}box-shadow: 0 5px 10px 0 rgba({block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors},.1);{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
             }{block:ShowHeaderImage}
             #headerlink {
                 {block:IfSearchBar}top: calc(15px + 1.4em);
