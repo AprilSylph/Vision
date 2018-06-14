@@ -25,6 +25,7 @@ nav > a::before {
 	font-size: 1.2em;
 	font-weight: normal;
 	font-variant: normal;
+	line-height: 1em;
 	text-transform: none;
 	vertical-align: text-top;
 	float: left;
