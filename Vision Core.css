@@ -230,7 +230,7 @@ li.note .retags {
 }
 .controls .like_button iframe,
 .controls .reblog_button svg {
-	opacity: 0;
+	opacity: 0.000000001;
 	z-index: 1;
 }
 .controls .like_button::before, 
