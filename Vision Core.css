@@ -187,6 +187,8 @@ section.tags a.tag::before {
 	content: "#";
 }
 ol.notes {
+	display: flex;
+	flex-direction: column-reverse;
 	padding: 0;
 	margin-bottom: 0;
 	list-style-type: none;
@@ -196,7 +198,10 @@ ol.notes {
 	overflow-y: auto;
 }
 li.note {
+	flex: none;
 	padding: 5px 0;
+}
+li.note:not(.more_notes_link_container) {
 	max-width: 465px;
 }
 li.note blockquote a {
