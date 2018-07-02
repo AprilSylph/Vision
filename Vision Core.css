@@ -206,6 +206,7 @@ li.note:not(.more_notes_link_container) {
 }
 li.note blockquote a {
 	font-weight: normal;
+	color: inherit;
 }
 li.note .avatar_frame {
 	display: inline-block;
