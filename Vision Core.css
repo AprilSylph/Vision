@@ -186,16 +186,18 @@ section.tags a.tag {
 section.tags a.tag::before {
 	content: "#";
 }
+#notes {
+	width: 500px;
+	max-height: 700px;
+	margin-top: 1em;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
 ol.notes {
 	display: flex;
 	flex-direction: column-reverse;
-	padding: 0;
-	margin-bottom: 0;
+	padding: 0; margin: 0;
 	list-style-type: none;
-	max-width: 500px;
-	max-height: 700px;
-	overflow-x: hidden;
-	overflow-y: auto;
 }
 li.note {
 	flex: none;
