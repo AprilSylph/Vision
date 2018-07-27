@@ -246,7 +246,7 @@
                 </article>
             {/block:DayPage}
             {block:Posts inlineMediaWidth="500"}
-                <article class="{PostType} post {TagsAsClasses}">
+                <article class="{PostType} post {TagsAsClasses}">{block:Date}
                     <header>
                         {block:ContentSource} 
                             <a href="{SourceURL}" title="{SourceTitle}">
@@ -259,25 +259,23 @@
                                 {/block:NoSourceLogo}
                             </a>
                         {/block:ContentSource}
-                        {block:Date}
-                            <a class="permalink" href="{Permalink}">
-                                    {block:IfShowUsername}
-                                        {PostAuthorName}</a>
-                                    {/block:IfShowUsername}
-                                    {block:IfNotShowUsername}
-                                        {PostType}</a>
-                                        {block:NotReblog}
-                                            {block:Submission}
-                                                <span class="published"></span> <a href="{SubmitterURL}">{Submitter}</a>
-                                            {/block:Submission}
-                                        {/block:NotReblog}
-                                    {/block:IfNotShowUsername}
-                            {block:RebloggedFrom}
-                                &#32;<span class="reblog-icon" title="{lang:Reblogged}" alt="⇄"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>
-                            {/block:RebloggedFrom}
-                            <p class="datetime"><time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {12HourWithZero}:{Minutes}:{Seconds}">{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}</time>&ensp;•&ensp;{TimeAgo}</p>
-                        {/block:Date}
-                    </header>
+                        <a class="permalink" href="{Permalink}">
+                                {block:IfShowUsername}
+                                    {PostAuthorName}</a>
+                                {/block:IfShowUsername}
+                                {block:IfNotShowUsername}
+                                    {PostType}</a>
+                                    {block:NotReblog}
+                                        {block:Submission}
+                                            <span class="published"></span> <a href="{SubmitterURL}">{Submitter}</a>
+                                        {/block:Submission}
+                                    {/block:NotReblog}
+                                {/block:IfNotShowUsername}
+                        {block:RebloggedFrom}
+                            &#32;<span class="reblog-icon" title="{lang:Reblogged}" alt="⇄"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>
+                        {/block:RebloggedFrom}
+                        <p class="datetime"><time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {12HourWithZero}:{Minutes}:{Seconds}">{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}</time>&ensp;•&ensp;{TimeAgo}</p>
+                    </header>{/block:Date}
                     {block:Text}
                         {block:Title}<h1>{Title}</h1>{/block:Title}
                         {Body}
@@ -405,7 +403,7 @@
                         </div>
                         {/block:Answerer}
                         {Replies}
-                    {/block:Answer}
+                    {/block:Answer}{block:Date}
                     <footer>
                     {block:HasTags}
                         <section class="tags">
@@ -418,18 +416,16 @@
                             {block:NoteCount}
                                 <a href="{Permalink}#notes" class="notecount">{NoteCountWithLabel}</a>
                             {/block:NoteCount}
-                            {block:Date}
-                                {LikeButton color="grey"}
-                                &emsp;
-                                {ReblogButton color="grey"}
-                            {/block:Date}
+                            {LikeButton color="grey"}
+                            &emsp;
+                            {ReblogButton color="grey"}
                             {block:PostNotes}
                             <section id="notes">
                                 {PostNotes-16}
                             </section>
                             {/block:PostNotes}
                         </section>
-                    </footer>
+                    </footer>{/block:Date}
                 </article>
             {/block:Posts}
             {block:IfNotSidebarPagination}
