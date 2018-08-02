@@ -170,6 +170,33 @@ p.npf_chat {
 p.npf_quote {
 	font-family: Calluna, sans-serif;
 }
+.npf_color_joey {
+    color: #ff492f;
+}
+.npf_color_monica {
+    color: #ff8a00;
+}
+.npf_color_phoebe {
+    color: #fcf01d;
+}
+.npf_color_ross {
+    color: #00cf35;
+}
+.npf_color_rachel {
+    color: #00b8ff;
+}
+.npf_color_chandler {
+    color: #973ff4;
+}
+.npf_color_niles {
+    color: #ff62ce;
+}
+.npf_color_frasier {
+    color: #001935;
+}
+.npf_color_mr_big {
+    color: #000c1a;
+}
 a.tumblr_blog {
 	text-decoration: underline;
 }
