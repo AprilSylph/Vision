@@ -44,7 +44,8 @@ a {
 pre {
 	overflow: scroll;
 }
-blockquote {
+blockquote, .npf-link-block .description {
+	border-left: 3px solid;
 	padding-left: 1em;
 	margin: 1em 0;
 }
@@ -323,7 +324,7 @@ h2.quote::before {
 h2.quote::after {
 	content: "\201D";
 }
-a.link {
+a.link, .npf-link-block a {
 	display: block;
 }
 a.link blockquote {
@@ -334,6 +335,30 @@ span.linktitle {
 }
 span.linkhost {
 	display: inline-block;
+}
+.npf-link-block a {
+	border: 1px solid;
+	border-radius: 5px;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+.npf-link-block .title {
+	font-size: 2em;
+}
+.npf-link-block .poster {
+	border-radius: 5px 5px 0 0;
+	height: 250px;
+	margin: -1em -1em 0;
+	background-size: cover;
+	background-position: 50%;
+}
+.npf-link-block .poster .title {
+	text-align: center;
+	position: relative;
+	top: 50%;
+}
+.npf-link-block .site-name::after {
+	content: " \00BB";
 }
 iframe.tumblr_audio_player {
 	max-height: 85px;
