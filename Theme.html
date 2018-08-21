@@ -38,7 +38,7 @@
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/anTpdq6d9/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/p5Hpdsh2h/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/RBIpb98gt/vision_plain.css">{/block:IfNotBackgroundImage}
         <meta name="description" content="{MetaDescription}">
         <style id="vision_dynamic">
@@ -106,6 +106,9 @@
             }
             a.link blockquote, .npf-link-block .title, .npf-link-block .description {
                 color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+            }
+            .npf-link-block .poster .title {
+                text-shadow: 0 0 3px {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
             }
             div.answerbox {
                 border: 1px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
