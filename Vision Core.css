@@ -36,7 +36,7 @@
 		url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff?v=c5fa36698a378c9c64711cec95efd69e") format("woff");
 }
 body {
-	font-size: 0.875em;
+	font-size: 14px;
 }
 a {
 	text-decoration: none;
