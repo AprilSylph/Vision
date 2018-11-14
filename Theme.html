@@ -1,506 +1,506 @@
 <!DOCTYPE html>
 <html>
-    <!--Theme: "Vision" by April Sylph-->
-    <!--[https://www.tumblr.com/theme/40627]-->
-    {block:ReadMe}
-    <!--
-    Hello user!
-        If you are looking to edit the theme code, please consider using the Custom CSS under Advanced Options instead. This way, the theme can continue to receive updates and your modifications (such as custom cursors) will persist between theme changes. Take a look at the wiki on GitHub for some easy mods, or send an email for anything else! (Links to both available on the installation page).
-    Thanks for reading!
-        - April
-    -->
-    {/block:ReadMe}
-    {block:Meta}
-    <meta name="image:Background" content="">
-    <meta name="color:Background" content="{BackgroundColor}">
-    <meta name="color:Text" content="{TitleColor}">
-    <meta name="color:Links" content="{AccentColor}">
-    <meta name="font:Font" content="Helvetica">
-    <meta name="select:Background" content="center/cover no-repeat fixed" title="Stretched">
-    <meta name="select:Background" content="center repeat fixed" title="Tiled, Fixed">
-    <meta name="select:Background" content="center repeat scroll" title="Tiled, Scrolls">
-    <meta name="select:Sidebar" content="right: calc(50% + 280px);" title="Leftside">
-    <meta name="select:Sidebar" content="left: calc(50% + 280px);" title="Rightside">
-    <meta name="select:Sidebar" content="display: none;" title="None">
-    <meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
-    <meta name="select:Title Separator" content=" | " title="Pipe">
-    <meta name="if:Custom Colors" content="0">
-    <meta name="if:Search Bar" content="1">
-    <meta name="if:Show Username" content="1">
-    <meta name="if:Sidebar Pagination" content="0">
-    <meta name="if:Generate Post Summaries" content="0">
-    <meta name="text:Custom Title" content="">
-    <meta name="text:Hide Posts Tagged" content="nsfw">
-    <meta name="text:Widget Code" content="">
-    {/block:Meta}
-    <head>
-        <title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/u1kpg9m78/vision_core.css">{block:IfNotBackgroundImage}
-        <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/RBIpb98gt/vision_plain.css">{/block:IfNotBackgroundImage}
-        <meta name="description" content="{MetaDescription}">
-        <style id="vision_dynamic">
-            body {
-                background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
-                font-family: {font:Font};
-                color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-            }
-            a{block:IfBackgroundImage}, .like_button, .reblog_button{/block:IfBackgroundImage} {
-                color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-            }{block:IfBackgroundImage}
-            span.reblog-icon {
-                color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-            }{/block:IfBackgroundImage}
-            #sidebar {
-                {select:Sidebar}
-                background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
-                {block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
-                {/block:HideHeaderImage}
-                {block:IfNotBackgroundImage}{block:ShowHeaderImage}box-shadow: 0 5px 10px 0 rgba({block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors},.1);{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
-            }{block:ShowHeaderImage}
-            #headerlink {
-                {block:IfSearchBar}top: calc(15px + 1.4em);
-                height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
-                height: 160px;{/block:IfNotSearchBar}
-            }{/block:ShowHeaderImage}
-            #sidebar #search input {
-                color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};{block:IfNotBackgroundImage}{block:HideHeaderImage}
-                text-align: center;
-            }
-            #search::before {
-                display: none;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
-            }
-            #sidebar #search input::placeholder {
-                color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-            }{/block:IfSearchBar}
-            #avatar {
-                background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-                border: 3px solid {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-            }
-            #blogtitle {
-                color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-                font-family: {TitleFont};
-                font-weight: {TitleFontWeight};
-            }{block:IfBackgroundImage}
-            blockquote, li.note .answer_content {
-                border-left: 3px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-            }
-            article {
-                background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-            }{/block:IfBackgroundImage}
-            #pagination {
-                padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
-            }
-            #prevpage, #nextpage, #pageno {
-                {block:IfNotSidebarPagination}padding: 0.5em;{block:IfBackgroundImage}
-                border: 2px solid;{/block:IfBackgroundImage}{/block:IfNotSidebarPagination}
-                background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-            }{block:IfHidePostsTagged}{block:IndexPage}
-            article.{text:Hide Posts Tagged} {
-                display: none;
-            }{/block:IndexPage}{/block:IfHidePostsTagged}{block:IfBackgroundImage}
-            a.link h3 {
-                color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-            }
-            a.link blockquote, .npf-link-block .title, .npf-link-block .description {
-                color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-            }
-            .npf-link-block .poster .title {
-                text-shadow: 0 0 3px {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-            }
-            div.answerbox {
-                border: 1px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
-            }{/block:IfBackgroundImage}
-        </style>
-        <style title="Custom CSS">{CustomCSS}</style>
-    </head>
-    <body>
-        <aside id="sidebar">
-            {block:IfSearchBar}
-                <form id="search" action="/search" method="get">
-                    <input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
-                </form>
-            {/block:IfSearchBar}
-            <a href="{BlogURL}">
-                {block:ShowHeaderImage}
-                    <div id="headerlink"></div>
-                {/block:ShowHeaderImage}
-                {block:ShowAvatar}
-                    <img src="{PortraitURL-64}" id="avatar" class="{AvatarShape}">
-                {/block:ShowAvatar}
-                {block:ShowTitle}
-                    <h1 id="blogtitle">{Title}</h1>
-                {/block:ShowTitle}
-            </a>
-            {block:ShowDescription}
-                <div id="description">{Description}</div>
-            {/block:ShowDescription}
-            <nav>
-                {block:AskEnabled}
-                    <a href="/ask">{AskLabel}</a>
-                {/block:AskEnabled}
-                {block:SubmissionsEnabled}
-                    <a href="/submit">{SubmitLabel}</a>
-                {/block:SubmissionsEnabled}
-                <a href="/archive">{lang:Archive}</a>
-                {block:Likes}
-                    <a href="/likes">{lang:Likes}</a>
-                {/block:Likes}
-                {block:HasPages}
-                    {block:Pages}
-                        <a href="{URL}">{Label}</a>
-                    {/block:Pages}
-                {/block:HasPages}
-            </nav>
-            {block:IfSidebarPagination}
-                {block:Pagination}
-                    <div id="pagination">
-                        {block:PreviousPage}
-                            <a href="{PreviousPage}">
-                        {/block:PreviousPage}
-                                <div id="prevpage">
-                                    ‹&ensp;{lang:Back}
-                                </div>
-                        {block:PreviousPage}
-                            </a>
-                        {/block:PreviousPage}
-                        {block:NextPage}
-                            <a href="{NextPage}">
-                        {/block:NextPage}
-                                <div id="nextpage">
-                                    {lang:Next}&ensp;›
-                                </div>
-                        {block:NextPage}
-                            </a>
-                        {/block:NextPage}
-                        {lang:Page CurrentPage of TotalPages}
-                    </div>
-                {/block:Pagination}
-                {block:PermalinkPagination}
-                    <div id="pagination">
-                        {block:PreviousPost}
-                            <a href="{PreviousPost}">
-                                <div id="prevpage">
-                                    ‹&ensp;{lang:Previous post}
-                                </div>
-                            </a>
-                        {/block:PreviousPost}
-                        &nbsp;
-                        {block:NextPost}
-                            <a href="{NextPost}">
-                                <div id="nextpage">
-                                    {lang:Next post}&ensp;›
-                                </div>
-                            </a>
-                        {/block:NextPost}
-                    </div>
-                {/block:PermalinkPagination}
-                {block:DayPagination}
-                    <div id="pagination">
-                        {block:PreviousDayPage}
-                            <a href="{PreviousDayPage}">
-                                <div id="prevpage">
-                                    ‹&ensp;{lang:Previous day}
-                                </div>
-                            </a>
-                        {/block:PreviousDayPage}
-                        &nbsp;
-                        {block:NextDayPage}
-                            <a href="{NextDayPage}">
-                                <div id="nextpage">
-                                    {lang:Next day}&ensp;›
-                                </div>
-                            </a>
-                        {/block:NextDayPage}
-                    </div>
-                {/block:DayPagination}
-            {/block:IfSidebarPagination}
-            {block:IfWidgetCode}
-                <aside id="widget">
-                    {text:Widget Code}
-                </aside>
-            {/block:IfWidgetCode}
-        </aside>
-        <div id="content">
-            {block:SearchPage}
-                <article class="post">
-                    <h1>
-                        {lang:Found SearchResultCount results for SearchQuery}
-                        {block:NoSearchResults}
-                            {lang:No search results for SearchQuery}
-                        {/block:NoSearchResults}
-                    </h1>
-                </article>
-            {/block:SearchPage}
-            {block:TagPage}
-                <article class="post {Tag}">
-                    <h1>
-                        {lang:TagResultCount posts tagged Tag}
-                    </h1>
-                </article>
-            {/block:TagPage}
-            {block:DayPage}
-                <article class="post">
-                    <h1>
-                        {DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}
-                    </h1>
-                </article>
-            {/block:DayPage}
-            {block:Posts inlineMediaWidth="500"}
-                <article class="{PostType} post {TagsAsClasses}">{block:Date}
-                    <header>
-                        {block:ContentSource} 
-                            <a href="{SourceURL}" title="{SourceTitle}">
-                                {block:SourceLogo} 
-                                    <img src="{BlackLogoURL}" alt="{SourceTitle}" class="sourcelogo"/>
-                                    
-                                {/block:SourceLogo}
-                                {block:NoSourceLogo} 
-                                    <p class="sourcelogo">{lang:Source}: {SourceTitle}</p>
-                                {/block:NoSourceLogo}
-                            </a>
-                        {/block:ContentSource}
-                        <a class="permalink" href="{Permalink}">
-                                {block:IfShowUsername}
-                                    {PostAuthorName}</a>
-                                {/block:IfShowUsername}
-                                {block:IfNotShowUsername}
-                                    {PostType}</a>
-                                    {block:NotReblog}
-                                        {block:Submission}
-                                            <span class="published"></span> <a href="{SubmitterURL}">{Submitter}</a>
-                                        {/block:Submission}
-                                    {/block:NotReblog}
-                                {/block:IfNotShowUsername}
-                        {block:RebloggedFrom}
-                            &#32;<span class="reblog-icon" title="{lang:Reblogged}" alt="⇄"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>
-                        {/block:RebloggedFrom}
-                        <p class="datetime"><time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {12HourWithZero}:{Minutes}:{Seconds}">{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}</time>&ensp;•&ensp;{TimeAgo}</p>
-                    </header>{/block:Date}
-                    {block:Text}
-                        {block:Title}<h1>{Title}</h1>{/block:Title}
-                        {Body}
-                    {/block:Text}
-                    {block:Photo}
-                        {LinkOpenTag}
-                            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photopost"/>
-                        {LinkCloseTag}
-                        {block:Exif}
-                            <p class="exif">
-                                {block:Camera}{Camera}&emsp;{/block:Camera}
-                                {block:Aperture}{Aperture}&emsp;{/block:Aperture}
-                                {block:Exposure}{Exposure}&emsp;{/block:Exposure}
-                                {block:FocalLength}{FocalLength}{/block:FocalLength}
-                            </p>
-                        {/block:Exif}
-                        {block:Caption}
-                            {Caption}
-                        {/block:Caption}
-                    {/block:Photo}
-                    {block:Panorama}
-                        {LinkOpenTag}
-                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" class="panorama"/>
-                        {LinkCloseTag}
-                        {block:Exif}
-                            <p class="exif">
-                                {block:Camera}
-                                    &ensp;{Camera}&ensp;
-                                {/block:Camera}
-                                {block:Aperture}
-                                    &ensp;{Aperture}&ensp;
-                                {/block:Aperture}
-                                {block:Exposure}
-                                    &ensp;{Exposure}&ensp;
-                                {/block:Exposure}
-                                {block:FocalLength}
-                                    &ensp;{FocalLength}&ensp;
-                                {/block:FocalLength}
-                            </p>
-                        {/block:Exif}
-                        {block:Caption}
-                            {Caption}
-                        {/block:Caption}
-                    {/block:Panorama}
-                    {block:Photoset}
-                        {Photoset-500}
-                        {block:Caption}
-                            {Caption}
-                        {/block:Caption}
-                    {/block:Photoset}
-                    {block:Quote}
-                            <h2 class="quote {Length}">{Quote}</h2>
-                            {block:Source}
-                                <div class="quotesource">
-                                    <p>&horbar; {Source}</p>
-                                </div>
-                            {/block:Source}
-                    {/block:Quote}
-                    {block:Link}
-                        <a class="link" href="{URL}" target="{Target}">
-                            <h3>
-                                <span class="linktitle">{Name}&nbsp;&#187;</span>{block:Host}<span class="linkhost">[{block:Author}{Author}, {/block:Author}{Host}]</span>{/block:Host}
-                            </h3>
-                            {block:Thumbnail}
-                                <img src="{Thumbnail-HighRes}" class="linkimage"/>
-                            {/block:Thumbnail}
-                            {block:Excerpt}
-                                <blockquote>
-                                    {Excerpt}
-                                </blockquote>
-                            {/block:Excerpt}
-                        </a>
-                        {block:Description}
-                            {Description}
-                        {/block:Description}
-                    {/block:Link}
-                    {block:Chat}
-                        {block:Title}
-                            <h1>{Title}</h1>
-                        {/block:Title}
-                        {block:Lines}
-                            <p>
-                                {block:Label}
-                                    <b>{Label}</b>
-                                {/block:Label}
-                                {Line}
-                            </p>
-                        {/block:Lines}
-                    {/block:Chat}
-                    {block:Audio}
-                        {block:AudioEmbed}
-                            {AudioEmbed-500}
-                        {/block:AudioEmbed}
-                        {block:PlayCount}
-                            <p class="plays">{PlayCountWithLabel}</p>
-                        {/block:PlayCount}
-                        {block:Caption}
-                            {Caption}
-                        {/block:Caption}
-                    {/block:Audio}
-                    {block:Video}
-                        {VideoEmbed-500}
-                        <p class="plays">{PlayCountWithLabel}</p>
-                        {block:Caption}
-                            {Caption}
-                        {/block:Caption}
-                    {/block:Video}
-                    {block:Answer}
-                    <div class="answertub">
-                        <img src="{AskerPortraitURL-64}" class="askicon">
-                        <div class="answerbox">
-                            <p>{Asker} asked:</p>
-                            <p class="separator"><br/></p>
-                            <p>{Question}</p>
-                        </div>
-                    </div>
-                        {block:Answerer}
-                        <div class="answertub">
-                            <img src="{AnswererPortraitURL-64}" class="askicon">
-                            <div class="answerbox">
-                                <p>{Answerer} answered:</p>
-                                <p class="separator"><br/></p>
-                                <p>{Answer}</p>
-                            </div>
-                        </div>
-                        {/block:Answerer}
-                        {Replies}
-                    {/block:Answer}{block:Date}
-                    <footer>
-                    {block:HasTags}
-                        <section class="tags">
-                            {block:Tags}
-                                <a href="{TagURL}" class="tag">{Tag}</a>
-                            {/block:Tags}
-                        </section>
-                    {/block:HasTags}
-                        <section class="controls">
-                            {block:NoteCount}
-                                <a href="{Permalink}#notes" class="notecount">{NoteCountWithLabel}</a>
-                            {/block:NoteCount}
-                            {LikeButton color="grey"}
-                            &emsp;
-                            {ReblogButton color="grey"}
-                            {block:PostNotes}
-                            <section id="notes">
-                                {PostNotes-16}
-                            </section>
-                            {/block:PostNotes}
-                        </section>
-                    </footer>{/block:Date}
-                </article>
-            {/block:Posts}
-            {block:IfNotSidebarPagination}
-                {block:Pagination}
-                    <div id="pagination">
-                        {block:PreviousPage}
-                            <a href="{PreviousPage}">
-                        {/block:PreviousPage}
-                                <div id="prevpage">
-                                    ‹&ensp;{lang:Back}
-                                </div>
-                        {block:PreviousPage}
-                            </a>
-                        {/block:PreviousPage}
-                        <div id="pageno">
-                            {lang:Page CurrentPage of TotalPages}
-                        </div>
-                        {block:NextPage}
-                            <a href="{NextPage}">
-                        {/block:NextPage}
-                                <div id="nextpage">
-                                    {lang:Next}&ensp;›
-                                </div>
-                        {block:NextPage}
-                            </a>
-                        {/block:NextPage}
-                    </div>
-                {/block:Pagination}
-                {block:PermalinkPagination}
-                    <div id="pagination">
-                        {block:PreviousPost}
-                            <a href="{PreviousPost}">
-                                <div id="prevpage">
-                                    ‹&ensp;{lang:Previous post}
-                                </div>
-                            </a>
-                        {/block:PreviousPost}
-                        <div id="pageno" style="opacity: 0;">
-                            &nbsp;
-                        </div>
-                        {block:NextPost}
-                            <a href="{NextPost}">
-                                <div id="nextpage">
-                                    {lang:Next post}&ensp;›
-                                </div>
-                            </a>
-                        {/block:NextPost}
-                    </div>
-                {/block:PermalinkPagination}
-                {block:DayPagination}
-                    <div id="pagination">
-                        {block:PreviousDayPage}
-                            <a href="{PreviousDayPage}">
-                                <div id="prevpage">
-                                    ‹&ensp;{lang:Previous day}
-                                </div>
-                            </a>
-                        {/block:PreviousDayPage}
-                        <div id="pageno" style="opacity: 0;">
-                            &nbsp;
-                        </div>
-                        {block:NextDayPage}
-                            <a href="{NextDayPage}">
-                                <div id="nextpage">
-                                    {lang:Next day}&ensp;›
-                                </div>
-                            </a>
-                        {/block:NextDayPage}
-                    </div>
-                {/block:DayPagination}
-            {/block:IfNotSidebarPagination}
-        </div>
-        <a href="https://www.tumblr.com/theme/40627" title="Vision by April Sylph"><img src="http://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" id="credit" alt="Vision by April Sylph"></a>
-    </body>
+	<!--Theme: "Vision" by April Sylph-->
+	<!--[https://www.tumblr.com/theme/40627]-->
+	{block:ReadMe}
+	<!--
+	Hello user!
+		If you are looking to edit the theme code, please consider using the Custom CSS under Advanced Options instead. This way, the theme can continue to receive updates and your modifications (such as custom cursors) will persist between theme changes. Take a look at the wiki on GitHub for some easy mods, or send an email for anything else! (Links to both available on the installation page).
+	Thanks for reading!
+		- April
+	-->
+	{/block:ReadMe}
+	{block:Meta}
+	<meta name="image:Background" content="">
+	<meta name="color:Background" content="{BackgroundColor}">
+	<meta name="color:Text" content="{TitleColor}">
+	<meta name="color:Links" content="{AccentColor}">
+	<meta name="font:Font" content="Helvetica">
+	<meta name="select:Background" content="center/cover no-repeat fixed" title="Stretched">
+	<meta name="select:Background" content="center repeat fixed" title="Tiled, Fixed">
+	<meta name="select:Background" content="center repeat scroll" title="Tiled, Scrolls">
+	<meta name="select:Sidebar" content="right: calc(50% + 280px);" title="Leftside">
+	<meta name="select:Sidebar" content="left: calc(50% + 280px);" title="Rightside">
+	<meta name="select:Sidebar" content="display: none;" title="None">
+	<meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
+	<meta name="select:Title Separator" content=" | " title="Pipe">
+	<meta name="if:Custom Colors" content="0">
+	<meta name="if:Search Bar" content="1">
+	<meta name="if:Show Username" content="1">
+	<meta name="if:Sidebar Pagination" content="0">
+	<meta name="if:Generate Post Summaries" content="0">
+	<meta name="text:Custom Title" content="">
+	<meta name="text:Hide Posts Tagged" content="nsfw">
+	<meta name="text:Widget Code" content="">
+	{/block:Meta}
+	<head>
+		<title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/u1kpg9m78/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/RBIpb98gt/vision_plain.css">{/block:IfNotBackgroundImage}
+		<meta name="description" content="{MetaDescription}">
+		<style id="vision_dynamic">
+			body {
+				background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
+				font-family: {font:Font};
+				color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+			}
+			a{block:IfBackgroundImage}, .like_button, .reblog_button{/block:IfBackgroundImage} {
+				color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
+			}{block:IfBackgroundImage}
+			span.reblog-icon {
+				color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
+			}{/block:IfBackgroundImage}
+			#sidebar {
+				{select:Sidebar}
+				background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
+				{block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
+				{/block:HideHeaderImage}
+				{block:IfNotBackgroundImage}{block:ShowHeaderImage}box-shadow: 0 5px 10px 0 rgba({block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors},.1);{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
+			}{block:ShowHeaderImage}
+			#headerlink {
+				{block:IfSearchBar}top: calc(15px + 1.4em);
+				height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
+				height: 160px;{/block:IfNotSearchBar}
+			}{/block:ShowHeaderImage}
+			#sidebar #search input {
+				color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};{block:IfNotBackgroundImage}{block:HideHeaderImage}
+				text-align: center;
+			}
+			#search::before {
+				display: none;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
+			}
+			#sidebar #search input::placeholder {
+				color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+			}{/block:IfSearchBar}
+			#avatar {
+				background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+				border: 3px solid {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+			}
+			#blogtitle {
+				color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				font-family: {TitleFont};
+				font-weight: {TitleFontWeight};
+			}{block:IfBackgroundImage}
+			blockquote, li.note .answer_content {
+				border-left: 3px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+			}
+			article {
+				background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+			}{/block:IfBackgroundImage}
+			#pagination {
+				padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
+			}
+			#prevpage, #nextpage, #pageno {
+				{block:IfNotSidebarPagination}padding: 0.5em;{block:IfBackgroundImage}
+				border: 2px solid;{/block:IfBackgroundImage}{/block:IfNotSidebarPagination}
+				background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+			}{block:IfHidePostsTagged}{block:IndexPage}
+			article.{text:Hide Posts Tagged} {
+				display: none;
+			}{/block:IndexPage}{/block:IfHidePostsTagged}{block:IfBackgroundImage}
+			a.link h3 {
+				color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
+			}
+			a.link blockquote, .npf-link-block .title, .npf-link-block .description {
+				color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+			}
+			.npf-link-block .poster .title {
+				text-shadow: 0 0 3px {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+			}
+			div.answerbox {
+				border: 1px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+			}{/block:IfBackgroundImage}
+		</style>
+		<style title="Custom CSS">{CustomCSS}</style>
+	</head>
+	<body>
+		<aside id="sidebar">
+			{block:IfSearchBar}
+				<form id="search" action="/search" method="get">
+					<input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
+				</form>
+			{/block:IfSearchBar}
+			<a href="{BlogURL}">
+				{block:ShowHeaderImage}
+					<div id="headerlink"></div>
+				{/block:ShowHeaderImage}
+				{block:ShowAvatar}
+					<img src="{PortraitURL-64}" id="avatar" class="{AvatarShape}">
+				{/block:ShowAvatar}
+				{block:ShowTitle}
+					<h1 id="blogtitle">{Title}</h1>
+				{/block:ShowTitle}
+			</a>
+			{block:ShowDescription}
+				<div id="description">{Description}</div>
+			{/block:ShowDescription}
+			<nav>
+				{block:AskEnabled}
+					<a href="/ask">{AskLabel}</a>
+				{/block:AskEnabled}
+				{block:SubmissionsEnabled}
+					<a href="/submit">{SubmitLabel}</a>
+				{/block:SubmissionsEnabled}
+				<a href="/archive">{lang:Archive}</a>
+				{block:Likes}
+					<a href="/likes">{lang:Likes}</a>
+				{/block:Likes}
+				{block:HasPages}
+					{block:Pages}
+						<a href="{URL}">{Label}</a>
+					{/block:Pages}
+				{/block:HasPages}
+			</nav>
+			{block:IfSidebarPagination}
+				{block:Pagination}
+					<div id="pagination">
+						{block:PreviousPage}
+							<a href="{PreviousPage}">
+						{/block:PreviousPage}
+								<div id="prevpage">
+									‹&ensp;{lang:Back}
+								</div>
+						{block:PreviousPage}
+							</a>
+						{/block:PreviousPage}
+						{block:NextPage}
+							<a href="{NextPage}">
+						{/block:NextPage}
+								<div id="nextpage">
+									{lang:Next}&ensp;›
+								</div>
+						{block:NextPage}
+							</a>
+						{/block:NextPage}
+						{lang:Page CurrentPage of TotalPages}
+					</div>
+				{/block:Pagination}
+				{block:PermalinkPagination}
+					<div id="pagination">
+						{block:PreviousPost}
+							<a href="{PreviousPost}">
+								<div id="prevpage">
+									‹&ensp;{lang:Previous post}
+								</div>
+							</a>
+						{/block:PreviousPost}
+						&nbsp;
+						{block:NextPost}
+							<a href="{NextPost}">
+								<div id="nextpage">
+									{lang:Next post}&ensp;›
+								</div>
+							</a>
+						{/block:NextPost}
+					</div>
+				{/block:PermalinkPagination}
+				{block:DayPagination}
+					<div id="pagination">
+						{block:PreviousDayPage}
+							<a href="{PreviousDayPage}">
+								<div id="prevpage">
+									‹&ensp;{lang:Previous day}
+								</div>
+							</a>
+						{/block:PreviousDayPage}
+						&nbsp;
+						{block:NextDayPage}
+							<a href="{NextDayPage}">
+								<div id="nextpage">
+									{lang:Next day}&ensp;›
+								</div>
+							</a>
+						{/block:NextDayPage}
+					</div>
+				{/block:DayPagination}
+			{/block:IfSidebarPagination}
+			{block:IfWidgetCode}
+				<aside id="widget">
+					{text:Widget Code}
+				</aside>
+			{/block:IfWidgetCode}
+		</aside>
+		<div id="content">
+			{block:SearchPage}
+				<article class="post">
+					<h1>
+						{lang:Found SearchResultCount results for SearchQuery}
+						{block:NoSearchResults}
+							{lang:No search results for SearchQuery}
+						{/block:NoSearchResults}
+					</h1>
+				</article>
+			{/block:SearchPage}
+			{block:TagPage}
+				<article class="post {Tag}">
+					<h1>
+						{lang:TagResultCount posts tagged Tag}
+					</h1>
+				</article>
+			{/block:TagPage}
+			{block:DayPage}
+				<article class="post">
+					<h1>
+						{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}
+					</h1>
+				</article>
+			{/block:DayPage}
+			{block:Posts inlineMediaWidth="500"}
+				<article class="{PostType} post {TagsAsClasses}">{block:Date}
+					<header>
+						{block:ContentSource} 
+							<a href="{SourceURL}" title="{SourceTitle}">
+								{block:SourceLogo} 
+									<img src="{BlackLogoURL}" alt="{SourceTitle}" class="sourcelogo"/>
+									
+								{/block:SourceLogo}
+								{block:NoSourceLogo} 
+									<p class="sourcelogo">{lang:Source}: {SourceTitle}</p>
+								{/block:NoSourceLogo}
+							</a>
+						{/block:ContentSource}
+						<a class="permalink" href="{Permalink}">
+								{block:IfShowUsername}
+									{PostAuthorName}</a>
+								{/block:IfShowUsername}
+								{block:IfNotShowUsername}
+									{PostType}</a>
+									{block:NotReblog}
+										{block:Submission}
+											<span class="published"></span> <a href="{SubmitterURL}">{Submitter}</a>
+										{/block:Submission}
+									{/block:NotReblog}
+								{/block:IfNotShowUsername}
+						{block:RebloggedFrom}
+							&#32;<span class="reblog-icon" title="{lang:Reblogged}" alt="⇄"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>
+						{/block:RebloggedFrom}
+						<p class="datetime"><time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {12HourWithZero}:{Minutes}:{Seconds}">{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}</time>&ensp;•&ensp;{TimeAgo}</p>
+					</header>{/block:Date}
+					{block:Text}
+						{block:Title}<h1>{Title}</h1>{/block:Title}
+						{Body}
+					{/block:Text}
+					{block:Photo}
+						{LinkOpenTag}
+							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photopost"/>
+						{LinkCloseTag}
+						{block:Exif}
+							<p class="exif">
+								{block:Camera}{Camera}&emsp;{/block:Camera}
+								{block:Aperture}{Aperture}&emsp;{/block:Aperture}
+								{block:Exposure}{Exposure}&emsp;{/block:Exposure}
+								{block:FocalLength}{FocalLength}{/block:FocalLength}
+							</p>
+						{/block:Exif}
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Photo}
+					{block:Panorama}
+						{LinkOpenTag}
+							<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" class="panorama"/>
+						{LinkCloseTag}
+						{block:Exif}
+							<p class="exif">
+								{block:Camera}
+									&ensp;{Camera}&ensp;
+								{/block:Camera}
+								{block:Aperture}
+									&ensp;{Aperture}&ensp;
+								{/block:Aperture}
+								{block:Exposure}
+									&ensp;{Exposure}&ensp;
+								{/block:Exposure}
+								{block:FocalLength}
+									&ensp;{FocalLength}&ensp;
+								{/block:FocalLength}
+							</p>
+						{/block:Exif}
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Panorama}
+					{block:Photoset}
+						{Photoset-500}
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Photoset}
+					{block:Quote}
+							<h2 class="quote {Length}">{Quote}</h2>
+							{block:Source}
+								<div class="quotesource">
+									<p>&horbar; {Source}</p>
+								</div>
+							{/block:Source}
+					{/block:Quote}
+					{block:Link}
+						<a class="link" href="{URL}" target="{Target}">
+							<h3>
+								<span class="linktitle">{Name}&nbsp;&#187;</span>{block:Host}<span class="linkhost">[{block:Author}{Author}, {/block:Author}{Host}]</span>{/block:Host}
+							</h3>
+							{block:Thumbnail}
+								<img src="{Thumbnail-HighRes}" class="linkimage"/>
+							{/block:Thumbnail}
+							{block:Excerpt}
+								<blockquote>
+									{Excerpt}
+								</blockquote>
+							{/block:Excerpt}
+						</a>
+						{block:Description}
+							{Description}
+						{/block:Description}
+					{/block:Link}
+					{block:Chat}
+						{block:Title}
+							<h1>{Title}</h1>
+						{/block:Title}
+						{block:Lines}
+							<p>
+								{block:Label}
+									<b>{Label}</b>
+								{/block:Label}
+								{Line}
+							</p>
+						{/block:Lines}
+					{/block:Chat}
+					{block:Audio}
+						{block:AudioEmbed}
+							{AudioEmbed-500}
+						{/block:AudioEmbed}
+						{block:PlayCount}
+							<p class="plays">{PlayCountWithLabel}</p>
+						{/block:PlayCount}
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Audio}
+					{block:Video}
+						{VideoEmbed-500}
+						<p class="plays">{PlayCountWithLabel}</p>
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Video}
+					{block:Answer}
+					<div class="answertub">
+						<img src="{AskerPortraitURL-64}" class="askicon">
+						<div class="answerbox">
+							<p>{Asker} asked:</p>
+							<p class="separator"><br/></p>
+							<p>{Question}</p>
+						</div>
+					</div>
+						{block:Answerer}
+						<div class="answertub">
+							<img src="{AnswererPortraitURL-64}" class="askicon">
+							<div class="answerbox">
+								<p>{Answerer} answered:</p>
+								<p class="separator"><br/></p>
+								<p>{Answer}</p>
+							</div>
+						</div>
+						{/block:Answerer}
+						{Replies}
+					{/block:Answer}{block:Date}
+					<footer>
+					{block:HasTags}
+						<section class="tags">
+							{block:Tags}
+								<a href="{TagURL}" class="tag">{Tag}</a>
+							{/block:Tags}
+						</section>
+					{/block:HasTags}
+						<section class="controls">
+							{block:NoteCount}
+								<a href="{Permalink}#notes" class="notecount">{NoteCountWithLabel}</a>
+							{/block:NoteCount}
+							{LikeButton color="grey"}
+							&emsp;
+							{ReblogButton color="grey"}
+							{block:PostNotes}
+							<section id="notes">
+								{PostNotes-16}
+							</section>
+							{/block:PostNotes}
+						</section>
+					</footer>{/block:Date}
+				</article>
+			{/block:Posts}
+			{block:IfNotSidebarPagination}
+				{block:Pagination}
+					<div id="pagination">
+						{block:PreviousPage}
+							<a href="{PreviousPage}">
+						{/block:PreviousPage}
+								<div id="prevpage">
+									‹&ensp;{lang:Back}
+								</div>
+						{block:PreviousPage}
+							</a>
+						{/block:PreviousPage}
+						<div id="pageno">
+							{lang:Page CurrentPage of TotalPages}
+						</div>
+						{block:NextPage}
+							<a href="{NextPage}">
+						{/block:NextPage}
+								<div id="nextpage">
+									{lang:Next}&ensp;›
+								</div>
+						{block:NextPage}
+							</a>
+						{/block:NextPage}
+					</div>
+				{/block:Pagination}
+				{block:PermalinkPagination}
+					<div id="pagination">
+						{block:PreviousPost}
+							<a href="{PreviousPost}">
+								<div id="prevpage">
+									‹&ensp;{lang:Previous post}
+								</div>
+							</a>
+						{/block:PreviousPost}
+						<div id="pageno" style="opacity: 0;">
+							&nbsp;
+						</div>
+						{block:NextPost}
+							<a href="{NextPost}">
+								<div id="nextpage">
+									{lang:Next post}&ensp;›
+								</div>
+							</a>
+						{/block:NextPost}
+					</div>
+				{/block:PermalinkPagination}
+				{block:DayPagination}
+					<div id="pagination">
+						{block:PreviousDayPage}
+							<a href="{PreviousDayPage}">
+								<div id="prevpage">
+									‹&ensp;{lang:Previous day}
+								</div>
+							</a>
+						{/block:PreviousDayPage}
+						<div id="pageno" style="opacity: 0;">
+							&nbsp;
+						</div>
+						{block:NextDayPage}
+							<a href="{NextDayPage}">
+								<div id="nextpage">
+									{lang:Next day}&ensp;›
+								</div>
+							</a>
+						{/block:NextDayPage}
+					</div>
+				{/block:DayPagination}
+			{/block:IfNotSidebarPagination}
+		</div>
+		<a href="https://www.tumblr.com/theme/40627" title="Vision by April Sylph"><img src="http://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" id="credit" alt="Vision by April Sylph"></a>
+	</body>
 </html>
