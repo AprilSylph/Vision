@@ -9,32 +9,6 @@
 		url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_1a292352282f4fc706b9015c01cab89b.ttf?v=9b36135a7b59c72e0fe7118ab69259b8") format("truetype"),
 		url("https://assets.tumblr.com/fonts/tumblr-icons/tumblr-icons_1a292352282f4fc706b9015c01cab89b.svg?v=9fab8e7811a16a260fcf8b3770762df8#tumblr-icons") format("svg");
 }
-@font-face {
-	font-family: "Calluna";
-	font-style: normal;
-	font-weight: 700;
-	src:
-		url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.eot?3%3F=&v=4d396676b5b7013e8062b0306fb6df25#iefix") format("embedded-opentype"),
-		url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.woff?3=&v=cfbfc0fbbd321fd3635b9d1fb3abd7da") format("woff"),
-		url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.ttf?3=&v=66795c1b09c6ecba8d96d158e5f25e4e") format("truetype"),
-		url("https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.svg?3=&v=becfe0f2e977ae23541d14051460730e#CallunaBlckRegular") format("svg");
-}
-@font-face {
-	font-family: "Fairwater";
-	font-style: normal;
-	font-weight: 400;
-	src:
-		url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff2?v=b7ab7a58cded3365889a447bfd9e9c45") format("woff2"),
-		url("https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff?v=96e975b7468359e6f67086305577e43e") format("woff");
-}
-@font-face {
-	font-family: "Source Code Pro";
-	font-style: normal;
-	font-weight: 400;
-	src:
-		url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff2?v=c2bb363563f7a15a4c0fe91cf951a67c") format("woff2"),
-		url("https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff?v=c5fa36698a378c9c64711cec95efd69e") format("woff");
-}
 body {
 	font-size: 14px;
 }
@@ -44,7 +18,7 @@ a {
 pre {
 	overflow: scroll;
 }
-blockquote, .npf-link-block .description {
+blockquote {
 	border-left: 3px solid;
 	padding-left: 1em;
 	margin: 1em 0;
@@ -158,45 +132,6 @@ img, iframe, figure {
 }
 .tmblr-lightbox .lightbox-image {
 	max-width: none;
-}
-p.npf_quirky {
-	font-family: Fairwater, serif;
-	font-size: 1.71428571429em;
-	line-height: 1.3em;
-	margin: 0;
-}
-p.npf_chat {
-	font-family: Source Code Pro, monospace;
-}
-p.npf_quote {
-	font-family: Calluna, sans-serif;
-}
-.npf_color_joey {
-	color: #ff492f;
-}
-.npf_color_monica {
-	color: #ff8a00;
-}
-.npf_color_phoebe {
-	color: #fcf01d;
-}
-.npf_color_ross {
-	color: #00cf35;
-}
-.npf_color_rachel {
-	color: #00b8ff;
-}
-.npf_color_chandler {
-	color: #973ff4;
-}
-.npf_color_niles {
-	color: #ff62ce;
-}
-.npf_color_frasier {
-	color: #001935;
-}
-.npf_color_mr_big {
-	color: #000c1a;
 }
 a.tumblr_blog {
 	text-decoration: underline;
@@ -324,7 +259,7 @@ h2.quote::before {
 h2.quote::after {
 	content: "\201D";
 }
-a.link, .npf-link-block a {
+a.link {
 	display: block;
 }
 a.link blockquote {
@@ -335,32 +270,6 @@ span.linktitle {
 }
 span.linkhost {
 	display: inline-block;
-}
-.npf-link-block a {
-	border: 1px solid;
-	border-radius: 5px;
-	padding: 1em;
-	margin-bottom: 1em;
-}
-.npf-link-block .title {
-	font-size: 2em;
-}
-.npf-link-block .poster {
-	display: flex;
-	align-items: center;
-	border-radius: 5px 5px 0 0;
-	height: 250px;
-	margin: -1em -1em 0;
-	padding: 1em;
-	background-size: cover;
-	background-position: 50%;
-	box-shadow: inset 0 0 250px;
-}
-.npf-link-block .poster .title {
-	text-align: center;
-}
-.npf-link-block .site-name::after {
-	content: " \00BB";
 }
 iframe.tumblr_audio_player {
 	max-height: 85px;
