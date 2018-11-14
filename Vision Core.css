@@ -115,7 +115,7 @@ nav a {
 	margin: 10px -5px 0;
 	overflow-x: hidden;
 }
-#content {
+main {
 	min-width: 250px;
 	position: relative;
 	width: 560px;
