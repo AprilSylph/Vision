@@ -43,53 +43,54 @@
 		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
 		<meta name="description" content="{MetaDescription}">
 		<style id="vision_dynamic">
-			body {
-				background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors}{block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
-				font-family: {font:Font};
-				color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+			:root {
+				--background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
+				--title: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				--accent: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
+				--rgbaccent: {block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors};
 			}
-			a{block:IfBackgroundImage}, .like_button, .reblog_button{/block:IfBackgroundImage} {
-				color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-			}{block:IfBackgroundImage}
-			span.reblog-icon {
-				color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
-			}{/block:IfBackgroundImage}
+			body {
+				background: var(--background){block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
+				font-family: {font:Font};
+				color: var(--title);
+			}
+			a{block:IfBackgroundImage}, span.reblog-icon, .like_button, .reblog_button{/block:IfBackgroundImage} {
+				color: var(--accent);
+			}
 			#sidebar {
 				{select:Sidebar}
-				background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors}{block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
+				background: var(--background){block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
 				{block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
 				{/block:HideHeaderImage}
-				{block:IfNotBackgroundImage}{block:ShowHeaderImage}box-shadow: 0 5px 10px 0 rgba({block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors},.1);{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
+				{block:IfNotBackgroundImage}{block:ShowHeaderImage}box-shadow: 0 5px 10px 0 rgba(var(--rgbaccent),.1);{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
 			}{block:ShowHeaderImage}
 			#headerlink {
 				{block:IfSearchBar}top: calc(15px + 1.4em);
 				height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
 				height: 160px;{/block:IfNotSearchBar}
 			}{/block:ShowHeaderImage}
-			#sidebar #search input {
-				color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};{block:IfNotBackgroundImage}{block:HideHeaderImage}
+			#sidebar #search input,
+			#sidebar #search input::placeholder {
+				color: var(--title);{block:IfNotBackgroundImage}{block:HideHeaderImage}
 				text-align: center;
 			}
 			#search::before {
 				display: none;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
-			}
-			#sidebar #search input::placeholder {
-				color: {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
 			}{/block:IfSearchBar}
 			#avatar {
-				background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
-				border: 3px solid {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+				background-color: var(--background);
+				border: 3px solid var(--background);
 			}
 			#blogtitle {
-				color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				color: var(--title);
 				font-family: {TitleFont};
 				font-weight: {TitleFontWeight};
 			}{block:IfBackgroundImage}
 			blockquote, li.note .answer_content {
-				border-left: 3px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				border-left: 3px solid var(--title);
 			}
 			article {
-				background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+				background-color: var(--background);
 			}{/block:IfBackgroundImage}
 			#pagination {
 				padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
@@ -97,19 +98,19 @@
 			#prevpage, #nextpage, #pageno {
 				{block:IfNotSidebarPagination}padding: 0.5em;{block:IfBackgroundImage}
 				border: 2px solid;{/block:IfBackgroundImage}{/block:IfNotSidebarPagination}
-				background-color: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomColors};
+				background-color: var(--background);
 			}{block:IfHidePostsTagged}{block:IndexPage}
 			article.{text:Hide Posts Tagged} {
 				display: none;
 			}{/block:IndexPage}{/block:IfHidePostsTagged}{block:IfBackgroundImage}
 			a.link h3 {
-				color: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
+				color: var(--accent);
 			}
 			a.link blockquote {
-				color: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				color: var(--title);
 			}
 			div.answerbox {
-				border: 1px solid {block:IfCustomColors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				border: 1px solid var(--title);
 			}{/block:IfBackgroundImage}
 		</style>
 		<style title="Custom CSS">{CustomCSS}</style>
