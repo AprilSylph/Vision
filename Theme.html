@@ -34,14 +34,17 @@
 	<!--Theme: "Vision" by April Sylph-->
 	<!--[https://www.tumblr.com/theme/40627]-->
 	<head>
+		<meta charset="UTF-8">
 		<title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
 		<link rel="shortcut icon" href="{Favicon}">
+		<meta name="description" content="{MetaDescription}">
+		<meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/u1kpg9m78/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/Jgwpj3r5r/vision_core.css">{block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/RBIpb98gt/vision_plain.css">{/block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
-		<meta name="description" content="{MetaDescription}">
+		{PostTypographyStyles}
 		<style id="vision_dynamic">
 			:root {
 				--background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
