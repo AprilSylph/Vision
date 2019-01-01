@@ -63,12 +63,13 @@ blockquote img {
 	border-radius: 6px;
 }
 #blogtitle {
+	font-size: 20px;
 	margin: 0 10px;
 }
 #description {
-	margin: 3px 10px 0;
+	margin: 5px 10px 0;
 	word-wrap: break-word;
-	font-size: 0.8571428571428571em;
+	font-size: 12px;
 }
 #description p {
 	margin: 0;
