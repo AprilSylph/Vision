@@ -40,15 +40,16 @@
 		<meta name="description" content="{MetaDescription}">
 		<meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
-		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/FnVpko3yd/vision_core.css">{block:IfNotBackgroundImage}
-		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/RBIpb98gt/vision_plain.css">{/block:IfNotBackgroundImage}
-		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/yXapmbpos/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/9w5pmau0x/vision_plain.css">{/block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
 		{PostTypographyStyles}
 		<style id="vision_dynamic">
 			:root {
 				--background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
 				--title: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
+				--rgbtitle: {block:IfCustomcolors}{RGBcolor:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBTitleColor}{/block:IfNotCustomColors};
 				--accent: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
 				--rgbaccent: {block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors};
 			}
@@ -89,11 +90,24 @@
 				font-family: {TitleFont};
 				font-weight: {TitleFontWeight};
 			}{block:IfBackgroundImage}
-			blockquote, li.note .answer_content {
-				border-left: 3px solid var(--title);
+			blockquote,
+			li.note .answer_content {
+				border-color: rgba(var(--rgbtitle), 0.5);
 			}
 			article {
 				background-color: var(--background);
+			}
+			.npf-link-block a {
+				color: var(--title);
+			}
+			.npf-link-block .bottom > .site-name {
+				color: rgba(var(--rgbtitle), 0.5);
+			}
+			section.body .reblog .user .username {
+				color: var(--title);
+			}
+			.ask-item > div {
+				background: rgba(var(--rgbtitle), 0.1);
 			}{/block:IfBackgroundImage}
 			#pagination {
 				padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
@@ -105,16 +119,7 @@
 			}{block:IfHidePostsTagged}{block:IndexPage}
 			article.{text:Hide Posts Tagged} {
 				display: none;
-			}{/block:IndexPage}{/block:IfHidePostsTagged}{block:IfBackgroundImage}
-			a.link h3 {
-				color: var(--accent);
-			}
-			a.link blockquote {
-				color: var(--title);
-			}
-			div.answerbox {
-				border: 1px solid var(--title);
-			}{/block:IfBackgroundImage}
+			}{/block:IndexPage}{/block:IfHidePostsTagged}
 		</style>
 		<style title="Custom CSS">{CustomCSS}</style>
 	</head>
@@ -189,7 +194,7 @@
 			<article class="post">
 				<h1>{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h1>
 			</article>{/block:DayPage}{block:Posts inlineMediaWidth="500"}
-			<article class="{PostType} post {TagsAsClasses}">{block:Date}
+			<article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post {TagsAsClasses}">{block:Date}
 				<header>{block:ContentSource}
 					<a href="{SourceURL}" title="{SourceTitle}">{block:SourceLogo}
 						<img src="{BlackLogoURL}" alt="{SourceTitle}" class="sourcelogo"/>{/block:SourceLogo}{block:NoSourceLogo}
@@ -200,83 +205,89 @@
 						{PostType}{/block:IfNotShowUsername}
 					</a>{block:IfNotShowUsername}{block:NotReblog}{block:Submission}
 					<span class="published"></span>&nbsp;<a href="{SubmitterURL}">{Submitter}</a>{/block:Submission}{/block:NotReblog}{/block:IfNotShowUsername}{block:RebloggedFrom}
-					&#32;<span class="reblog-icon" title="{lang:Reblogged}" alt="⇄"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>{/block:RebloggedFrom}
+					&#32;<span class="reblog-icon" title="{lang:Reblogged}"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>{/block:RebloggedFrom}
 					<p class="datetime">
 						<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {12HourWithZero}:{Minutes}:{Seconds}">
 							{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}
-							<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}
-								{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}
-							</a>{/block:PermalinkPage}
+							<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}
 						</time>
 						&ensp;•&ensp;{TimeAgo}
 					</p>
-				</header>{/block:Date}{block:Text}{block:Title}
-				<h1>{Title}</h1>{/block:Title}
-				{Body}{/block:Text}{block:Photo}
-				{LinkOpenTag}
-					<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photopost"/>
-				{LinkCloseTag}{block:Exif}
-				<p class="exif">
-					{block:Camera}{Camera}&emsp;{/block:Camera}
-					{block:Aperture}{Aperture}&emsp;{/block:Aperture}
-					{block:Exposure}{Exposure}&emsp;{/block:Exposure}
-					{block:FocalLength}{FocalLength}{/block:FocalLength}
-				</p>{/block:Exif}{block:Caption}
-				{Caption}{/block:Caption}{/block:Photo}{block:Panorama}
-				{LinkOpenTag}
-					<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" class="panorama"/>
-				{LinkCloseTag}{block:Exif}
-				<p class="exif">
-					{block:Camera}{Camera}&emsp;{/block:Camera}
-					{block:Aperture}{Aperture}&emsp;{/block:Aperture}
-					{block:Exposure}{Exposure}&emsp;{/block:Exposure}
-					{block:FocalLength}{FocalLength}{/block:FocalLength}
-				</p>{/block:Exif}{block:Caption}
-				{Caption}{/block:Caption}{/block:Panorama}{block:Photoset}
-				{Photoset-500}{block:Caption}
-				{Caption}{/block:Caption}{/block:Photoset}{block:Quote}
-				<h2 class="quote {Length}">{Quote}</h2>{block:Source}
-				<div class="quotesource">
-					<p>&horbar; {Source}</p>
-				</div>{/block:Source}{/block:Quote}{block:Link}
-				<a class="link" href="{URL}" target="{Target}">
-					<h3>
-						<span class="linktitle">{Name}&nbsp;&#187;</span>{block:Host}<span class="linkhost">[{block:Author}{Author}, {/block:Author}{Host}]</span>{/block:Host}
-					</h3>{block:Thumbnail}
-					<img src="{Thumbnail-HighRes}" class="linkimage"/>{/block:Thumbnail}{block:Excerpt}
-					<blockquote>
-						{Excerpt}
-					</blockquote>{/block:Excerpt}
-				</a>{block:Description}
-				{Description}{/block:Description}{/block:Link}{block:Chat}{block:Title}
-				<h1>{Title}</h1>{/block:Title}{block:Lines}
-				<p>{block:Label}
-					<b>{Label}</b>{/block:Label}
-					{Line}
-				</p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
-				{AudioEmbed-500}{/block:AudioEmbed}{block:PlayCount}
-				<p class="plays">{PlayCountWithLabel}</p>{/block:PlayCount}{block:Caption}
-				{Caption}{/block:Caption}{/block:Audio}{block:Video}
-				{VideoEmbed-500}
-				<p class="plays">{PlayCountWithLabel}</p>{block:Caption}
-				{Caption}{/block:Caption}{/block:Video}{block:Answer}
-				<div class="answertub">
-					<img src="{AskerPortraitURL-64}" class="askicon">
-					<div class="answerbox">
-						<p>{Asker} asked:</p>
-						<p class="separator"><br/></p>
-						<p>{Question}</p>
-					</div>
-				</div>{block:Answerer}
-				<div class="answertub">
-					<img src="{AnswererPortraitURL-64}" class="askicon">
-					<div class="answerbox">
-						<p>{Answerer} answered:</p>
-						<p class="separator"><br/></p>
-						<p>{Answer}</p>
-					</div>
-				</div>{/block:Answerer}
-				{Replies}{/block:Answer}{block:Date}
+				</header>{/block:Date}
+				<section class="media">{block:Text}{block:Title}
+					<h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
+					<figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
+						{LinkOpenTag}
+							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+						{LinkCloseTag}
+					</figure>{/block:Photo}{block:Panorama}
+					<figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
+						{LinkOpenTag}
+							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+						{LinkCloseTag}
+					</figure>{/block:Panorama}{block:Photoset}
+					{Photoset}{/block:Photoset}{block:Quote}
+					<p class="npf_quote {Length}">{Quote}</p>{block:Source}
+					<table>
+						<tr>
+							<td>&mdash;</td>
+							<td>{Source}</td>
+						</tr>
+					</table>{/block:Source}{/block:Quote}{block:Link}
+					<div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
+						<a href="{URL}" {Target}>{block:Thumbnail}
+							<div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
+								<div class="title">{Name}</div>{block:Thumbnail}
+							</div>{/block:Thumbnail}
+							<div class="bottom">{block:Excerpt}
+								<div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
+								<div class="site-name">{Host}</div>{/block:Host}
+							</div>
+						</a>
+					</div>{/block:Link}{block:Chat}{block:Title}
+					<h1>{Title}</h1>{/block:Title}{block:Lines}
+					<p class="npf_chat">{block:Label}
+						<b>{Label}</b>{/block:Label}
+						{Line}
+					</p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
+					{AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}
+					{VideoEmbed-500}{/block:Video}{block:Answer}
+					<div class="ask-item">
+						<img class="avatar" src="{AskerPortraitURL-64}" alt="">
+						<div>
+							<span class="user">{lang:Asker asked 2}:</span>
+							<blockquote>{Question}</blockquote>
+						</div>
+					</div>{block:Answerer}
+					<div class="ask-item">
+						<img class="avatar" src="{AnswererPortraitURL-64}" alt="">
+						<div>
+							<span class="user">{Answerer} answered:</span>
+							<blockquote>{Answer}</blockquote>
+						</div>
+					</div>{/block:Answerer}{/block:Answer}
+				</section>
+				<section class="body">{block:Reblogs}
+					<div class="reblog">
+						<p class="user">{block:HasPermalink}
+							<a href="{Permalink}">{/block:HasPermalink}{block:HasAvatar}
+								<img class="avatar" src="{PortraitURL-64}" alt="">&nbsp;{/block:HasAvatar}
+								<strong class="username{block:IsDeactivated} deactivated{/block:IsDeactivated}">{Username}</strong>{block:HasPermalink}
+							</a>{/block:HasPermalink}
+						</p>
+						{Body}
+					</div>{/block:Reblogs}{block:NotReblog}
+					<div class="original">{block:Text}
+						{Body}{/block:Text}{block:Photo}{block:Caption}
+						{Caption}{/block:Caption}{/block:Photo}{block:Panorama}{block:Caption}
+						{Caption}{/block:Caption}{/block:Panorama}{block:Photoset}{block:Caption}
+						{Caption}{/block:Caption}{/block:Photoset}{block:Link}{block:Description}
+						{Description}{/block:Description}{/block:Link}{block:Audio}{block:Caption}
+						{Caption}{/block:Caption}{/block:Audio}{block:Video}{block:Caption}
+						{Caption}{/block:Caption}{/block:Video}{block:Answer}
+						{Answer}{/block:Answer}
+					</div>{/block:NotReblog}
+				</section>{block:Date}
 				<footer>{block:HasTags}
 					<section class="tags">{block:Tags}
 						<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}
@@ -336,6 +347,6 @@
 				</a>{/block:NextDayPage}
 			</div>{/block:DayPagination}{/block:IfNotSidebarPagination}
 		</main>
-		<a href="https://www.tumblr.com/theme/40627" title="Vision by April Sylph"><img src="http://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" id="credit" alt="Vision by April Sylph"></a>
+		<a href="https://www.tumblr.com/theme/40627" title="Vision by April Sylph"><img src="https://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" id="credit" alt="Vision by April Sylph"></a>
 	</body>
 </html>
