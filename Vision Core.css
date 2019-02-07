@@ -168,12 +168,12 @@ iframe.tumblr_audio_player {
 figure {
 	margin: 0;
 }
-figure.tmblr-full {
-	width: 100%;
-}
 figure img {
 	display: block;
 	height: auto;
+}
+figure.tmblr-full img {
+	width: 100%;
 }
 section.media figure img {
 	margin: auto;
