@@ -139,6 +139,9 @@ article.quote section.body,
 article.chat section.body {
 	display: none;
 }
+article.photo section.media img {
+	margin: auto;
+}
 article.quote section.media td:first-child {
 	vertical-align: top;
 }
@@ -165,8 +168,8 @@ iframe.tumblr_audio_player {
 	padding: 0;
 }
 
-figure {
-	margin: 0;
+article figure {
+	margin: 0 0 4px;
 }
 figure img {
 	display: block;
@@ -175,10 +178,7 @@ figure img {
 figure.tmblr-full img {
 	width: 100%;
 }
-section.media figure img {
-	margin: auto;
-}
-section.body div.npf_row {
+article.post div.npf_row {
 	margin-left: 0;
 	margin-right: 0;
 }
