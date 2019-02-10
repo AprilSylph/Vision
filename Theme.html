@@ -41,7 +41,7 @@
 		<meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/3x9pmlunp/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/0qtpmq7jo/vision_core.css">{block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/9w5pmau0x/vision_plain.css">{/block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
 		{PostTypographyStyles}
@@ -185,14 +185,20 @@
 			</aside>{/block:IfWidgetCode}
 		</aside>
 		<main>{block:SearchPage}
-			<article class="post">
-				<h1>{lang:Found SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h1>
+			<article>
+				<section class="media">
+					<h1>{lang:Found SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h1>
+				</section>
 			</article>{/block:SearchPage}{block:TagPage}
-			<article class="post {Tag}">
-				<h1>{lang:TagResultCount posts tagged Tag}</h1>
+			<article>
+				<section class="media">
+					<h1>{lang:TagResultCount posts tagged Tag}</h1>
+				</section>
 			</article>{/block:TagPage}{block:DayPage}
-			<article class="post">
-				<h1>{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h1>
+			<article>
+				<section class="media">
+					<h1>{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h1>
+				</section>
 			</article>{/block:DayPage}{block:Posts inlineMediaWidth="500"}
 			<article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post {TagsAsClasses}">{block:Date}
 				<header>{block:ContentSource}
@@ -294,11 +300,11 @@
 					</section>{/block:HasTags}
 					<section class="controls">{block:NoteCount}
 						<a href="{Permalink}#notes" class="notecount">{NoteCountWithLabel}</a>{/block:NoteCount}
-						{LikeButton}&emsp;{ReblogButton}{block:PostNotes}
-						<section id="notes">
-							{PostNotes-16}
-						</section>{/block:PostNotes}
-					</section>
+						{LikeButton}&emsp;{ReblogButton}
+					</section>{block:PostNotes}
+					<section id="notes">
+						{PostNotes-16}
+					</section>{/block:PostNotes}
 				</footer>{/block:Date}
 			</article>{/block:Posts}{block:IfNotSidebarPagination}{block:Pagination}
 			<div id="pagination">{block:PreviousPage}
