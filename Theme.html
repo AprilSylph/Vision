@@ -16,9 +16,10 @@
 	<meta name="select:Background" content="center/cover no-repeat fixed" title="Stretched">
 	<meta name="select:Background" content="center repeat fixed" title="Tiled, Fixed">
 	<meta name="select:Background" content="center repeat scroll" title="Tiled, Scrolls">
-	<meta name="select:Sidebar" content="right: calc(50% + 280px);" title="Leftside">
-	<meta name="select:Sidebar" content="left: calc(50% + 280px);" title="Rightside">
-	<meta name="select:Sidebar" content="display: none;" title="None">
+	<meta name="select:Sidebar" content="right: calc(50% + 280px);" title="Leftside, Fixed">
+	<meta name="select:Sidebar" content="right: calc(50% + 280px); position: absolute;" title="Leftside, Scrolling">
+	<meta name="select:Sidebar" content="left: calc(50% + 280px);" title="Rightside, Fixed">
+	<meta name="select:Sidebar" content="left: calc(50% + 280px); position: absolute;" title="Rightside, Scrolling">
 	<meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
 	<meta name="select:Title Separator" content=" | " title="Pipe">
 	<meta name="if:Custom Colors" content="0">
@@ -41,7 +42,7 @@
 		<meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/0qtpmq7jo/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/D5Upmtkcd/vision_core.css">{block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/9w5pmau0x/vision_plain.css">{/block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
 		{PostTypographyStyles}
@@ -61,8 +62,10 @@
 			a{block:IfBackgroundImage}, span.reblog-icon, .like_button, .reblog_button{/block:IfBackgroundImage} {
 				color: var(--accent);
 			}
-			#sidebar {
+			aside {
 				{select:Sidebar}
+			}
+			#sidebar {
 				background: var(--background){block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
 				{block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
 				{/block:HideHeaderImage}
@@ -124,65 +127,67 @@
 		<style title="Custom CSS">{CustomCSS}</style>
 	</head>
 	<body>
-		<aside id="sidebar">{block:IfSearchBar}
-			<form id="search" action="/search" method="get">
-				<input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
-			</form>{/block:IfSearchBar}
-			<a href="{BlogURL}">{block:ShowHeaderImage}
-				<div id="headerlink"></div>{/block:ShowHeaderImage}{block:ShowAvatar}
-				<img src="{PortraitURL-64}" id="avatar" class="{AvatarShape}">{/block:ShowAvatar}{block:ShowTitle}
-				<h1 id="blogtitle">{Title}</h1>{/block:ShowTitle}
-			</a>{block:ShowDescription}
-			<div id="description">{Description}</div>{/block:ShowDescription}
-			<nav>{block:AskEnabled}
-				<a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}
-				<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
-				<a href="/archive">{lang:Archive}</a>{block:Likes}
-				<a href="/likes">{lang:Likes}</a>{/block:Likes}{block:HasPages}{block:Pages}
-				<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
-			</nav>{block:IfSidebarPagination}{block:Pagination}
-			<div id="pagination">{block:PreviousPage}
-				<a href="{PreviousPage}">{/block:PreviousPage}
-					<div id="prevpage">
-						‹&ensp;{lang:Back}
-					</div>{block:PreviousPage}
-				</a>{/block:PreviousPage}{block:NextPage}
-				<a href="{NextPage}">{/block:NextPage}
-					<div id="nextpage">
-						{lang:Next}&ensp;›
-					</div>{block:NextPage}
-				</a>{/block:NextPage}
-				{lang:Page CurrentPage of TotalPages}
-			</div>{/block:Pagination}{block:PermalinkPagination}
-			<div id="pagination">{block:PreviousPost}
-				<a href="{PreviousPost}">
-					<div id="prevpage">
-						‹&ensp;{lang:Previous post}
-					</div>
-				</a>{/block:PreviousPost}
-				&nbsp;{block:NextPost}
-				<a href="{NextPost}">
-					<div id="nextpage">
-						{lang:Next post}&ensp;›
-					</div>
-				</a>{/block:NextPost}
-			</div>{/block:PermalinkPagination}{block:DayPagination}
-			<div id="pagination">{block:PreviousDayPage}
-				<a href="{PreviousDayPage}">
-					<div id="prevpage">
-						‹&ensp;{lang:Previous day}
-					</div>
-				</a>{/block:PreviousDayPage}
-				&nbsp;{block:NextDayPage}
-				<a href="{NextDayPage}">
-					<div id="nextpage">
-						{lang:Next day}&ensp;›
-					</div>
-				</a>{/block:NextDayPage}
-			</div>{/block:DayPagination}{/block:IfSidebarPagination}{block:IfWidgetCode}
-			<aside id="widget">
+		<aside>
+			<section id="sidebar">{block:IfSearchBar}
+				<form id="search" action="/search" method="get">
+					<input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
+				</form>{/block:IfSearchBar}
+				<a href="{BlogURL}">{block:ShowHeaderImage}
+					<div id="headerlink"></div>{/block:ShowHeaderImage}{block:ShowAvatar}
+					<img src="{PortraitURL-64}" id="avatar" class="{AvatarShape}">{/block:ShowAvatar}{block:ShowTitle}
+					<h1 id="blogtitle">{Title}</h1>{/block:ShowTitle}
+				</a>{block:ShowDescription}
+				<div id="description">{Description}</div>{/block:ShowDescription}
+				<nav>{block:AskEnabled}
+					<a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}
+					<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+					<a href="/archive">{lang:Archive}</a>{block:Likes}
+					<a href="/likes">{lang:Likes}</a>{/block:Likes}{block:HasPages}{block:Pages}
+					<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
+				</nav>{block:IfSidebarPagination}{block:Pagination}
+				<div id="pagination">{block:PreviousPage}
+					<a href="{PreviousPage}">{/block:PreviousPage}
+						<div id="prevpage">
+							‹&ensp;{lang:Back}
+						</div>{block:PreviousPage}
+					</a>{/block:PreviousPage}{block:NextPage}
+					<a href="{NextPage}">{/block:NextPage}
+						<div id="nextpage">
+							{lang:Next}&ensp;›
+						</div>{block:NextPage}
+					</a>{/block:NextPage}
+					{lang:Page CurrentPage of TotalPages}
+				</div>{/block:Pagination}{block:PermalinkPagination}
+				<div id="pagination">{block:PreviousPost}
+					<a href="{PreviousPost}">
+						<div id="prevpage">
+							‹&ensp;{lang:Previous post}
+						</div>
+					</a>{/block:PreviousPost}
+					&nbsp;{block:NextPost}
+					<a href="{NextPost}">
+						<div id="nextpage">
+							{lang:Next post}&ensp;›
+						</div>
+					</a>{/block:NextPost}
+				</div>{/block:PermalinkPagination}{block:DayPagination}
+				<div id="pagination">{block:PreviousDayPage}
+					<a href="{PreviousDayPage}">
+						<div id="prevpage">
+							‹&ensp;{lang:Previous day}
+						</div>
+					</a>{/block:PreviousDayPage}
+					&nbsp;{block:NextDayPage}
+					<a href="{NextDayPage}">
+						<div id="nextpage">
+							{lang:Next day}&ensp;›
+						</div>
+					</a>{/block:NextDayPage}
+				</div>{/block:DayPagination}{/block:IfSidebarPagination}
+			</section>{block:IfWidgetCode}
+			<section id="widget">
 				{text:Widget Code}
-			</aside>{/block:IfWidgetCode}
+			</section>{/block:IfWidgetCode}
 		</aside>
 		<main>{block:SearchPage}
 			<article>

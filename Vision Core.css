@@ -27,9 +27,11 @@ li.note .answer_content {
 	margin: 1em 0;
 	border-left: 3px solid;
 }
-#sidebar {
+aside {
 	position: fixed;
-	width: 270px;
+	width: 280px;
+}
+#sidebar {
 	text-align: center;
 	border-radius: 3px;
 }
@@ -86,10 +88,7 @@ nav a {
 	word-wrap: break-word;
 }
 #widget {
-	position: absolute;
-	max-width: 280px;
-	margin: 10px -5px 0;
-	overflow-x: hidden;
+	margin-top: 15px;
 }
 main {
 	min-width: 250px;
