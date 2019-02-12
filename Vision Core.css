@@ -144,9 +144,6 @@ article.chat section.body {
 article.photo section.media img {
 	margin: auto;
 }
-article.quote section.media td:first-child {
-	vertical-align: top;
-}
 iframe.tumblr_audio_player {
 	max-height: 85px;
 }

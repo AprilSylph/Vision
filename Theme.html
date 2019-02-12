@@ -42,7 +42,7 @@
 		<meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/D5Upmtkcd/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/MILpmtkg2/vision_core.css">{block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/9w5pmau0x/vision_plain.css">{/block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
 		{PostTypographyStyles}
@@ -238,13 +238,8 @@
 						{LinkCloseTag}
 					</figure>{/block:Panorama}{block:Photoset}
 					{Photoset}{/block:Photoset}{block:Quote}
-					<p class="npf_quote {Length}">{Quote}</p>{block:Source}
-					<table>
-						<tr>
-							<td>&mdash;</td>
-							<td>{Source}</td>
-						</tr>
-					</table>{/block:Source}{/block:Quote}{block:Link}
+					<blockquote>{Quote}</blockquote>{block:Source}
+					<p>&mdash; {Source}</p>{/block:Source}{/block:Quote}{block:Link}
 					<div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
 						<a href="{URL}" {Target}>{block:Thumbnail}
 							<div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
