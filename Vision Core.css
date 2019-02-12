@@ -183,7 +183,7 @@ article.post div.npf_row {
 }
 
 section.body .reblog .user {
-	margin-bottom: 10px;
+	margin: 10px 0;
 }
 section.body .reblog .user + * {
 	margin-top: 10px;
@@ -201,6 +201,9 @@ section.body .reblog:hover .user .username.deactivated::after {
 	content: "deactivated";
 	opacity: 0.5;
 	margin-left: 1ch;
+}
+section.body .reblog + .reblog {
+	border-top: 1px solid;
 }
 
 .tmblr-attribution {

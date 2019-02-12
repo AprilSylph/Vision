@@ -28,7 +28,8 @@ li.note a {
 	color: black;
 }
 blockquote,
-li.note .answer_content {
+li.note .answer_content,
+section.body .reblog + .reblog {
 	border-color: rgba(0,0,0,0.1);
 }
 .ask-item > div {
