@@ -205,6 +205,9 @@ section.body .reblog:hover .user .username.deactivated::after {
 section.body .reblog + .reblog {
 	border-top: 1px solid;
 }
+section.body .reblog + .original {
+	display: none;
+}
 
 .tmblr-attribution {
 	margin-top: 0;
