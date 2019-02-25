@@ -122,9 +122,10 @@ article header a {
 	float: right;
 	margin: 0 0 0 1em;
 }
-p.datetime {
-	font-size: 0.857142857em;
-	margin: 0.416666667em 0;
+.timestamp {
+	display: block;
+	font-size: 12px;
+	margin-top: 5px;
 }
 
 article section.media:first-child {

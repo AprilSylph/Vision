@@ -42,8 +42,8 @@
 		<meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/OMMpmzux3/vision_core.css">{block:IfNotBackgroundImage}
-		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/lNypmtkl7/vision_plain.css">{/block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/vk1pnia7v/vision_core.css">{block:IfNotBackgroundImage}
+		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
 		<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
 		{PostTypographyStyles}
 		<style id="vision_dynamic">
@@ -220,13 +220,9 @@
 					</a>{block:IfNotShowUsername}{block:NotReblog}{block:Submission}
 					<span class="published"></span>&nbsp;<a href="{SubmitterURL}">{Submitter}</a>{/block:Submission}{/block:NotReblog}{/block:IfNotShowUsername}{block:RebloggedFrom}
 					&#32;<span class="reblog-icon" title="{lang:Reblogged}"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>{/block:RebloggedFrom}
-					<p class="datetime">
-						<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {12HourWithZero}:{Minutes}:{Seconds}">
-							{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}
-							<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}
-						</time>
-						&ensp;•&ensp;{TimeAgo}
-					</p>
+					<time class="timestamp" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}.{Beats}">
+						{12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}&ensp;•&ensp;{TimeAgo}
+					</time>
 				</header>{/block:Date}
 				<section class="media">{block:Text}{block:Title}
 					<h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
