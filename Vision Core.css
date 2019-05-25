@@ -38,13 +38,13 @@ aside {
 #search {
 	position: absolute;
 	top: 15px;
-	height: 1.4em;
-	padding: 0 9px;
-	width: 249px;
+	left: 15px;
+	width: calc(100% - 30px);
 }
 #search::before {
-	content: "\EA99\2002";
+	content: "\EA99";
 	font-family: tumblr-icons, None;
+	padding-right: 0.5em;
 }
 #search input {
 	background: none;
