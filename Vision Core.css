@@ -158,7 +158,7 @@ iframe.tumblr_audio_player {
 	border-radius: 5px;
 }
 .ask-item > div {
-	padding: 1em 1em 0.5em;
+	padding: 15px 15px 0;
 }
 .ask-item .user a {
 	font-weight: bolder;
