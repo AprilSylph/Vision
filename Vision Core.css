@@ -267,6 +267,7 @@ li.note .answer_content {
 }
 li.note .retags {
 	margin-left: 26px;
+	margin-bottom: 0;
 }
 .controls .like_button, 
 .controls .reblog_button {
