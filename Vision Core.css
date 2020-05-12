@@ -70,9 +70,10 @@ aside {
 	margin: 0 10px;
 }
 #description {
-	margin: 5px 10px 0;
-	word-wrap: break-word;
 	font-size: 12px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin: 5px 10px 0;
 }
 #description p {
 	margin: 0;
@@ -138,6 +139,10 @@ article section.media:last-child {
 .tmblr-lightbox .lightbox-image {
 	max-width: none;
 }
+article.quote section.media,
+article.chat section.media {
+	line-height: 1.5;
+}
 article.quote section.body,
 article.chat section.body {
 	display: none;
@@ -183,6 +188,9 @@ article.post div.npf_row {
 	margin-right: 0;
 }
 
+section.body {
+	line-height: 1.5;
+}
 section.body .reblog .user {
 	margin: 10px 0;
 }
