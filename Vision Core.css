@@ -1,335 +1,335 @@
 @font-face {
-	font-family: tumblr-icons;
-	font-style: normal;
-	font-weight: normal;
-	src:
-		url("https://static.tumblr.com/2wliono/TPhpui34m/tumblr-icons.eot?#iefix") format("embedded-opentype"),
-		url("https://static.tumblr.com/2wliono/zm9pui35n/tumblr-icons.woff2") format("woff2"),
-		url("https://static.tumblr.com/2wliono/Hlqpui35f/tumblr-icons.woff") format("woff"),
-		url("https://static.tumblr.com/2wliono/2gspui356/tumblr-icons.ttf") format("truetype"),
-		url("https://static.tumblr.com/2wliono/qq2pui34y/tumblr-icons.svg#tumblr-icons") format("svg");
+  font-family: tumblr-icons;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url("https://static.tumblr.com/2wliono/TPhpui34m/tumblr-icons.eot?#iefix") format("embedded-opentype"),
+    url("https://static.tumblr.com/2wliono/zm9pui35n/tumblr-icons.woff2") format("woff2"),
+    url("https://static.tumblr.com/2wliono/Hlqpui35f/tumblr-icons.woff") format("woff"),
+    url("https://static.tumblr.com/2wliono/2gspui356/tumblr-icons.ttf") format("truetype"),
+    url("https://static.tumblr.com/2wliono/qq2pui34y/tumblr-icons.svg#tumblr-icons") format("svg");
 }
 * {
-	max-width: 100%;
+  max-width: 100%;
 }
 body {
-	font-size: 14px;
+  font-size: 14px;
 }
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 pre {
-	overflow-x: scroll;
+  overflow-x: scroll;
 }
 blockquote,
 li.note .answer_content {
-	padding-left: 1em;
-	margin: 1em 0;
-	border-left: 3px solid;
+  padding-left: 1em;
+  margin: 1em 0;
+  border-left: 3px solid;
 }
 aside {
-	position: fixed;
-	width: 280px;
+  position: fixed;
+  width: 280px;
 }
 #sidebar {
-	text-align: center;
-	border-radius: 3px;
+  text-align: center;
+  border-radius: 3px;
 }
 #search {
-	position: absolute;
-	top: 15px;
-	left: 15px;
-	width: calc(100% - 30px);
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: calc(100% - 30px);
 }
 #search::before {
-	content: "\EA99";
-	font-family: tumblr-icons, None;
-	padding-right: 0.5em;
+  content: "\EA99";
+  font-family: tumblr-icons, None;
+  padding-right: 0.5em;
 }
 #search input {
-	background: none;
-	border: none;
-	width: calc(100% - 2em);
+  background: none;
+  border: none;
+  width: calc(100% - 2em);
 }
 #search input:focus {
-	outline: none;
+  outline: none;
 }
 #headerlink {
-	position: absolute;
-	left: 0;
-	width: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
 }
 #avatar.circle {
-	border-radius: 64px;
+  border-radius: 64px;
 }
 #avatar.square {
-	border-radius: 6px;
+  border-radius: 6px;
 }
 #blogtitle {
-	font-size: 20px;
-	margin: 0 10px;
+  font-size: 20px;
+  margin: 0 10px;
 }
 #description {
-	font-size: 12px;
-	line-height: 1.5;
-	word-wrap: break-word;
-	margin: 5px 10px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  margin: 5px 10px 0;
 }
 #description p {
-	margin: 0;
+  margin: 0;
 }
 nav {
-	margin: 1em 10px;
+  margin: 1em 10px;
 }
 nav a {
-	font-weight: bold;
-	margin: 0 0.3em;
-	display: inline-block;
-	max-width: 240px;
-	word-wrap: break-word;
+  font-weight: bold;
+  margin: 0 0.3em;
+  display: inline-block;
+  max-width: 240px;
+  word-wrap: break-word;
 }
 #widget {
-	margin-top: 15px;
+  margin-top: 15px;
 }
 main {
-	min-width: 250px;
-	position: relative;
-	width: 560px;
-	margin: 0 auto;
+  min-width: 250px;
+  position: relative;
+  width: 560px;
+  margin: 0 auto;
 }
 article {
-	word-wrap: break-word;
-	padding: 15px;
-	margin: 15px;
-	border-radius: 3px;
+  word-wrap: break-word;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 3px;
 }
 article header {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 article header a {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 .reblog-icon::before {
-	content: "\EA92";
-	font: normal 19px/14px tumblr-icons, None;
-	position: relative;
-	top: 2px;
+  content: "\EA92";
+  font: normal 19px/14px tumblr-icons, None;
+  position: relative;
+  top: 2px;
 }
 .published::before {
-	content: "submitted by";
+  content: "submitted by";
 }
 .sourcelogo {
-	display: inline-block;
-	float: right;
-	margin: 0 0 0 1em;
+  display: inline-block;
+  float: right;
+  margin: 0 0 0 1em;
 }
 .timestamp {
-	display: block;
-	font-size: 12px;
-	margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 article section.media:first-child {
-	margin-top: -15px;
+  margin-top: -15px;
 }
 article section.media:last-child {
-	margin-bottom: -15px;
+  margin-bottom: -15px;
 }
 
 .tmblr-lightbox .lightbox-image {
-	max-width: none;
+  max-width: none;
 }
 article.quote section.media,
 article.chat section.media {
-	line-height: 1.5;
+  line-height: 1.5;
 }
 article.quote section.body,
 article.chat section.body {
-	display: none;
+  display: none;
 }
 article.photo section.media img {
-	margin: auto;
+  margin: auto;
 }
 iframe.tumblr_audio_player {
-	max-height: 85px;
+  max-height: 85px;
 }
 .ask-item {
-	margin: 1em 0;
-	display: grid;
-	grid-template-columns: 64px auto;
-	grid-column-gap: 1em;
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: 64px auto;
+  grid-column-gap: 1em;
 }
 .ask-item > * {
-	border-radius: 5px;
+  border-radius: 5px;
 }
 .ask-item > div {
-	padding: 15px 15px 0;
+  padding: 15px 15px 0;
 }
 .ask-item .user a {
-	font-weight: bolder;
+  font-weight: bolder;
 }
 .ask-item > div > blockquote {
-	border: none;
-	padding: 0;
+  border: none;
+  padding: 0;
 }
 
 article figure {
-	margin: 0 0 4px;
+  margin: 0 0 4px;
 }
 figure img {
-	display: block;
-	height: auto;
+  display: block;
+  height: auto;
 }
 figure.tmblr-full img {
-	width: 100%;
+  width: 100%;
 }
 article.post div.npf_row {
-	margin-left: 0;
-	margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 section.body {
-	line-height: 1.5;
+  line-height: 1.5;
 }
 section.body .reblog .user {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 section.body .reblog .user + * {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 section.body .reblog .user .avatar {
-	height: 25px;
-	vertical-align: middle;
-	border-radius: 2px;
+  height: 25px;
+  vertical-align: middle;
+  border-radius: 2px;
 }
 section.body .reblog .user .username {
-	font-size: 13px;
-	vertical-align: middle;
+  font-size: 13px;
+  vertical-align: middle;
 }
 section.body .reblog:hover .user .username.deactivated::after {
-	content: "deactivated";
-	opacity: 0.5;
-	margin-left: 1ch;
+  content: "deactivated";
+  opacity: 0.5;
+  margin-left: 1ch;
 }
 section.body .reblog + .reblog {
-	border-top: 1px solid;
+  border-top: 1px solid;
 }
 section.body .reblog + .original {
-	display: none;
+  display: none;
 }
 
 .tmblr-attribution {
-	margin-top: 0;
+  margin-top: 0;
 }
 article footer, section.controls {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 section.tags a.tag {
-	margin-right: 0.5em;
-	font-weight: normal;
+  margin-right: 0.5em;
+  font-weight: normal;
 }
 section.tags a.tag::before {
-	content: "#";
+  content: "#";
 }
 #notes {
-	width: 500px;
-	max-height: 700px;
-	margin-top: 1em;
-	overflow-x: hidden;
-	overflow-y: auto;
+  width: 500px;
+  max-height: 700px;
+  margin-top: 1em;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 ol.notes {
-	display: flex;
-	flex-direction: column-reverse;
-	padding: 0; margin: 0;
-	list-style-type: none;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0; margin: 0;
+  list-style-type: none;
 }
 li.note {
-	flex: none;
-	padding: 5px 0;
+  flex: none;
+  padding: 5px 0;
 }
 li.note:not(.more_notes_link_container) {
-	max-width: 465px;
+  max-width: 465px;
 }
 li.note blockquote a {
-	font-weight: normal;
-	color: inherit;
+  font-weight: normal;
+  color: inherit;
 }
 li.note .avatar_frame {
-	display: inline-block;
-	width: 16px;
-	position: relative;
-	top: 3px;
-	margin-right: 1ch;
+  display: inline-block;
+  width: 16px;
+  position: relative;
+  top: 3px;
+  margin-right: 1ch;
 }
 li.note .avatar {
-	border-radius: 2px;
+  border-radius: 2px;
 }
 li.note blockquote,
 li.note .answer_content {
-	margin: 10px 31px 5px;
+  margin: 10px 31px 5px;
 }
 li.note .answer_content {
-	display: block;
-	padding-left: 1em;
+  display: block;
+  padding-left: 1em;
 }
 li.note .retags {
-	margin-left: 26px;
-	margin-bottom: 0;
+  margin-left: 26px;
+  margin-bottom: 0;
 }
-.controls .like_button, 
+.controls .like_button,
 .controls .reblog_button {
-	float: right;
-	margin-left: 12px;
+  float: right;
+  margin-left: 12px;
 }
 .controls .like_button iframe,
 .controls .reblog_button svg {
-	opacity: 0.000000001;
-	z-index: 1;
+  opacity: 0.000000001;
+  z-index: 1;
 }
-.controls .like_button::before, 
+.controls .like_button::before,
 .controls .reblog_button::before {
-	font-family: tumblr-icons, None;
-	font-size: 24px;
-	font-weight: normal;
-	position: absolute;
-	margin: -5px 0 0 -3px;
+  font-family: tumblr-icons, None;
+  font-size: 24px;
+  font-weight: normal;
+  position: absolute;
+  margin: -5px 0 0 -3px;
 }
 .controls .reblog_button::before {
-	content: "\EA8F";
+  content: "\EA8F";
 }
 .controls .like_button::before {
-	content: "\EA4E";
+  content: "\EA4E";
 }
 .controls .like_button.liked::before {
-	content: "\EA4F";
-	color: #d95e40;
+  content: "\EA4F";
+  color: #d95e40;
 }
 #credit {
-	position: fixed;
-	right: 10px;
-	bottom: 10px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
 #pagination {
-	text-align: center;
+  text-align: center;
 }
 #prevpage, #nextpage, #pageno {
-	display: inline-block;
-	margin: 0 15px;
-	font-weight: bold;
-	border-radius: 3px;
+  display: inline-block;
+  margin: 0 15px;
+  font-weight: bold;
+  border-radius: 3px;
 }
 #prevpage {
-	opacity: 0;
-	float: left;
+  opacity: 0;
+  float: left;
 }
 #nextpage {
-	opacity: 0;
-	float: right;
+  opacity: 0;
+  float: right;
 }
 a #prevpage {
-	opacity: 1;
+  opacity: 1;
 }
 a #nextpage {
-	opacity: 1;
+  opacity: 1;
 }
