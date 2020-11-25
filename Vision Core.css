@@ -9,29 +9,99 @@
     url("https://static.tumblr.com/2wliono/2gspui356/tumblr-icons.ttf") format("truetype"),
     url("https://static.tumblr.com/2wliono/qq2pui34y/tumblr-icons.svg#tumblr-icons") format("svg");
 }
-* {
-  max-width: 100%;
+
+:root {
+  --aside-width: 280px;
+  --post-width: 530px;
+  --post-margin: 15px;
+  --post-padding: 15px;
 }
+
 body {
   font-size: 14px;
 }
+
+/* Global */
+
+* {
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
 }
+
 pre {
   overflow-x: scroll;
 }
+
+/* Overall layout */
+
+#base-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+
+.flag--right-sidebar #base-container {
+	flex-direction: row-reverse;
+}
+
+aside {
+	position: sticky;
+	top: 0;
+	max-height: 100vh;
+	width: var(--aside-width);
+  margin-left: var(--post-margin);
+}
+
+.flag--right-sidebar aside {
+  margin-left: 0;
+  margin-right: var(--post-margin);
+}
+
+.flag--right-sidebar aside:not(:empty) {
+	margin-left: 0;
+	margin-right: var(--post-margin);
+}
+
+.flag--right-sidebar aside:empty {
+  margin-right: 0;
+  margin-left: var(--post-margin);
+}
+
+/* (aside width * 2) + post width + (--post-margin * 4) */
+@media (max-width: 1150px) {
+	aside:empty {
+		display: none;
+	}
+}
+
+/* aside width + post width + (--post-margin * 3) */
+@media (max-width: 850px) {
+	aside {
+		display: none;
+	}
+}
+
+main {
+	min-width: 250px;
+	width: var(--post-width);
+	margin: 0 var(--post-margin);
+}
+
+/* === */
+
 blockquote,
 li.note .answer_content {
   padding-left: 1em;
   margin: 1em 0;
   border-left: 3px solid;
 }
-aside {
-  position: fixed;
-  width: 280px;
-}
 #sidebar {
+  position: relative;
+  margin-top: var(--post-margin);
   text-align: center;
   border-radius: 3px;
 }
@@ -91,16 +161,10 @@ nav a {
 #widget {
   margin-top: 15px;
 }
-main {
-  min-width: 250px;
-  position: relative;
-  width: 560px;
-  margin: 0 auto;
-}
 article {
   word-wrap: break-word;
   padding: 15px;
-  margin: 15px;
+  margin: 15px 0;
   border-radius: 3px;
 }
 article header {
