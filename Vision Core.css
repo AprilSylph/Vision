@@ -44,30 +44,11 @@ pre {
   margin: auto;
 }
 
-.flag--right-sidebar #base-container {
-	flex-direction: row-reverse;
-}
-
 aside {
 	position: sticky;
 	top: 0;
 	max-height: 100vh;
 	width: var(--aside-width);
-  margin-left: var(--post-margin);
-}
-
-.flag--right-sidebar aside {
-  margin-left: 0;
-  margin-right: var(--post-margin);
-}
-
-.flag--right-sidebar aside:not(:empty) {
-	margin-left: 0;
-	margin-right: var(--post-margin);
-}
-
-.flag--right-sidebar aside:empty {
-  margin-right: 0;
   margin-left: var(--post-margin);
 }
 

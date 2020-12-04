@@ -16,8 +16,6 @@
     <meta name="select:Background" content="center/cover no-repeat fixed" title="Stretched">
     <meta name="select:Background" content="center repeat fixed" title="Tiled, Fixed">
     <meta name="select:Background" content="center repeat scroll" title="Tiled, Scrolls">
-    <meta name="select:Sidebar Position" content="" title="Left">
-    <meta name="select:Sidebar Position" content="flag--right-sidebar" title="Right">
     <meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
     <meta name="select:Title Separator" content=" | " title="Pipe">
     <meta name="if:Custom Colors" content="0">
@@ -40,7 +38,7 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Pfgqkdjgl/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/0Azqktzl1/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {PostTypographyStyles}
@@ -124,7 +122,7 @@
         </style>
         <style title="Custom CSS">{CustomCSS}</style>
     </head>
-    <body class="{select:Sidebar Position}">
+    <body>
         <div id="base-container">
             <aside>
                 <section id="sidebar">{block:IfSearchBar}
