@@ -41,15 +41,16 @@ pre {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
   margin: auto;
 }
 
 aside {
 	position: sticky;
 	top: 0;
-	max-height: 100vh;
 	width: var(--aside-width);
   margin-left: var(--post-margin);
+  padding-bottom: var(--post-margin);
 }
 
 /* (aside width * 2) + post width + (--post-margin * 4) */
