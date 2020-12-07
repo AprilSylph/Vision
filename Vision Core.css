@@ -75,6 +75,10 @@ aside {
   padding-bottom: var(--post-margin);
 }
 
+body.tmblr-iframe-pushdown aside {
+  top: 54px;
+}
+
 @media (max-width: /* (--aside-width * 2) + --post-width + (--post-margin * 4) = */ 1150px) {
 	aside:empty {
 		display: none;
