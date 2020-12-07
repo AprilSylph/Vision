@@ -35,7 +35,7 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/4Voqkx6bl/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/ndiqkx8f0/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {PostTypographyStyles}
@@ -97,10 +97,7 @@
             .ask-item > div {
                 background: rgba(var(--rgbtitle), 0.1);
             }{/block:IfBackgroundImage}
-            #pagination {
-                padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
-            }
-            #prevpage, #nextpage, #pageno {{block:IfNotSidebarPagination}
+            #previous-link, #next-link {{block:IfNotSidebarPagination}
                 padding: 0.5em;
                 border: 2px solid;{/block:IfNotSidebarPagination}
                 background-color: var(--background);
@@ -131,44 +128,18 @@
                         <a href="/likes">{lang:Likes}</a>{/block:Likes}{block:HasPages}{block:Pages}
                         <a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
                     </nav>{block:IfSidebarPagination}{block:Pagination}
-                    <div id="pagination">{block:PreviousPage}
-                        <a href="{PreviousPage}">{/block:PreviousPage}
-                            <div id="prevpage">
-                                ‹&ensp;{lang:Back}
-                            </div>{block:PreviousPage}
-                        </a>{/block:PreviousPage}{block:NextPage}
-                        <a href="{NextPage}">{/block:NextPage}
-                            <div id="nextpage">
-                                {lang:Next}&ensp;›
-                            </div>{block:NextPage}
-                        </a>{/block:NextPage}
+                    <div id="pagination">
+                        <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
                         {lang:Page CurrentPage of TotalPages}
+                        <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
                     </div>{/block:Pagination}{block:PermalinkPagination}
-                    <div id="pagination">{block:PreviousPost}
-                        <a href="{PreviousPost}">
-                            <div id="prevpage">
-                                ‹&ensp;{lang:Previous post}
-                            </div>
-                        </a>{/block:PreviousPost}
-                        &nbsp;{block:NextPost}
-                        <a href="{NextPost}">
-                            <div id="nextpage">
-                                {lang:Next post}&ensp;›
-                            </div>
-                        </a>{/block:NextPost}
+                    <div id="pagination">
+                        <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
+                        <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
                     </div>{/block:PermalinkPagination}{block:DayPagination}
-                    <div id="pagination">{block:PreviousDayPage}
-                        <a href="{PreviousDayPage}">
-                            <div id="prevpage">
-                                ‹&ensp;{lang:Previous day}
-                            </div>
-                        </a>{/block:PreviousDayPage}
-                        &nbsp;{block:NextDayPage}
-                        <a href="{NextDayPage}">
-                            <div id="nextpage">
-                                {lang:Next day}&ensp;›
-                            </div>
-                        </a>{/block:NextDayPage}
+                    <div id="pagination">
+                        <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
+                        <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
                     </div>{/block:DayPagination}{/block:IfSidebarPagination}
                 </section>{block:IfWidgetCode}
                 <section id="widget">
@@ -289,50 +260,18 @@
                         </section>{/block:PostNotes}
                     </footer>{/block:Date}
                 </article>{/block:Posts}{block:IfNotSidebarPagination}{block:Pagination}
-                <div id="pagination">{block:PreviousPage}
-                    <a href="{PreviousPage}">{/block:PreviousPage}
-                        <div id="prevpage">
-                            ‹&ensp;{lang:Back}
-                        </div>{block:PreviousPage}
-                    </a>{/block:PreviousPage}
-                    <div id="pageno">
-                        {lang:Page CurrentPage of TotalPages}
-                    </div>{block:NextPage}
-                    <a href="{NextPage}">{/block:NextPage}
-                        <div id="nextpage">
-                            {lang:Next}&ensp;›
-                        </div>{block:NextPage}
-                    </a>{/block:NextPage}
+                <div id="pagination">
+                    <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
+                    {lang:Page CurrentPage of TotalPages}
+                    <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
                 </div>{/block:Pagination}{block:PermalinkPagination}
-                <div id="pagination">{block:PreviousPost}
-                    <a href="{PreviousPost}">
-                        <div id="prevpage">
-                            ‹&ensp;{lang:Previous post}
-                        </div>
-                    </a>{/block:PreviousPost}
-                    <div id="pageno" style="opacity: 0;">
-                        &nbsp;
-                    </div>{block:NextPost}
-                    <a href="{NextPost}">
-                        <div id="nextpage">
-                            {lang:Next post}&ensp;›
-                        </div>
-                    </a>{/block:NextPost}
+                <div id="pagination">
+                    <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
+                    <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
                 </div>{/block:PermalinkPagination}{block:DayPagination}
-                <div id="pagination">{block:PreviousDayPage}
-                    <a href="{PreviousDayPage}">
-                        <div id="prevpage">
-                            ‹&ensp;{lang:Previous day}
-                        </div>
-                    </a>{/block:PreviousDayPage}
-                    <div id="pageno" style="opacity: 0;">
-                        &nbsp;
-                    </div>{block:NextDayPage}
-                    <a href="{NextDayPage}">
-                        <div id="nextpage">
-                            {lang:Next day}&ensp;›
-                        </div>
-                    </a>{/block:NextDayPage}
+                <div id="pagination">
+                    <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
+                    <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
                 </div>{/block:DayPagination}{/block:IfNotSidebarPagination}
             </main>
             <aside></aside>

@@ -66,15 +66,13 @@ aside {
   padding-bottom: var(--post-margin);
 }
 
-/* (aside width * 2) + post width + (--post-margin * 4) */
-@media (max-width: 1150px) {
+@media (max-width: /* (--aside-width * 2) + --post-width + (--post-margin * 4) = */ 1150px) {
 	aside:empty {
 		display: none;
 	}
 }
 
-/* aside width + post width + (--post-margin * 3) */
-@media (max-width: 850px) {
+@media (max-width: /* --aside-width + --post-width + (--post-margin * 3) = */ 850px) {
 	aside {
 		display: none;
 	}
@@ -84,6 +82,53 @@ main {
 	min-width: 250px;
 	width: var(--post-width);
 	margin: 0 var(--post-margin);
+}
+
+/* Pagination */
+
+#pagination {
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main #pagination {
+  margin-bottom: var(--post-margin);
+}
+
+aside #pagination {
+  padding: 0 15px 1em;
+}
+
+#previous-link, #next-link {
+  border-radius: 3px;
+}
+
+#previous-link:not(:link),
+#next-link:not(:link) {
+  visibility: hidden;
+}
+
+#previous-link {
+  float: left;
+  margin-right: 1ch;
+}
+
+#next-link {
+  float: right;
+  margin-left: 1ch;
+}
+
+#previous-link::before {
+  content: "\2039";
+  margin-right: 1ch;
+}
+
+#next-link::after {
+  content: "\203A";
+  margin-left: 1ch;
 }
 
 /* === */
@@ -368,27 +413,4 @@ li.note .retags {
   position: fixed;
   right: 10px;
   bottom: 10px;
-}
-#pagination {
-  text-align: center;
-}
-#prevpage, #nextpage, #pageno {
-  display: inline-block;
-  margin: 0 15px;
-  font-weight: bold;
-  border-radius: 3px;
-}
-#prevpage {
-  opacity: 0;
-  float: left;
-}
-#nextpage {
-  opacity: 0;
-  float: right;
-}
-a #prevpage {
-  opacity: 1;
-}
-a #nextpage {
-  opacity: 1;
 }
