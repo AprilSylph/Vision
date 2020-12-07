@@ -82,9 +82,19 @@ aside {
 }
 
 @media (max-width: /* --aside-width + --post-width + (--post-margin * 3) = */ 850px) {
-	aside {
-		display: none;
-	}
+  #base-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  aside {
+    position: static;
+    width: var(--post-width);
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+  #widget {
+    display: none;
+  }
 }
 
 main {
