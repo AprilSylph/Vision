@@ -36,6 +36,10 @@ pre {
   overflow-x: scroll;
 }
 
+iframe {
+  display: block;
+}
+
 /* Overall layout */
 
 body {
