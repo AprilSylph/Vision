@@ -86,6 +86,7 @@ main {
 	min-width: 250px;
 	width: var(--post-width);
 	margin: 0 var(--post-margin);
+  padding-bottom: var(--post-margin);
 }
 
 /* Pagination */
@@ -96,17 +97,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-main #pagination {
-  margin-bottom: var(--post-margin);
-}
-
-aside #pagination {
-  padding: 0 15px 1em;
+  margin-top: var(--post-margin);
 }
 
 #previous-link, #next-link {
+  padding: 1ch;
+  background-color: var(--background);
+  border: 2px solid var(--accent);
   border-radius: 3px;
 }
 
@@ -208,7 +205,7 @@ nav a {
 article {
   word-wrap: break-word;
   padding: 15px;
-  margin: 15px 0;
+  margin-top: var(--post-margin);
   border-radius: 3px;
 }
 article header {

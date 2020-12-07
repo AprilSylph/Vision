@@ -35,7 +35,7 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Jdhqkz51s/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/jRtqkz5h9/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {PostTypographyStyles}
@@ -96,12 +96,7 @@
             }
             .ask-item > div {
                 background: rgba(var(--rgbtitle), 0.1);
-            }{/block:IfBackgroundImage}
-            #previous-link, #next-link {{block:IfNotSidebarPagination}
-                padding: 0.5em;
-                border: 2px solid;{/block:IfNotSidebarPagination}
-                background-color: var(--background);
-            }{block:IfHidePostsTagged}{block:IndexPage}
+            }{/block:IfBackgroundImage}{block:IfHidePostsTagged}{block:IndexPage}
             article.{text:Hide Posts Tagged} {
                 display: none;
             }{/block:IndexPage}{/block:IfHidePostsTagged}
@@ -127,21 +122,21 @@
                         <a href="/archive">{lang:Archive}</a>{block:Likes}
                         <a href="/likes">{lang:Likes}</a>{/block:Likes}{block:HasPages}{block:Pages}
                         <a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
-                    </nav>{block:IfSidebarPagination}{block:Pagination}
-                    <div id="pagination">
-                        <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
-                        {lang:Page CurrentPage of TotalPages}
-                        <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
-                    </div>{/block:Pagination}{block:PermalinkPagination}
-                    <div id="pagination">
-                        <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
-                        <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
-                    </div>{/block:PermalinkPagination}{block:DayPagination}
-                    <div id="pagination">
-                        <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
-                        <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
-                    </div>{/block:DayPagination}{/block:IfSidebarPagination}
-                </section>{block:IfWidgetCode}
+                    </nav>
+                </section>{block:IfSidebarPagination}{block:Pagination}
+                <section id="pagination">
+                    <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
+                    {lang:Page CurrentPage of TotalPages}
+                    <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
+                </section>{/block:Pagination}{block:PermalinkPagination}
+                <section id="pagination">
+                    <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
+                    <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
+                </section>{/block:PermalinkPagination}{block:DayPagination}
+                <section id="pagination">
+                    <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
+                    <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
+                </section>{/block:DayPagination}{/block:IfSidebarPagination}{block:IfWidgetCode}
                 <section id="widget">
                     {text:Widget Code}
                 </section>{/block:IfWidgetCode}
