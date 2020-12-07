@@ -107,8 +107,9 @@ main {
 
 #previous-link, #next-link {
   padding: 1ch;
-  background-color: var(--background);
-  border: 2px solid var(--accent);
+  line-height: 1;
+  color: var(--background);
+  background-color: var(--accent);
   border-radius: 3px;
 }
 
@@ -118,23 +119,26 @@ main {
 }
 
 #previous-link {
-  float: left;
   margin-right: 1ch;
 }
 
 #next-link {
-  float: right;
   margin-left: 1ch;
+}
+
+#previous-link::before, #next-link::after {
+  font-family: "optica-icons";
+  content: "\EA01";
+  display: inline-block;
 }
 
 #previous-link::before {
-  content: "\2039";
-  margin-right: 1ch;
+  margin-right: 5px;
+  transform: rotate(180deg);
 }
 
 #next-link::after {
-  content: "\203A";
-  margin-left: 1ch;
+  margin-left: 5px;
 }
 
 /* === */
