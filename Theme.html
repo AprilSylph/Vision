@@ -13,9 +13,6 @@
     <meta name="color:Text" content="{TitleColor}">
     <meta name="color:Links" content="{AccentColor}">
     <meta name="font:Font" content="Helvetica">
-    <meta name="select:Background" content="center/cover no-repeat fixed" title="Stretched">
-    <meta name="select:Background" content="center repeat fixed" title="Tiled, Fixed">
-    <meta name="select:Background" content="center repeat scroll" title="Tiled, Scrolls">
     <meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
     <meta name="select:Title Separator" content=" | " title="Pipe">
     <meta name="if:Custom Colors" content="0">
@@ -38,23 +35,20 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/xOrqktzo4/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/4Voqkx6bl/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {PostTypographyStyles}
         <style id="vision_dynamic">
             :root {
                 --background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
-                --title: {block:IfCustomcolors}{color:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{TitleColor}{/block:IfNotCustomColors};
                 --rgbtitle: {block:IfCustomcolors}{RGBcolor:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBTitleColor}{/block:IfNotCustomColors};
-                --accent: {block:IfCustomColors}{color:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{AccentColor}{/block:IfNotCustomColors};
                 --rgbaccent: {block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors};
-            }
+                --font-family: {font:Font};
+            }{block:IfBackgroundImage}
             body {
-                background: var(--background){block:IfBackgroundImage} url('{image:Background}') {select:Background}{/block:IfBackgroundImage};
-                font-family: {font:Font};
-                color: var(--title);
-            }
+                background-image: url('{image:Background}');
+            }{/block:IfBackgroundImage}
             a{block:IfBackgroundImage}, span.reblog-icon, .like_button, .reblog_button{/block:IfBackgroundImage} {
                 color: var(--accent);
             }
@@ -62,7 +56,6 @@
                 background: var(--background){block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
                 {block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
                 {/block:HideHeaderImage}
-                {block:IfNotBackgroundImage}{block:ShowHeaderImage}box-shadow: 0 5px 10px 0 rgba(var(--rgbaccent),.1);{/block:ShowHeaderImage}{/block:IfNotBackgroundImage}
             }{block:ShowHeaderImage}
             #headerlink {
                 {block:IfSearchBar}top: calc(15px + 1.4em);
@@ -71,12 +64,8 @@
             }{/block:ShowHeaderImage}
             #sidebar #search input,
             #sidebar #search input::placeholder {
-                color: var(--title);{block:IfNotBackgroundImage}{block:HideHeaderImage}
-                text-align: center;
+                color: var(--title);
             }
-            #search::before {
-                display: none;{/block:HideHeaderImage}{/block:IfNotBackgroundImage}
-            }{/block:IfSearchBar}
             #avatar {
                 background-color: var(--background);
                 border: 3px solid var(--background);
@@ -111,9 +100,9 @@
             #pagination {
                 padding-bottom: {block:IfSidebarPagination}1em{/block:IfSidebarPagination}{block:IfNotSidebarPagination}0.5em{/block:IfNotSidebarPagination};
             }
-            #prevpage, #nextpage, #pageno {
-                {block:IfNotSidebarPagination}padding: 0.5em;{block:IfBackgroundImage}
-                border: 2px solid;{/block:IfBackgroundImage}{/block:IfNotSidebarPagination}
+            #prevpage, #nextpage, #pageno {{block:IfNotSidebarPagination}
+                padding: 0.5em;
+                border: 2px solid;{/block:IfNotSidebarPagination}
                 background-color: var(--background);
             }{block:IfHidePostsTagged}{block:IndexPage}
             article.{text:Hide Posts Tagged} {

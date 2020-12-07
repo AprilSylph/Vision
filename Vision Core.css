@@ -15,10 +15,11 @@
   --post-width: 530px;
   --post-margin: 15px;
   --post-padding: 15px;
-}
 
-body {
-  font-size: 14px;
+  --title: rgb(var(--rgbtitle));
+  --accent: rgb(var(--rgbaccent));
+
+  --title-10percent: rgba(var(--rgbtitle), 0.1);
 }
 
 /* Global */
@@ -36,6 +37,18 @@ pre {
 }
 
 /* Overall layout */
+
+body {
+  font-size: 14px;
+  background-color: var(--background);
+  background-image: linear-gradient(var(--title-10percent), var(--title-10percent));
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: var(--title);
+  font-family: var(--font-family);
+}
 
 #base-container {
   display: flex;
