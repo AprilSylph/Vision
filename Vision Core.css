@@ -105,6 +105,10 @@ main {
   margin-top: var(--post-margin);
 }
 
+#page-number {
+  text-shadow: 0 0 1px var(--background);
+}
+
 #previous-link, #next-link {
   padding: 1ch;
   line-height: 1;

@@ -35,7 +35,7 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/kiUqkz6mj/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/2Abqkz7cw/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {PostTypographyStyles}
@@ -126,7 +126,7 @@
                 </section>{block:IfSidebarPagination}{block:Pagination}
                 <section id="pagination">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
-                    {lang:Page CurrentPage of TotalPages}
+                    <span id="page-number">{lang:Page CurrentPage of TotalPages}</span>
                     <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
                 </section>{/block:Pagination}{block:PermalinkPagination}
                 <section id="pagination">
@@ -257,7 +257,7 @@
                 </article>{/block:Posts}{block:IfNotSidebarPagination}{block:Pagination}
                 <div id="pagination">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
-                    {lang:Page CurrentPage of TotalPages}
+                    <span id="page-number">{lang:Page CurrentPage of TotalPages}</span>
                     <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
                 </div>{/block:Pagination}{block:PermalinkPagination}
                 <div id="pagination">
