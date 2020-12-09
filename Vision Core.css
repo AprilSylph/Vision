@@ -222,16 +222,18 @@ main {
 /* Navigation */
 
 nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0 var(--sidebar-padding);
   margin-top: var(--sidebar-padding);
 }
 
 nav a {
   font-weight: bold;
-  margin: 0 0.3em;
-  display: inline-block;
-  max-width: 240px;
   word-wrap: break-word;
+  margin: 0.5ch 1ch;
 }
 
 /* Pagination */
