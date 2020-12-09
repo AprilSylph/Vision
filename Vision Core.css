@@ -20,6 +20,7 @@
   --post-width: 530px;
   --post-margin: 15px;
   --post-padding: 15px;
+  --sidebar-padding: 15px;
 
   --title: rgb(var(--rgbtitle));
   --accent: rgb(var(--rgbaccent));
@@ -108,6 +109,121 @@ main {
   padding-bottom: var(--post-margin);
 }
 
+/* Blog Card */
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  background-color: var(--background);
+  padding-bottom: var(--sidebar-padding);
+  margin-top: var(--post-margin);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#search {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  height: 1em;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: var(--sidebar-padding) 0;
+  padding: 0 var(--sidebar-padding);
+}
+
+#search::before {
+  content: "\EA0B";
+  font-family: "optica-icons";
+}
+
+#search input,
+#search input::placeholder {
+  color: var(--title);
+}
+
+#search input {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  margin-left: 1ch;
+}
+
+#search input:focus {
+  outline: none;
+}
+
+#header {
+  display: block;
+  height: 140px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: calc(-1em - (var(--sidebar-padding) * 2));
+}
+
+#avatar {
+  height: 64px;
+  width: 64px;
+  background-color: var(--background);
+  border: 5px solid var(--background);
+}
+
+#avatar.circle {
+  border-radius: 64px;
+}
+#avatar.square {
+  border-radius: 6px;
+}
+
+#header + #avatar {
+  margin-top: -55px;
+}
+
+#title {
+  color: var(--title);
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: 20px;
+  padding: 0 var(--sidebar-padding);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+#avatar + #title {
+  margin-top: 7px;
+}
+
+#description {
+  font-size: 12px;
+  line-height: 16px;
+  word-wrap: break-word;
+  padding: 0 var(--sidebar-padding);
+  margin-top: 8px;
+}
+
+#description p {
+  margin: 0;
+}
+
+/* Navigation */
+
+nav {
+  padding: 0 var(-sidebar-padding);
+  margin-top: var(--sidebar-padding);
+}
+
+nav a {
+  font-weight: bold;
+  margin: 0 0.3em;
+  display: inline-block;
+  max-width: 240px;
+  word-wrap: break-word;
+}
+
 /* Pagination */
 
 #pagination {
@@ -166,65 +282,6 @@ li.note .answer_content {
   padding-left: 1em;
   margin: 1em 0;
   border-left: 3px solid;
-}
-#sidebar {
-  position: relative;
-  margin-top: var(--post-margin);
-  text-align: center;
-  border-radius: 3px;
-}
-#search {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: calc(100% - 30px);
-}
-#search::before {
-  content: "\EA99";
-  font-family: tumblr-icons, None;
-  padding-right: 0.5em;
-}
-#search input {
-  background: none;
-  border: none;
-  width: calc(100% - 2em);
-}
-#search input:focus {
-  outline: none;
-}
-#headerlink {
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-#avatar.circle {
-  border-radius: 64px;
-}
-#avatar.square {
-  border-radius: 6px;
-}
-#blogtitle {
-  font-size: 20px;
-  margin: 0 10px;
-}
-#description {
-  font-size: 12px;
-  line-height: 1.5;
-  word-wrap: break-word;
-  margin: 5px 10px 0;
-}
-#description p {
-  margin: 0;
-}
-nav {
-  margin: 1em 10px;
-}
-nav a {
-  font-weight: bold;
-  margin: 0 0.3em;
-  display: inline-block;
-  max-width: 240px;
-  word-wrap: break-word;
 }
 #widget {
   margin-top: 15px;

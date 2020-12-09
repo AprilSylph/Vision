@@ -16,7 +16,6 @@
     <meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
     <meta name="select:Title Separator" content=" | " title="Pipe">
     <meta name="if:Custom Colors" content="0">
-    <meta name="if:Search Bar" content="1">
     <meta name="if:Show Username" content="1">
     <meta name="if:Sidebar Pagination" content="0">
     <meta name="if:Generate Post Summaries" content="0">
@@ -36,15 +35,18 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/vsrqkz8ih/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Mrjql2thf/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {PostTypographyStyles}
         <style id="vision_dynamic">
             :root {
                 --background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
-                --rgbtitle: {block:IfCustomcolors}{RGBcolor:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBTitleColor}{/block:IfNotCustomColors};
+                --rgbtitle: {block:IfCustomColors}{RGBcolor:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBTitleColor}{/block:IfNotCustomColors};
                 --rgbaccent: {block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors};
+                --title-font: {TitleFont};
+                --title-font-weight: {TitleFontWeight};
+
                 --font-family: {font:Font};
             }{block:IfBackgroundImage}
             body {
@@ -52,29 +54,6 @@
             }{/block:IfBackgroundImage}
             a{block:IfBackgroundImage}, span.reblog-icon, .like_button, .reblog_button{/block:IfBackgroundImage} {
                 color: var(--accent);
-            }
-            #sidebar {
-                background: var(--background){block:ShowHeaderImage} url('{HeaderImage}') top/280px 160px no-repeat{/block:ShowHeaderImage};
-                {block:ShowHeaderImage}{block:ShowAvatar}padding: 110px 5px 5px;{/block:ShowAvatar}{block:HideAvatar}padding: 170px 5px 5px;{/block:HideAvatar}{/block:ShowHeaderImage}{block:HideHeaderImage}padding: {block:IfSearchBar}47px{/block:IfSearchBar}{block:IfNotSearchBar}15px{/block:IfNotSearchBar} 5px 5px;
-                {/block:HideHeaderImage}
-            }{block:ShowHeaderImage}
-            #headerlink {
-                {block:IfSearchBar}top: calc(15px + 1.4em);
-                height: calc(145px - 1.4em);{/block:IfSearchBar}{block:IfNotSearchBar}top: 0;
-                height: 160px;{/block:IfNotSearchBar}
-            }{/block:ShowHeaderImage}
-            #sidebar #search input,
-            #sidebar #search input::placeholder {
-                color: var(--title);
-            }
-            #avatar {
-                background-color: var(--background);
-                border: 3px solid var(--background);
-            }
-            #blogtitle {
-                color: var(--title);
-                font-family: {TitleFont};
-                font-weight: {TitleFontWeight};
             }{block:IfBackgroundImage}
             blockquote,
             li.note .answer_content {
@@ -107,14 +86,14 @@
     <body>
         <div id="base-container">
             <aside>
-                <section id="sidebar">{block:IfSearchBar}
+                <section id="sidebar">
                     <form id="search" action="/search" method="get">
                         <input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
-                    </form>{/block:IfSearchBar}
+                    </form>
                     <a href="{BlogURL}">{block:ShowHeaderImage}
-                        <div id="headerlink"></div>{/block:ShowHeaderImage}{block:ShowAvatar}
-                        <img src="{PortraitURL-64}" id="avatar" class="{AvatarShape}">{/block:ShowAvatar}{block:ShowTitle}
-                        <h1 id="blogtitle">{Title}</h1>{/block:ShowTitle}
+                        <img id="header" src="{HeaderImage}">{/block:ShowHeaderImage}{block:ShowAvatar}
+                        <img id="avatar" src="{PortraitURL-64}" class="{AvatarShape}">{/block:ShowAvatar}{block:ShowTitle}
+                        <h1 id="title">{Title}</h1>{/block:ShowTitle}
                     </a>{block:ShowDescription}
                     <div id="description">{Description}</div>{/block:ShowDescription}
                     <nav>{block:AskEnabled}
