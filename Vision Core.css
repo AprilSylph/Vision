@@ -136,6 +136,10 @@ main {
   padding: 0 var(--sidebar-padding);
 }
 
+#search:not(.search-enabled) {
+  visibility: hidden;
+}
+
 #search::before {
   content: "\EA0B";
   font-family: "optica-icons";

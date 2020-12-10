@@ -35,10 +35,17 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/aoIql4tfs/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/BOuql4tyt/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/EJxpafak4/socicon.css">
         {NewPostStyles}
+        <noscript>
+            <style>
+                #search {
+                    visibility: visible !important;
+                }
+            </style>
+        </noscript>
         <style id="vision_dynamic">
             :root {
                 --background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
@@ -256,4 +263,11 @@
             <img src="https://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" alt="">
         </a>
     </body>
+    <script>
+        const search = document.getElementById('search');
+        const robots = document.head.querySelector('meta[name="robots"]');
+        if (robots === null || robots.content !== 'noindex') {
+            search.classList.add('search-enabled');
+        }
+    </script>
 </html>
