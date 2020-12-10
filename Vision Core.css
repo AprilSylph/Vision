@@ -506,8 +506,36 @@ li.note .retags {
   content: "\EA4F";
   color: #d95e40;
 }
+
+/* Credit link */
+
 #credit {
   position: fixed;
-  right: 10px;
-  bottom: 10px;
+  right: 5px;
+  bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1ch;
+  border-radius: calc(1em + 2ch);
+}
+
+#credit:hover {
+  background-color: var(--background);
+}
+
+#credit span {
+  font-weight: bold;
+  margin-left: 0.5ch;
+  margin-right: 1ch;
+}
+
+#credit:not(:hover) span {
+  display: none;
+}
+
+@media (max-width: /* --post-width + (--post-margin * 2) + 32px = */ 592px) {
+  #credit {
+    display: none;
+  }
 }
