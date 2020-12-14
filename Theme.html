@@ -13,13 +13,9 @@
     <meta name="color:Text" content="{TitleColor}">
     <meta name="color:Links" content="{AccentColor}">
     <meta name="font:Font" content="Helvetica">
-    <meta name="select:Title Separator" content=" &mdash; " title="Hyphen">
-    <meta name="select:Title Separator" content=" | " title="Pipe">
     <meta name="if:Custom Colors" content="0">
     <meta name="if:Show Username" content="1">
     <meta name="if:Sidebar Pagination" content="0">
-    <meta name="if:Generate Post Summaries" content="0">
-    <meta name="text:Custom Title" content="">
     <meta name="text:Hide Posts Tagged" content="nsfw">
     <meta name="text:Widget Code" content="">
 {/block:Options}
@@ -29,7 +25,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{block:IfCustomTitle}{text:Custom Title}{/block:IfCustomTitle}{block:IfNotCustomTitle}{Title}{/block:IfNotCustomTitle}{block:IfGeneratePostSummaries}{block:PostSummary}{select:Title Separator}{PostSummary}{/block:PostSummary}{/block:IfGeneratePostSummaries}{block:IfNotGeneratePostSummaries}{block:PostTitle}{select:Title Separator}{PostTitle}{/block:PostTitle}{/block:IfNotGeneratePostSummaries}</title>
+        <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <meta name="description" content="{MetaDescription}">
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
