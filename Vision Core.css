@@ -230,6 +230,32 @@ main > h3 {
   margin: 0;
 }
 
+#top-photos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 80px;
+  overflow-y: hidden;
+  padding: 0 5px;
+  margin-top: var(--sidebar-padding);
+}
+
+#top-photos a {
+  height: 80px;
+  width: 80px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 5px;
+}
+
+#top-photos a img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 /* Navigation */
 
 nav {
