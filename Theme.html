@@ -25,7 +25,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}</title>
+        <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}{block:SearchPage}: {lang:SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No results found}{/block:NoSearchResults}{/block:SearchPage}{block:TagPage}: {lang:Posts tagged Tag}{/block:TagPage}{block:DayPage}: {lang:Viewing everything posted on Month DayOfMonth Year}{/block:DayPage}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <meta name="description" content="{MetaDescription}">
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
