@@ -31,7 +31,7 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/BOuql4tyt/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/41dqlc02f/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         {NewPostStyles}
         <noscript>
@@ -124,21 +124,10 @@
                 </section>{/block:IfWidgetCode}
             </aside>
             <main>{block:SearchPage}
-                <article>
-                    <section class="media">
-                        <h1>{lang:Found SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h1>
-                    </section>
-                </article>{/block:SearchPage}{block:TagPage}
-                <article>
-                    <section class="media">
-                        <h1>{lang:TagResultCount posts tagged Tag}</h1>
-                    </section>
-                </article>{/block:TagPage}{block:DayPage}
-                <article>
-                    <section class="media">
-                        <h1>{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h1>
-                    </section>
-                </article>{/block:DayPage}{block:Posts inlineMediaWidth="500"}
+                <h3>{lang:SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h3>{/block:SearchPage}{block:TagPage}
+                <h3>#{Tag}</h3>{/block:TagPage}{block:DayPage}
+                <h3>{lang:Viewing everything posted on Month DayOfMonth Year}</h3>{/block:DayPage}{block:NoPosts}
+                <h3>{lang:This minimalist Tumblr has no posts}</h3>{/block:NoPosts}{block:Posts inlineMediaWidth="500"}
                 <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post {TagsAsClasses}">{block:Date}
                     <header>{block:ContentSource}
                         <a href="{SourceURL}" title="{SourceTitle}">{block:SourceLogo}

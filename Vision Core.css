@@ -109,6 +109,13 @@ main {
   padding-bottom: var(--post-margin);
 }
 
+main > h3 {
+  text-align: center;
+  text-shadow: 0 0 1px var(--background);
+  margin: 0;
+  margin-top: var(--post-margin);
+}
+
 /* Blog Card */
 
 #sidebar {
