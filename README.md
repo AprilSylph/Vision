@@ -18,6 +18,9 @@ For group blogs, if the blog has "Show author portraits" enabled in its blog set
 #### Theme options: Background Image
 Replaces the generated page background colour with an image of your choice.
 
+#### Theme options: Font
+Selects the page font.
+
 #### Theme options: Sidebar Pagination
 Moves the pagination controls from the post column to the sidebar.
 
