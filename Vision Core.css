@@ -143,7 +143,8 @@ main > h3 {
   padding: 0 var(--sidebar-padding);
 }
 
-#search:not(.search-enabled) {
+#search:not(.search-enabled),
+body.tmblr-iframe-pushdown #search {
   visibility: hidden;
 }
 
