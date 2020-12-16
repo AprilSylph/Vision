@@ -23,7 +23,7 @@
         <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/TtKqlfm93/vision_core.css">{block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/hxXqlfscr/vision_core.css">{block:IfNotBackgroundImage}
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
         {NewPostStyles}
         <noscript>
@@ -173,18 +173,18 @@
                         {AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}
                         {VideoEmbed-500}{/block:Video}{block:Answer}
                         <div class="ask-item">
-                            <img class="avatar" src="{AskerPortraitURL-64}" alt="">
                             <div>
                                 <span class="user">{lang:Asker asked 2}:</span>
                                 <blockquote>{Question}</blockquote>
                             </div>
+                            <img class="avatar" src="{AskerPortraitURL-40}" alt="">
                         </div>{block:Answerer}
                         <div class="ask-item">
-                            <img class="avatar" src="{AnswererPortraitURL-64}" alt="">
                             <div>
                                 <span class="user">{Answerer} answered:</span>
                                 <blockquote>{Answer}</blockquote>
                             </div>
+                            <img class="avatar" src="{AnswererPortraitURL-40}" alt="">
                         </div>{/block:Answerer}{/block:Answer}
                     </section>
                     <section class="body">{block:Reblogs}

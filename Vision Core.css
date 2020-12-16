@@ -395,11 +395,11 @@ iframe.tumblr_audio_player {
 .ask-item {
   margin: 1em 0;
   display: grid;
-  grid-template-columns: 64px auto;
+  grid-template-columns: auto 40px;
   grid-column-gap: 1em;
 }
 .ask-item > * {
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .ask-item > div {
   padding: 15px 15px 0;
