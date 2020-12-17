@@ -171,20 +171,18 @@ body.tmblr-iframe-pushdown #search {
 
 #header {
   display: block;
-  height: 140px;
-  margin-top: calc(-1em - (var(--sidebar-padding) * 2));
+  width: 100%;
 }
 
 #header.stretch {
-  width: 100%;
+  height: 140px;
   object-fit: cover;
+  margin-top: calc(-1em - (var(--sidebar-padding) * 2));
 }
 
 #header.no-stretch {
-  box-sizing: border-box;
-  padding: calc(1em + (var(--sidebar-padding) * 2));
-  margin-left: auto;
-  margin-right: auto;
+  height: calc(140px - 1em - (var(--sidebar-padding) * 2));
+  object-fit: contain;
 }
 
 #avatar {
