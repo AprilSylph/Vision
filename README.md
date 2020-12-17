@@ -12,22 +12,28 @@ A modern Tumblr theme designed to be familiar.
 
 ## Usage
 
-#### Group blog control
+**Group blog control**
+
 For group blogs, if the blog has "Show author portraits" enabled in its blog settings (not configurable from the Edit Theme page), _Vision_ will display posts as belonging to the individual group members. Otherwise, the group blog's name is shown on posts.
 
-#### Theme options: Background Image
+**Theme options: Background Image**
+
 Replaces the generated page background colour with an image of your choice.
 
-#### Theme options: Font
+**Theme options: Font**
+
 Selects the page font.
 
-#### Theme options: Sidebar Pagination
+**Theme options: Sidebar Pagination**
+
 Moves the pagination controls from the post column to the sidebar.
 
-#### Theme options: Widget Code
+**Theme options: Widget Code**
+
 Inserts any HTML you like into the bottom of the sidebar.
 
-#### Advanced: Use default mobile theme
+**Advanced: Use default mobile theme**
+
 Disable this option to show _Vision_ to visitors on mobile devices.
 
 ## Credit
