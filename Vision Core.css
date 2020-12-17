@@ -352,10 +352,12 @@ article header a {
   white-space: nowrap;
 }
 .reblog-icon::before {
-  content: "\EA92";
-  font: normal 19px/14px tumblr-icons, None;
-  position: relative;
-  top: 2px;
+  content: "\EA09";
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: "optica-icons";
+  line-height: inherit;
+  vertical-align: middle;
 }
 .published::before {
   content: "submitted by";
