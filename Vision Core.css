@@ -542,12 +542,15 @@ li.note .retags {
 .controls .reblog_button::before {
   content: "\EA08";
 }
+.controls .reblog_button:visited::before {
+  color: #00cf35;
+}
 .controls .like_button::before {
   content: "\EA04";
 }
 .controls .like_button.liked::before {
   content: "\EA05";
-  color: #d95e40;
+  color: #ff492f;
 }
 
 /* Credit link */
