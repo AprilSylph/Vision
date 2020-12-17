@@ -227,6 +227,11 @@ body.tmblr-iframe-pushdown #search {
   margin-top: 8px;
 }
 
+#title:empty,
+#description:empty {
+  display: none;
+}
+
 #description p {
   margin: 0;
 }
