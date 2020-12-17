@@ -344,8 +344,8 @@ article header a {
   font-size: 1.5em;
   font-weight: normal;
   font-family: "optica-icons";
-  line-height: inherit;
-  vertical-align: middle;
+  line-height: 1rem;
+  vertical-align: text-bottom;
 }
 .published::before {
   content: "submitted by";
