@@ -533,20 +533,20 @@ li.note .retags {
 }
 .controls .like_button::before,
 .controls .reblog_button::before {
-  font-family: tumblr-icons, None;
+  font-family: "optica-icons";
   font-size: 24px;
   font-weight: normal;
   position: absolute;
   margin: -5px 0 0 -3px;
 }
 .controls .reblog_button::before {
-  content: "\EA8F";
+  content: "\EA08";
 }
 .controls .like_button::before {
-  content: "\EA4E";
+  content: "\EA04";
 }
 .controls .like_button.liked::before {
-  content: "\EA4F";
+  content: "\EA05";
   color: #d95e40;
 }
 
