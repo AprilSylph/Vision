@@ -93,7 +93,8 @@
                     <div id="top-photos" aria-label="{lang:Top Photos}">{block:HighlightedPosts}
                         <a href="{Permalink}" target="_blank"><img src="{PhotoURL-250}"></a>{/block:HighlightedPosts}
                     </div>{/block:HasHighlightedPosts}
-                    <nav>{block:AskEnabled}
+                    <nav>
+                        <a href="/">{lang:Home}</a>{block:AskEnabled}
                         <a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}
                         <a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
                         <a href="/archive">{lang:Archive}</a>{block:Likes}
