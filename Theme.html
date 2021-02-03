@@ -42,6 +42,12 @@
                 --title-font-weight: {TitleFontWeight};
 
                 --font-family: {font:Font};
+            }
+            aside nav a[href="/ask"]:empty::before {
+                content: "{block:English}Ask{/block:English}{block:German}Fragen{/block:German}{block:French}Question{/block:French}{block:Italian}Chiedi{/block:Italian}{block:Japanese}質問{/block:Japanese}{block:Turkish}Sor{/block:Turkish}{block:Spanish}Preguntas{/block:Spanish}{block:Russian}Спросить{/block:Russian}{block:Polish}Zapytaj{/block:Polish}{block:PortuguesePT}Perguntar{/block:PortuguesePT}{block:PortugueseBR}Ask{/block:PortugueseBR}{block:Dutch}Vragen{/block:Dutch}{block:Korean}질문{/block:Korean}{block:ChineseSimplified}提问{/block:ChineseSimplified}{block:ChineseTraditional}提問{/block:ChineseTraditional}{block:ChineseHK}提問{/block:ChineseHK}{block:Indonesian}Tanya{/block:Indonesian}{block:Hindi}पूछें{/block:Hindi}";
+            }
+            aside nav a[href="/submit"]:empty::before {
+                content: "{block:English}Submit{/block:English}{block:German}Einreichen{/block:German}{block:French}Contribution{/block:French}{block:Italian}Invia{/block:Italian}{block:Japanese}送信{/block:Japanese}{block:Turkish}Gönderim{/block:Turkish}{block:Spanish}Colaboraciones{/block:Spanish}{block:Russian}Отправить{/block:Russian}{block:Polish}Prześlij{/block:Polish}{block:PortuguesePT}Enviar{/block:PortuguesePT}{block:PortugueseBR}Enviar{/block:PortugueseBR}{block:Dutch}Bijdragen{/block:Dutch}{block:Korean}전송{/block:Korean}{block:ChineseSimplified}提交{/block:ChineseSimplified}{block:ChineseTraditional}投稿{/block:ChineseTraditional}{block:ChineseHK}提交{/block:ChineseHK}{block:Indonesian}Kirim{/block:Indonesian}{block:Hindi}सबमिट करें{/block:Hindi}";
             }{block:IfBackgroundImage}
             body {
                 background-image: url('{image:Background}');
