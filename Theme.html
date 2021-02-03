@@ -8,7 +8,6 @@
     <meta name="if:Custom Colors" content="0">
     <meta name="if:Show Username" content="1">
     <meta name="if:Sidebar Pagination" content="0">
-    <meta name="text:Hide Posts Tagged" content="nsfw">
     <meta name="text:Widget Code" content="">
 {/block:Options}
 <html lang="{block:English}en-US{/block:English}{block:German}de-DE{/block:German}{block:French}fr-FR{/block:French}{block:Italian}it-IT{/block:Italian}{block:Japanese}ja-JP{/block:Japanese}{block:Turkish}tr-TR{/block:Turkish}{block:Spanish}es-ES{/block:Spanish}{block:Russian}ru-RU{/block:Russian}{block:Polish}pl-PL{/block:Polish}{block:PortuguesePT}pt-PT{/block:PortuguesePT}{block:PortugueseBR}pt-BR{/block:PortugueseBR}{block:Dutch}nl-NL{/block:Dutch}{block:Korean}ko-KR{/block:Korean}{block:ChineseSimplified}zh-CN{/block:ChineseSimplified}{block:ChineseTraditional}zh-TW{/block:ChineseTraditional}{block:ChineseHK}zh-HK{/block:ChineseHK}{block:Indonesian}id-ID{/block:Indonesian}{block:Hindi}hi-IN{/block:Hindi}">
@@ -76,10 +75,7 @@
             }
             .ask-item > div {
                 background: rgba(var(--rgbtitle), 0.1);
-            }{/block:IfBackgroundImage}{block:IfHidePostsTagged}{block:HomePage}
-            article.{text:Hide Posts Tagged} {
-                display: none;
-            }{/block:HomePage}{/block:IfHidePostsTagged}
+            }{/block:IfBackgroundImage}
         </style>
         <style title="Custom CSS">{CustomCSS}</style>
     </head>
@@ -130,7 +126,7 @@
                 <h3>#{Tag}</h3>{/block:TagPage}{block:DayPage}
                 <h3>{lang:Viewing everything posted on Month DayOfMonth Year}</h3>{/block:DayPage}{block:NoPosts}
                 <h3>{lang:This minimalist Tumblr has no posts}</h3>{/block:NoPosts}{block:Posts inlineMediaWidth="500"}
-                <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post {TagsAsClasses}">{block:Date}
+                <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post">{block:Date}
                     <header>{block:ContentSource}
                         <a href="{SourceURL}" title="{SourceTitle}">{block:SourceLogo}
                             <img src="{BlackLogoURL}" alt="{SourceTitle}" class="sourcelogo"/>{/block:SourceLogo}{block:NoSourceLogo}
