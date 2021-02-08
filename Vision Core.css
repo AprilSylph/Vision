@@ -119,6 +119,7 @@ main > h3 {
 }
 
 #search {
+  color: var(--accent);
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -129,6 +130,10 @@ main > h3 {
   z-index: 1;
   margin: var(--sidebar-padding) 0;
   padding: 0 var(--sidebar-padding);
+}
+
+#search.overlaps-header {
+  color: white;
 }
 
 #search:not(.search-enabled),
@@ -143,7 +148,7 @@ body.tmblr-iframe-pushdown #search {
 
 #search input,
 #search input::placeholder {
-  color: var(--title);
+  color: inherit;
 }
 
 #search input {
