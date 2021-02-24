@@ -537,9 +537,6 @@ li.note .retags {
 .controls .reblog_button::before {
   content: "\EA08";
 }
-.controls .reblog_button:visited::before {
-  color: #00cf35;
-}
 .controls .like_button::before {
   content: "\EA04";
 }
