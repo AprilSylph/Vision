@@ -466,13 +466,29 @@ article.post div.npf_row {
   margin-top: 0;
 }
 
+.npf-link-block {
+  border-color: rgba(var(--title), 0.25) !important;
+}
+
 .npf-link-block a {
   color: rgb(var(--title));
   text-decoration: none;
 }
 
-.npf-link-block .bottom > .site-name {
-  color: rgba(var(--title), 0.5);
+.npf-link-block .poster {
+  border-bottom: 1px solid rgba(var(--title), 0.25);
+}
+
+.npf-link-block .poster .title {
+  text-align: center;
+}
+
+.npf-link-block .bottom:empty {
+  display: none;
+}
+
+.npf-link-block .bottom .site-name {
+  color: rgba(var(--title), 0.65) !important;
 }
 
 /* Post body */
