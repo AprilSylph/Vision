@@ -349,6 +349,8 @@ article header {
 }
 
 article header a {
+  font-weight: bold;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -376,6 +378,11 @@ article header a {
   display: block;
   font-size: 12px;
   margin-top: 5px;
+}
+
+.timestamp a {
+  font-weight: normal;
+  text-decoration: underline;
 }
 
 /* Post legacy media */
@@ -461,6 +468,7 @@ article.post div.npf_row {
 
 .npf-link-block a {
   color: rgb(var(--title));
+  text-decoration: none;
 }
 
 .npf-link-block .bottom > .site-name {
@@ -479,6 +487,11 @@ section.body .reblog .user {
   margin: 10px 0;
 }
 
+section.body .reblog .user a {
+  color: rgb(var(--title));
+  text-decoration: none;
+}
+
 section.body .reblog .user + * {
   margin-top: 10px;
 }
@@ -490,7 +503,6 @@ section.body .reblog .user .avatar {
 }
 
 section.body .reblog .user .username {
-  color: rgb(var(--title));
   font-size: 13px;
   vertical-align: middle;
 }
@@ -510,6 +522,11 @@ section.body .reblog + .original {
 }
 
 /* Post footer */
+
+article footer a {
+  font-weight: bold;
+  text-decoration: none;
+}
 
 article footer, section.controls {
   margin-top: 1em;
