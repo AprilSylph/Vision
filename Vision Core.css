@@ -18,6 +18,7 @@
 }
 
 a {
+  color: rgb(var(--accent));
   text-decoration: none;
 }
 
@@ -33,7 +34,7 @@ blockquote,
 li.note .answer_content {
   padding-left: 1em;
   margin: 1em 0;
-  border-left: 3px solid;
+  border-left: 3px solid rgba(var(--title), 0.5);
 }
 
 /* Overall layout */
@@ -334,6 +335,7 @@ nav a {
 /* Posts */
 
 article {
+  background-color: rgb(var(--background));
   word-wrap: break-word;
   padding: 15px;
   margin-top: var(--post-margin);
@@ -358,6 +360,7 @@ article header a {
 
 .reblog-icon::before {
   content: "\EA09";
+  color: rgb(var(--accent));
   font-size: 1.5em;
   font-weight: normal;
   font-family: "optica-icons";
@@ -415,6 +418,7 @@ iframe.tumblr_audio_player {
 }
 
 .ask-item > div {
+  background: rgba(var(--title), 0.1);
   padding: 15px 15px 0;
 }
 
@@ -455,6 +459,14 @@ article.post div.npf_row {
   margin-top: 0;
 }
 
+.npf-link-block a {
+  color: rgb(var(--title));
+}
+
+.npf-link-block .bottom > .site-name {
+  color: rgba(var(--title), 0.5);
+}
+
 /* Post body */
 
 section.body {
@@ -478,6 +490,7 @@ section.body .reblog .user .avatar {
 }
 
 section.body .reblog .user .username {
+  color: rgb(var(--title));
   font-size: 13px;
   vertical-align: middle;
 }
@@ -489,7 +502,7 @@ section.body .reblog:hover .user .username.deactivated::after {
 }
 
 section.body .reblog + .reblog {
-  border-top: 1px solid;
+  border-top: 1px solid rgba(var(--title), 0.1);
 }
 
 section.body .reblog + .original {
@@ -525,10 +538,12 @@ article footer, section.controls {
 
 .controls .reblog_button::before {
   content: "\EA08";
+  color: rgb(var(--accent));
 }
 
 .controls .like_button::before {
   content: "\EA04";
+  color: rgb(var(--accent));
 }
 
 .controls .like_button.liked::before {

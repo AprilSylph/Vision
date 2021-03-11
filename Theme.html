@@ -18,8 +18,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/w0daeoc/wlpqpt6dv/vision_core.css">{block:IfNotBackgroundImage}
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/KyGpnia7z/vision_plain.css">{/block:IfNotBackgroundImage}
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/w0daeoc/KTiqpt88r/vision_core.css">
         {NewPostStyles}
         <noscript>
             <style>
@@ -45,31 +44,6 @@
             }{block:IfBackgroundImage}
             body {
                 background-image: url('{image:Background}');
-            }{/block:IfBackgroundImage}
-            a{block:IfBackgroundImage}, span.reblog-icon, .like_button, .reblog_button{/block:IfBackgroundImage} {
-                color: rgb(var(--accent));
-            }{block:IfBackgroundImage}
-            blockquote,
-            li.note .answer_content {
-                border-color: rgba(var(--title), 0.5);
-            }
-            article {
-                background-color: rgb(var(--background));
-            }
-            .npf-link-block a {
-                color: rgb(var(--title));
-            }
-            .npf-link-block .bottom > .site-name {
-                color: rgba(var(--title), 0.5);
-            }
-            section.body .reblog .user .username {
-                color: rgb(var(--title));
-            }
-            section.body .reblog + .reblog {
-                border-color: rgba(var(--title), 0.1);
-            }
-            .ask-item > div {
-                background: rgba(var(--title), 0.1);
             }{/block:IfBackgroundImage}
         </style>
         <style title="Custom CSS">{CustomCSS}</style>
