@@ -9,11 +9,6 @@
   --post-margin: 15px;
   --post-padding: 15px;
   --sidebar-padding: 15px;
-
-  --title: rgb(var(--rgbtitle));
-  --accent: rgb(var(--rgbaccent));
-
-  --title-10percent: rgba(var(--rgbtitle), 0.1);
 }
 
 /* Global */
@@ -45,13 +40,13 @@ li.note .answer_content {
 
 body {
   font-size: 14px;
-  background-color: var(--background);
-  background-image: linear-gradient(var(--title-10percent), var(--title-10percent));
+  background-color: rgb(var(--background));
+  background-image: linear-gradient(rgba(var(--title), 0.1), rgba(var(--title), 0.1));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 
-  color: var(--title);
+  color: rgb(var(--title));
   font-family: var(--font-family);
 }
 
@@ -106,7 +101,7 @@ main {
 
 main > h3 {
   text-align: center;
-  text-shadow: 0 0 1px var(--background);
+  text-shadow: 0 0 1px rgb(var(--background));
   margin: 0;
   margin-top: var(--post-margin);
 }
@@ -118,7 +113,7 @@ main > h3 {
   flex-direction: column;
   align-items: stretch;
   text-align: center;
-  background-color: var(--background);
+  background-color: rgb(var(--background));
   padding-bottom: var(--sidebar-padding);
   margin-top: var(--post-margin);
   border-radius: 3px;
@@ -126,7 +121,7 @@ main > h3 {
 }
 
 #search {
-  color: var(--accent);
+  color: rgb(var(--accent));
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -190,8 +185,8 @@ body.tmblr-iframe-pushdown #search {
 #avatar {
   height: 64px;
   width: 64px;
-  background-color: var(--background);
-  border: 5px solid var(--background);
+  background-color: rgb(var(--background));
+  border: 5px solid rgb(var(--background));
 }
 
 #avatar.circle {
@@ -206,7 +201,7 @@ body.tmblr-iframe-pushdown #search {
 }
 
 #title {
-  color: var(--title);
+  color: rgb(var(--title));
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
   font-size: 20px;
@@ -297,14 +292,14 @@ nav a {
 }
 
 #page-number {
-  text-shadow: 0 0 1px var(--background);
+  text-shadow: 0 0 1px rgb(var(--background));
 }
 
 #previous-link, #next-link {
   padding: 1ch;
   line-height: 1;
-  color: var(--background);
-  background-color: var(--accent);
+  color: rgb(var(--background));
+  background-color: rgb(var(--accent));
   border-radius: 3px;
 }
 
@@ -624,7 +619,7 @@ li.note .retags {
 }
 
 #credit:hover {
-  background-color: var(--background);
+  background-color: rgb(var(--background));
 }
 
 #credit span {
