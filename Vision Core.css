@@ -34,6 +34,13 @@ iframe {
   display: block;
 }
 
+blockquote,
+li.note .answer_content {
+  padding-left: 1em;
+  margin: 1em 0;
+  border-left: 3px solid;
+}
+
 /* Overall layout */
 
 body {
@@ -255,6 +262,12 @@ body.tmblr-iframe-pushdown #search {
   object-fit: cover;
 }
 
+/* Widget */
+
+#widget {
+  margin-top: 15px;
+}
+
 /* Navigation */
 
 nav {
@@ -323,29 +336,31 @@ nav a {
   margin-left: 5px;
 }
 
-/* === */
+/* Posts */
 
-blockquote,
-li.note .answer_content {
-  padding-left: 1em;
-  margin: 1em 0;
-  border-left: 3px solid;
-}
-#widget {
-  margin-top: 15px;
-}
 article {
   word-wrap: break-word;
   padding: 15px;
   margin-top: var(--post-margin);
   border-radius: 3px;
 }
+
+/* Post header */
+
 article header {
   margin-bottom: 1em;
 }
+
 article header a {
   white-space: nowrap;
 }
+
+.sourcelogo {
+  display: inline-block;
+  float: right;
+  margin: 0 0 0 1em;
+}
+
 .reblog-icon::before {
   content: "\EA09";
   font-size: 1.5em;
@@ -354,178 +369,156 @@ article header a {
   line-height: 1rem;
   vertical-align: text-bottom;
 }
+
 .published::before {
   content: "submitted by";
 }
-.sourcelogo {
-  display: inline-block;
-  float: right;
-  margin: 0 0 0 1em;
-}
+
 .timestamp {
   display: block;
   font-size: 12px;
   margin-top: 5px;
 }
 
+/* Post legacy media */
+
 article section.media:first-child {
   margin-top: -15px;
 }
+
 article section.media:last-child {
   margin-bottom: -15px;
 }
 
-.tmblr-lightbox .lightbox-image {
-  max-width: none;
+article.photo section.media img {
+  margin: auto;
 }
+
 article.quote section.media,
 article.chat section.media {
   line-height: 1.5;
 }
+
 article.quote section.body,
 article.chat section.body {
   display: none;
 }
-article.photo section.media img {
-  margin: auto;
-}
+
 iframe.tumblr_audio_player {
   max-height: 85px;
 }
+
 .ask-item {
   margin: 1em 0;
   display: grid;
   grid-template-columns: auto 40px;
   grid-column-gap: 1em;
 }
+
 .ask-item > * {
   border-radius: 3px;
 }
+
 .ask-item > div {
   padding: 15px 15px 0;
 }
+
 .ask-item .user a {
   font-weight: bolder;
 }
+
 .ask-item > div > blockquote {
   border: none;
   padding: 0;
 }
 
+/* Post NPF media */
+
 article figure {
   margin: 0 0 4px;
 }
+
 figure img {
   display: block;
   height: auto;
 }
+
 figure.tmblr-full img {
   width: 100%;
 }
+
 article.post div.npf_row {
   margin-left: 0;
   margin-right: 0;
 }
 
-section.body {
-  line-height: 1.5;
-}
-section.body .reblog .user {
-  margin: 10px 0;
-}
-section.body .reblog .user + * {
-  margin-top: 10px;
-}
-section.body .reblog .user .avatar {
-  height: 25px;
-  vertical-align: middle;
-  border-radius: 2px;
-}
-section.body .reblog .user .username {
-  font-size: 13px;
-  vertical-align: middle;
-}
-section.body .reblog:hover .user .username.deactivated::after {
-  content: "deactivated";
-  opacity: 0.5;
-  margin-left: 1ch;
-}
-section.body .reblog + .reblog {
-  border-top: 1px solid;
-}
-section.body .reblog + .original {
-  display: none;
+.tmblr-lightbox .lightbox-image {
+  max-width: none;
 }
 
 .tmblr-attribution {
   margin-top: 0;
 }
+
+/* Post body */
+
+section.body {
+  line-height: 1.5;
+}
+
+/* Reblog trail */
+
+section.body .reblog .user {
+  margin: 10px 0;
+}
+
+section.body .reblog .user + * {
+  margin-top: 10px;
+}
+
+section.body .reblog .user .avatar {
+  height: 25px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+section.body .reblog .user .username {
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+section.body .reblog:hover .user .username.deactivated::after {
+  content: "deactivated";
+  opacity: 0.5;
+  margin-left: 1ch;
+}
+
+section.body .reblog + .reblog {
+  border-top: 1px solid;
+}
+
+section.body .reblog + .original {
+  display: none;
+}
+
+/* Post footer */
+
 article footer, section.controls {
   margin-top: 1em;
 }
-section.tags a.tag {
-  margin-right: 0.5em;
-  font-weight: normal;
-}
-section.tags a.tag::before {
-  content: "#";
-}
-#notes {
-  width: 500px;
-  max-height: 700px;
-  margin-top: 1em;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-ol.notes {
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 0; margin: 0;
-  list-style-type: none;
-}
-li.note {
-  flex: none;
-  padding: 5px 0;
-}
-li.note:not(.more_notes_link_container) {
-  max-width: 465px;
-}
-li.note blockquote a {
-  font-weight: normal;
-  color: inherit;
-}
-li.note .avatar_frame {
-  display: inline-block;
-  width: 16px;
-  position: relative;
-  top: 3px;
-  margin-right: 1ch;
-}
-li.note .avatar {
-  border-radius: 2px;
-}
-li.note blockquote,
-li.note .answer_content {
-  margin: 10px 31px 5px;
-}
-li.note .answer_content {
-  display: block;
-  padding-left: 1em;
-}
-li.note .retags {
-  margin-left: 26px;
-  margin-bottom: 0;
-}
+
 .controls .like_button,
 .controls .reblog_button {
   float: right;
   margin-left: 12px;
 }
+
 .controls .like_button iframe,
 .controls .reblog_button svg {
   opacity: 0.000000001;
   z-index: 1;
 }
+
 .controls .like_button::before,
 .controls .reblog_button::before {
   font-family: "optica-icons";
@@ -534,15 +527,87 @@ li.note .retags {
   position: absolute;
   margin: -5px 0 0 -3px;
 }
+
 .controls .reblog_button::before {
   content: "\EA08";
 }
+
 .controls .like_button::before {
   content: "\EA04";
 }
+
 .controls .like_button.liked::before {
   content: "\EA05";
   color: #ff492f;
+}
+
+/* Tags */
+
+section.tags a.tag {
+  margin-right: 0.5em;
+  font-weight: normal;
+}
+
+section.tags a.tag::before {
+  content: "#";
+}
+
+/* Notes */
+
+#notes {
+  width: 500px;
+  max-height: 700px;
+  margin-top: 1em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ol.notes {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0; margin: 0;
+  list-style-type: none;
+}
+
+li.note {
+  flex: none;
+  padding: 5px 0;
+}
+
+li.note:not(.more_notes_link_container) {
+  max-width: 465px;
+}
+
+li.note blockquote a {
+  font-weight: normal;
+  color: inherit;
+}
+
+li.note .avatar_frame {
+  display: inline-block;
+  width: 16px;
+  position: relative;
+  top: 3px;
+  margin-right: 1ch;
+}
+
+li.note .avatar {
+  border-radius: 2px;
+}
+
+li.note blockquote,
+li.note .answer_content {
+  margin: 10px 31px 5px;
+}
+
+li.note .answer_content {
+  display: block;
+  padding-left: 1em;
+}
+
+li.note .retags {
+  margin-left: 26px;
+  margin-bottom: 0;
 }
 
 /* Credit link */
