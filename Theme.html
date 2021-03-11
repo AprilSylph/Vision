@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 {block:Options}
     <meta name="image:Background" content="">
-    <meta name="color:Background" content="{BackgroundColor}">
-    <meta name="color:Text" content="{TitleColor}">
-    <meta name="color:Links" content="{AccentColor}">
     <meta name="font:Font" content="Favorit">
-    <meta name="if:Custom Colors" content="0">
     <meta name="if:Show Username" content="1">
     <meta name="if:Sidebar Pagination" content="0">
     <meta name="text:Widget Code" content="">
@@ -19,7 +15,7 @@
         <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}{block:SearchPage}: {lang:SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No results found}{/block:NoSearchResults}{/block:SearchPage}{block:TagPage}: {lang:Posts tagged Tag}{/block:TagPage}{block:DayPage}: {lang:Viewing everything posted on Month DayOfMonth Year}{/block:DayPage}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <meta name="description" content="{MetaDescription}">
-        <meta name="theme-color" content="{block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomColors}{BackgroundColor}{/block:IfNotCustomcolors}">
+        <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/c04qp1al4/vision_core.css">{block:IfNotBackgroundImage}
@@ -34,9 +30,9 @@
         </noscript>
         <style id="vision_dynamic">
             :root {
-                --background: {block:IfCustomColors}{color:Background}{/block:IfCustomColors}{block:IfNotCustomcolors}{BackgroundColor}{/block:IfNotCustomcolors};
-                --rgbtitle: {block:IfCustomColors}{RGBcolor:Text}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBTitleColor}{/block:IfNotCustomColors};
-                --rgbaccent: {block:IfCustomColors}{RGBcolor:Links}{/block:IfCustomColors}{block:IfNotCustomColors}{RGBAccentColor}{/block:IfNotCustomColors};
+                --background: {BackgroundColor};
+                --rgbtitle: {RGBTitleColor};
+                --rgbaccent: {RGBAccentColor};
                 --title-font: {TitleFont};
                 --title-font-weight: {TitleFontWeight};
 
