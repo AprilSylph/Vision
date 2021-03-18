@@ -463,7 +463,15 @@ article.post div.npf_row {
 }
 
 .tmblr-attribution {
-  margin-top: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: .5em;
+}
+
+.tmblr-attribution a {
+  color: rgba(var(--title), 0.65);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .npf-link-block {
