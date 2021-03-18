@@ -440,6 +440,14 @@ iframe.tumblr_audio_player {
 
 /* Post NPF media */
 
+a.tmblr-truncated-link {
+  color: rgb(var(--accent));
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 article figure {
   margin: 0 0 4px;
 }
