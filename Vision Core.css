@@ -416,7 +416,7 @@ iframe.tumblr_audio_player {
 .ask-item {
   margin: 1em 0;
   display: grid;
-  grid-template-columns: auto 40px;
+  grid-template-columns: minmax(0, 1fr) 40px;
   grid-column-gap: 1em;
 }
 
