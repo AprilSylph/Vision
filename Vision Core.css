@@ -107,6 +107,11 @@ main > h3 {
   margin-top: var(--post-margin);
 }
 
+main a {
+  color: rgb(var(--title));
+  text-decoration: underline;
+}
+
 /* Blog Card */
 
 #blog-card {
@@ -301,6 +306,7 @@ nav a {
   line-height: 1;
   color: rgb(var(--background));
   background-color: rgb(var(--accent));
+  text-decoration: none;
   border-radius: 3px;
 }
 
@@ -345,10 +351,12 @@ article {
 /* Post header */
 
 article header {
+  color: rgba(var(--title), 0.65);
   margin-bottom: 1em;
 }
 
 article header a {
+  color: inherit;
   font-weight: bold;
   text-decoration: none;
   white-space: nowrap;
@@ -360,9 +368,12 @@ article header a {
   margin: 0 0 0 1em;
 }
 
+.permalink {
+  color: rgb(var(--title));
+}
+
 .reblog-icon::before {
   content: "\EA09";
-  color: rgb(var(--accent));
   font-size: 1.5em;
   font-weight: normal;
   font-family: "optica-icons";
@@ -425,12 +436,18 @@ iframe.tumblr_audio_player {
 }
 
 .ask-item > div {
-  background: rgba(var(--title), 0.1);
+  background: rgba(var(--title), 0.07);
   padding: 15px 15px 0;
 }
 
+.ask-item .user {
+  color: rgba(var(--title), 0.65);
+}
+
 .ask-item .user a {
+  color: inherit;
   font-weight: bolder;
+  text-decoration: none;
 }
 
 .ask-item > div > blockquote {
@@ -555,7 +572,12 @@ section.body .reblog + .original {
 
 /* Post footer */
 
+article footer {
+  color: rgba(var(--title), 0.65);
+}
+
 article footer a {
+  color: inherit;
   font-weight: bold;
   text-decoration: none;
 }
@@ -587,22 +609,21 @@ article footer, section.controls {
 
 .controls .reblog_button::before {
   content: "\EA08";
-  color: rgb(var(--accent));
 }
 
 .controls .like_button::before {
   content: "\EA04";
-  color: rgb(var(--accent));
 }
 
 .controls .like_button.liked::before {
   content: "\EA05";
-  color: #ff492f;
+  color: rgb(var(--accent));
 }
 
 /* Tags */
 
 section.tags a.tag {
+  color: rgba(var(--title), 0.65);
   margin-right: 0.5em;
   font-weight: normal;
 }
@@ -626,6 +647,10 @@ ol.notes {
   flex-direction: column-reverse;
   padding: 0; margin: 0;
   list-style-type: none;
+}
+
+a.more_notes_link {
+  color: rgb(var(--accent));
 }
 
 li.note {
@@ -652,6 +677,10 @@ li.note .avatar_frame {
 
 li.note .avatar {
   border-radius: 2px;
+}
+
+li.note span.action a:first-of-type {
+  color: rgb(var(--title));
 }
 
 li.note blockquote,
