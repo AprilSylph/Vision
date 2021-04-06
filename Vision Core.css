@@ -457,12 +457,22 @@ iframe.tumblr_audio_player {
 
 /* Post NPF media */
 
+.read_more_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.read_more_container > .read_more,
 a.tmblr-truncated-link {
   color: rgb(var(--accent));
-  display: block;
-  text-align: center;
   text-decoration: none;
   font-weight: bold;
+}
+
+:not(.read_more_container) > a.tmblr-truncated-link {
+  display: block;
+  text-align: center;
 }
 
 article figure {
