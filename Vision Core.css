@@ -381,10 +381,6 @@ article header a {
   vertical-align: text-bottom;
 }
 
-.published::before {
-  content: "submitted by";
-}
-
 .timestamp {
   display: block;
   font-size: 12px;
