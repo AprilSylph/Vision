@@ -588,12 +588,12 @@ section.source a:hover {
 
 /* Submitter credit */
 
-section.submission {
+section.submitter {
   color: rgba(var(--title), 0.65);
   margin-top: .625em;
 }
 
-section.submission a {
+section.submitter a {
   color: inherit;
   font-weight: bold;
   text-decoration: none;
