@@ -576,6 +576,19 @@ section.body .reblog + .original {
   display: none;
 }
 
+/* Submitter credit */
+
+section.submission {
+  color: rgba(var(--title), 0.65);
+  margin-top: .625em;
+}
+
+section.submission a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 /* Tags */
 
 section.tags {
