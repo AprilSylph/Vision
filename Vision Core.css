@@ -576,20 +576,33 @@ section.body .reblog + .original {
   display: none;
 }
 
+/* Tags */
+
+section.tags {
+  margin-top: 1em;
+}
+
+section.tags a.tag {
+  color: rgba(var(--title), 0.65);
+  margin-right: 0.5em;
+  text-decoration: none;
+}
+
+section.tags a.tag::before {
+  content: "#";
+}
+
 /* Post footer */
 
 article footer {
   color: rgba(var(--title), 0.65);
+  margin-top: 1em;
 }
 
 article footer a {
   color: inherit;
   font-weight: bold;
   text-decoration: none;
-}
-
-article footer, section.controls {
-  margin-top: 1em;
 }
 
 .controls .like_button,
@@ -624,18 +637,6 @@ article footer, section.controls {
 .controls .like_button.liked::before {
   content: "\EA05";
   color: rgb(var(--accent));
-}
-
-/* Tags */
-
-section.tags a.tag {
-  color: rgba(var(--title), 0.65);
-  margin-right: 0.5em;
-  font-weight: normal;
-}
-
-section.tags a.tag::before {
-  content: "#";
 }
 
 /* Notes */
