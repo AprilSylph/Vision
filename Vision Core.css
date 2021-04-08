@@ -362,12 +362,6 @@ article header a {
   white-space: nowrap;
 }
 
-.sourcelogo {
-  display: inline-block;
-  float: right;
-  margin: 0 0 0 1em;
-}
-
 .permalink {
   color: rgb(var(--title));
 }
@@ -574,6 +568,22 @@ section.body .reblog + .reblog {
 
 section.body .reblog + .original {
   display: none;
+}
+
+/* Content source */
+
+section.source {
+  color: rgba(var(--title), 0.65);
+  margin-top: .625em;
+}
+
+section.source a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section.source a:hover {
+  text-decoration: underline;
 }
 
 /* Submitter credit */

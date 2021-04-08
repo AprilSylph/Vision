@@ -17,7 +17,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/ED4qr8y6y/vision_core.css">
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/z1qqr8z1j/vision_core.css">
         {NewPostStyles}
         <noscript>
             <style>
@@ -95,11 +95,7 @@
                 <h3>{lang:Viewing everything posted on Month DayOfMonth Year}</h3>{/block:DayPage}{block:NoPosts}
                 <h3>{lang:This minimalist Tumblr has no posts}</h3>{/block:NoPosts}{block:Posts inlineMediaWidth="500"}
                 <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post">{block:Date}
-                    <header>{block:ContentSource}
-                        <a href="{SourceURL}" title="{SourceTitle}">{block:SourceLogo}
-                            <img src="{BlackLogoURL}" alt="{SourceTitle}" class="sourcelogo"/>{/block:SourceLogo}{block:NoSourceLogo}
-                            <p class="sourcelogo">{lang:Source}: {SourceTitle}</p>{/block:NoSourceLogo}
-                        </a>{/block:ContentSource}
+                    <header>
                         <a class="permalink" href="{Permalink}">{PostAuthorName}</a>{block:RebloggedFrom}
                         &#32;<span class="reblog-icon" title="{lang:Reblogged}"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>{/block:RebloggedFrom}
                         <time class="timestamp" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}.{Beats}">
@@ -174,7 +170,10 @@
                             {Caption}{/block:Caption}{/block:Video}{block:Answer}
                             {Answer}{/block:Answer}
                         </div>{/block:NotReblog}
-                    </section>{block:Submission}
+                    </section>{block:ContentSource}
+                    <section class="source">
+                        {lang:Source}: <a href="{SourceURL}">{SourceTitle}</a>
+                    </section>{/block:ContentSource}{block:Submission}
                     <section class="submission">
                       {block:English}Submitted by <a href="{SubmitterURL}">{Submitter}</a>{/block:English}{block:German}Eingereicht von <a href="{SubmitterURL}">{Submitter}</a>{/block:German}{block:French}Proposé par <a href="{SubmitterURL}">{Submitter}</a>{/block:French}{block:Italian}Postato da <a href="{SubmitterURL}">{Submitter}</a>{/block:Italian}{block:Japanese}送信者: <a href="{SubmitterURL}">{Submitter}</a>{/block:Japanese}{block:Turkish}<a href="{SubmitterURL}">{Submitter}</a> tarafından gönderildi{/block:Turkish}{block:Spanish}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:Spanish}{block:Russian}Отправил(а): <a href="{SubmitterURL}">{Submitter}</a>{/block:Russian}{block:Polish}Przesłane przez <a href="{SubmitterURL}">{Submitter}</a>{/block:Polish}{block:PortuguesePT}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortuguesePT}{block:PortugueseBR}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortugueseBR}{block:Dutch}Bijgedragen door <a href="{SubmitterURL}">{Submitter}</a>{/block:Dutch}{block:Korean}<a href="{SubmitterURL}">{Submitter}</a>님이 제출함{/block:Korean}{block:ChineseSimplified}提交者：<a href="{SubmitterURL}">{Submitter}</a>{/block:ChineseSimplified}{block:ChineseTraditional}由 <a href="{SubmitterURL}">{Submitter}</a> 投稿{/block:ChineseTraditional}{block:ChineseHK}由 <a href="{SubmitterURL}">{Submitter}</a> 提交{/block:ChineseHK}{block:Indonesian}Dikirimkan oleh <a href="{SubmitterURL}">{Submitter}</a>{/block:Indonesian}{block:Hindi}<a href="{SubmitterURL}">{Submitter}</a> ने सबमिट किया{/block:Hindi}
                     </section>
