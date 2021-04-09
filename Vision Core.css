@@ -510,6 +510,7 @@ article.post div.npf_row {
 
 .npf-link-block .poster {
   border-bottom: 1px solid rgba(var(--title), 0.25);
+  background-clip: content-box;
 }
 
 .npf-link-block .poster .title {
