@@ -682,8 +682,8 @@ article footer a {
 /* Notes */
 
 #notes {
-  width: 500px;
-  max-height: 700px;
+  width: 100%;
+  max-height: 75vh;
   margin-top: 1em;
   overflow-x: hidden;
   overflow-y: auto;
@@ -692,12 +692,16 @@ article footer a {
 ol.notes {
   display: flex;
   flex-direction: column-reverse;
-  padding: 0; margin: 0;
+  color: rgba(var(--title), 0.65);
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
-a.more_notes_link {
-  color: rgb(var(--accent));
+ol.notes a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 li.note {
@@ -709,9 +713,13 @@ li.note:not(.more_notes_link_container) {
   max-width: 465px;
 }
 
+li.note a.more_notes_link {
+  color: rgb(var(--accent));
+}
+
 li.note blockquote a {
+  color: rgb(var(--title));
   font-weight: normal;
-  color: inherit;
 }
 
 li.note .avatar_frame {
