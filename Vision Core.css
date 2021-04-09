@@ -615,6 +615,23 @@ section.tags a.tag::before {
   content: "#";
 }
 
+/* Pinned post label */
+
+.pinned-post-label {
+  display: inline-block;
+  color: rgba(var(--accent));
+  filter: hue-rotate(-61deg);
+  font-weight: bold;
+  margin-right: 1ch;
+}
+
+.pinned-post-label svg {
+  fill: rgba(var(--accent));
+  margin-right: 0.5ch;
+  vertical-align: bottom;
+}
+
+
 /* Post footer */
 
 article footer {
