@@ -734,9 +734,9 @@ li.note a.more_notes_link {
 
 li.note .avatar_frame {
   display: inline-block;
+  height: 16px;
   width: 16px;
-  position: relative;
-  top: 3px;
+  vertical-align: bottom;
   margin-right: 1ch;
 }
 
