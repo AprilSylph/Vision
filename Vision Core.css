@@ -30,8 +30,7 @@ iframe {
   display: block;
 }
 
-blockquote,
-li.note .answer_content {
+blockquote {
   padding-left: 1em;
   margin: 1em 0;
   border-left: 3px solid rgba(var(--title), 0.5);
@@ -733,11 +732,6 @@ li.note a.more_notes_link {
   color: rgb(var(--accent));
 }
 
-li.note blockquote a {
-  color: rgb(var(--title));
-  font-weight: normal;
-}
-
 li.note .avatar_frame {
   display: inline-block;
   width: 16px;
@@ -754,14 +748,21 @@ li.note span.action a:first-of-type {
   color: rgb(var(--title));
 }
 
-li.note blockquote,
-li.note .answer_content {
-  margin: 10px 31px 5px;
-}
-
 li.note .answer_content {
   display: block;
-  padding-left: 1em;
+}
+
+li.note blockquote,
+li.note .answer_content {
+  padding-left: 10px;
+  border-left: 3px solid rgba(var(--title), .25);
+  margin: 10px calc(16px + 1ch) 5px;
+}
+
+li.note blockquote a,
+li.note .answer_content {
+  color: rgb(var(--title));
+  font-weight: normal;
 }
 
 li.note .retags {
