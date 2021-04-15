@@ -605,6 +605,10 @@ section.tags {
   margin-top: 1em;
 }
 
+section.tags:empty {
+  display: none;
+}
+
 section.tags a.tag {
   color: rgba(var(--title), 0.65);
   margin-right: 0.5em;
