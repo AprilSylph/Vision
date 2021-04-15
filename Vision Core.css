@@ -4,11 +4,15 @@
 }
 
 :root {
-  --aside-width: 280px;
-  --post-width: 530px;
-  --post-margin: 15px;
-  --post-padding: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+
+  --aside-width: 300px;
   --sidebar-padding: 15px;
+  --post-width: 540px;
+  --post-padding: 20px;
+  --post-vertical-spacing: 15px;
+  --post-margin: 20px;
 }
 
 /* Global */
@@ -39,7 +43,6 @@ blockquote {
 /* Overall layout */
 
 body {
-  font-size: 14px;
   background-color: rgb(var(--background));
   background-image: linear-gradient(rgba(var(--title), 0.1), rgba(var(--title), 0.1));
   background-position: center;
@@ -70,13 +73,13 @@ body.tmblr-iframe-pushdown aside {
   top: 54px;
 }
 
-@media (max-width: /* (--aside-width * 2) + --post-width + (--post-margin * 4) = */ 1150px) {
+@media (max-width: /* (--aside-width * 2) + --post-width + (--post-margin * 4) = */ 1220px) {
 	aside:empty {
 		display: none;
 	}
 }
 
-@media (max-width: /* --aside-width + --post-width + (--post-margin * 3) = */ 850px) {
+@media (max-width: /* --aside-width + --post-width + (--post-margin * 3) = */ 900px) {
   #base-container {
     flex-direction: column;
     align-items: center;
@@ -111,6 +114,12 @@ main a {
   text-decoration: underline;
 }
 
+/* Sidebar */
+
+aside > section {
+  margin-top: var(--post-margin);
+}
+
 /* Blog Card */
 
 #blog-card {
@@ -120,7 +129,6 @@ main a {
   text-align: center;
   background-color: rgb(var(--background));
   padding-bottom: var(--sidebar-padding);
-  margin-top: var(--post-margin);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -130,10 +138,8 @@ main a {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  height: 1em;
+  height: 1rem;
   position: relative;
-  top: 0;
-  left: 0;
   z-index: 1;
   margin: var(--sidebar-padding) 0;
   padding: 0 var(--sidebar-padding);
@@ -151,6 +157,7 @@ body.tmblr-iframe-pushdown #search {
 #search::before {
   content: "\EA0B";
   font-family: "optica-icons";
+  line-height: 1;
 }
 
 #search input,
@@ -159,10 +166,14 @@ body.tmblr-iframe-pushdown #search {
 }
 
 #search input {
+  min-width: 0;
+  flex-basis: 0;
   flex-grow: 1;
   background: none;
+  padding: 0;
   border: none;
-  margin-left: 1ch;
+  margin: 0;
+  margin-left: .75ch;
 }
 
 #search input:focus {
@@ -177,12 +188,12 @@ body.tmblr-iframe-pushdown #search {
 #header.stretch {
   height: 140px;
   object-fit: cover;
-  margin-top: calc(-1em - (var(--sidebar-padding) * 2));
+  margin-top: calc(-1rem - (var(--sidebar-padding) * 2));
 }
 
 #header.no-stretch {
   box-sizing: border-box;
-  height: calc(140px - 1em - (var(--sidebar-padding) * 2));
+  height: calc(140px - 1rem - (var(--sidebar-padding) * 2));
   object-fit: contain;
   padding: 0 calc(var(--sidebar-padding) * 2);
 }
@@ -209,9 +220,9 @@ body.tmblr-iframe-pushdown #search {
   color: rgb(var(--title));
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: 20px;
+  font-size: 1.25rem;
   padding: 0 var(--sidebar-padding);
-  margin-top: 12px;
+  margin-top: .75rem;
   margin-bottom: 0;
 }
 
@@ -220,11 +231,10 @@ body.tmblr-iframe-pushdown #search {
 }
 
 #description {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: .875rem;
   word-wrap: break-word;
   padding: 0 var(--sidebar-padding);
-  margin-top: 8px;
+  margin-top: .5rem;
 }
 
 #title:empty,
@@ -237,20 +247,22 @@ body.tmblr-iframe-pushdown #search {
 }
 
 #top-photos {
+  --top-photo-width: calc(((var(--aside-width) - 10px) / 3) - 10px);
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  height: 80px;
+  height: var(--top-photo-width);
   overflow-y: hidden;
   padding: 0 5px;
   margin-top: var(--sidebar-padding);
 }
 
 #top-photos a {
-  height: 80px;
-  width: 80px;
+  height: var(--top-photo-width);
+  width: var(--top-photo-width);
   border-radius: 3px;
   overflow: hidden;
   margin: 0 5px;
@@ -262,12 +274,6 @@ body.tmblr-iframe-pushdown #search {
   object-fit: cover;
 }
 
-/* Widget */
-
-#widget {
-  margin-top: 15px;
-}
-
 /* Navigation */
 
 nav {
@@ -275,6 +281,7 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: .875rem;
   padding: 0 var(--sidebar-padding);
   margin-top: var(--sidebar-padding);
 }
@@ -342,7 +349,7 @@ nav a {
 article {
   background-color: rgb(var(--background));
   word-wrap: break-word;
-  padding: 15px;
+  padding: var(--post-vertical-spacing) var(--post-padding);
   margin-top: var(--post-margin);
   border-radius: 3px;
 }
@@ -351,7 +358,7 @@ article {
 
 article header {
   color: rgba(var(--title), 0.65);
-  margin-bottom: 1em;
+  margin-bottom: var(--post-vertical-spacing);
 }
 
 article header a {
@@ -367,16 +374,16 @@ article header a {
 
 .reblog-icon::before {
   content: "\EA09";
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: normal;
   font-family: "optica-icons";
   line-height: 1rem;
-  vertical-align: text-bottom;
+  vertical-align: sub;
 }
 
 .timestamp {
   display: block;
-  font-size: 12px;
+  font-size: .875rem;
   margin-top: 5px;
 }
 
@@ -387,21 +394,16 @@ article header a {
 
 /* Post legacy media */
 
-article section.media:first-child {
+article section.media:first-child:not(:empty) {
   margin-top: -15px;
 }
 
-article section.media:last-child {
+article section.media:last-child:not(:empty) {
   margin-bottom: -15px;
 }
 
 article.photo section.media img {
   margin: auto;
-}
-
-article.quote section.media,
-article.chat section.media {
-  line-height: 1.5;
 }
 
 article.quote section.body,
@@ -414,10 +416,10 @@ iframe.tumblr_audio_player {
 }
 
 .ask-item {
-  margin: 1em 0;
+  margin: var(--post-vertical-spacing) 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 40px;
-  grid-column-gap: 1em;
+  grid-column-gap: var(--post-vertical-spacing);
 }
 
 .ask-item > * {
@@ -426,11 +428,12 @@ iframe.tumblr_audio_player {
 
 .ask-item > div {
   background: rgba(var(--title), 0.07);
-  padding: 15px 15px 0;
+  padding: var(--post-vertical-spacing) var(--post-padding) 0;
 }
 
 .ask-item .user {
   color: rgba(var(--title), 0.65);
+  font-size: .875rem;
 }
 
 .ask-item .user a {
@@ -489,7 +492,7 @@ article.post div.npf_row {
 .tmblr-attribution {
   display: flex;
   justify-content: flex-end;
-  margin-top: .5em;
+  margin-top: .5rem;
 }
 
 .tmblr-attribution a {
@@ -521,13 +524,10 @@ article.post div.npf_row {
 }
 
 .npf-link-block .bottom .site-name {
-  color: rgba(var(--title), 0.65) !important;
-}
-
-/* Post body */
-
-section.body {
-  line-height: 1.5;
+  color: rgba(var(--title), 0.65);
+  font-size: .78125rem;
+  font-weight: 400;
+  margin-top: .5rem;
 }
 
 /* Reblog trail */
@@ -552,7 +552,7 @@ section.body .reblog .user .avatar {
 }
 
 section.body .reblog .user .username {
-  font-size: 13px;
+  font-size: .875rem;
   vertical-align: middle;
 }
 
@@ -574,7 +574,7 @@ section.body .reblog + .original {
 
 section.source {
   color: rgba(var(--title), 0.65);
-  margin-top: .625em;
+  margin-top: .625rem;
 }
 
 section.source a {
@@ -590,7 +590,11 @@ section.source a:hover {
 
 section.submitter {
   color: rgba(var(--title), 0.65);
-  margin-top: .625em;
+  margin-top: .625rem;
+}
+
+section.source + section.submitter {
+  margin-top: 0;
 }
 
 section.submitter a {
@@ -602,7 +606,7 @@ section.submitter a {
 /* Tags */
 
 section.tags {
-  margin-top: 1em;
+  margin-top: .625rem;
 }
 
 section.tags:empty {
@@ -611,7 +615,7 @@ section.tags:empty {
 
 section.tags a.tag {
   color: rgba(var(--title), 0.65);
-  margin-right: 0.5em;
+  margin-right: 1ch;
   text-decoration: none;
 }
 
@@ -622,7 +626,9 @@ section.tags a.tag::before {
 /* Pinned post label */
 
 .pinned-post-label {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
   color: rgba(var(--accent));
   filter: hue-rotate(-61deg);
   font-weight: bold;
@@ -643,9 +649,9 @@ article footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 24px;
+  min-height: 28px;
   color: rgba(var(--title), 0.65);
-  margin-top: 1em;
+  margin-top: var(--post-vertical-spacing);
 }
 
 article footer a {
@@ -681,7 +687,7 @@ article footer a {
   top: 0;
   left: 0;
   font-family: "optica-icons";
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1;
 }
 
@@ -703,7 +709,8 @@ article footer a {
 #notes {
   width: 100%;
   max-height: 75vh;
-  margin-top: 1em;
+  font-size: .875rem;
+  margin-top: var(--post-vertical-spacing);
   overflow-x: hidden;
   overflow-y: auto;
 }
