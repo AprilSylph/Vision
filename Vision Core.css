@@ -655,7 +655,7 @@ article footer {
   align-items: center;
   min-height: 28px;
   color: rgba(var(--title), 0.65);
-  margin-top: var(--post-vertical-spacing);
+  margin-top: .75rem;
 }
 
 article footer a {
