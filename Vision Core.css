@@ -613,6 +613,7 @@ section.tags:empty {
 }
 
 section.tags a.tag {
+  display: inline-block;
   color: rgba(var(--title), 0.65);
   margin-right: 1ch;
   text-decoration: none;
@@ -620,6 +621,10 @@ section.tags a.tag {
 
 section.tags a.tag::before {
   content: "#";
+}
+
+section.tags a.tag:hover {
+  text-decoration: underline;
 }
 
 /* Pinned post label */
