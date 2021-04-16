@@ -518,8 +518,8 @@ article.post div.npf_row {
   text-align: center;
 }
 
-.npf-link-block .bottom:empty {
-  display: none;
+.npf-link-block.no-poster .title {
+  margin-top: 1rem;
 }
 
 .npf-link-block .bottom .site-name {
