@@ -605,6 +605,9 @@ section.submitter a {
 /* Tags */
 
 section.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: .625rem;
 }
 
