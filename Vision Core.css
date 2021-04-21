@@ -358,6 +358,7 @@ article {
 
 article header {
   color: rgba(var(--title), 0.65);
+  font-size: .875rem;
   margin-bottom: var(--post-vertical-spacing);
 }
 
@@ -383,7 +384,6 @@ article header a {
 
 .timestamp {
   display: block;
-  font-size: .875rem;
 }
 
 .timestamp a {
