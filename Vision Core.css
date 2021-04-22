@@ -885,6 +885,7 @@ aside.secondary a {
   flex-direction: row;
   align-items: center;
   color: inherit;
+  padding: .625rem;
 }
 
 aside.secondary a:hover {
@@ -907,7 +908,6 @@ aside.secondary a[target="_blank"]::after {
 
 #group-members a {
   font-size: .875rem;
-  padding: .625rem;
 }
 
 #group-members img {
@@ -925,13 +925,6 @@ aside.secondary a[target="_blank"]::after {
 
 .group-member-info span {
   opacity: 0.65;
-}
-
-/* Twitter, RSS */
-
-#twitter a,
-#rss a {
-  padding: .3125rem .625rem;
 }
 
 /* Credit link */
