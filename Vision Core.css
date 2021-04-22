@@ -21,6 +21,10 @@
   max-width: 100%;
 }
 
+p, h2, h1, blockquote, ul, ol {
+  margin: 1rem 0;
+}
+
 a {
   color: rgb(var(--accent));
   text-decoration: none;
@@ -35,8 +39,7 @@ iframe {
 }
 
 blockquote {
-  padding-left: 1em;
-  margin: 1em 0;
+  padding-left: var(--post-padding);
   border-left: 3px solid rgba(var(--title), 0.5);
 }
 
@@ -447,6 +450,43 @@ iframe.tumblr_audio_player {
 }
 
 /* Post NPF media */
+
+article h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+article h1 {
+  font-size: 1.625rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+p.npf_quote {
+  font-size: 2.125rem;
+}
+
+blockquote.npf_indented {
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+article ul,
+article ol {
+  padding-left: var(--post-padding);
+}
+
+article ul {
+  list-style-type: disc;
+}
+
+article ol {
+  list-style-type: decimal;
+  font-feature-settings: "tnum" 0;
+}
 
 .read_more_container {
   display: flex;
