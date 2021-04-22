@@ -416,6 +416,18 @@ article.photo section.media img {
   margin: auto;
 }
 
+article.quote p.npf_quote[data-quote-length="short"] {
+  font-size: 2.125rem;
+}
+
+article.quote p.npf_quote[data-quote-length="medium"] {
+  font-size: 1.5rem;
+}
+
+article.quote p.npf_quote[data-quote-length="long"] {
+  font-size: 1.4375rem;
+}
+
 article.quote section.body,
 article.chat section.body {
   display: none;
