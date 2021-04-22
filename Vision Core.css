@@ -43,6 +43,14 @@ blockquote {
   border-left: 3px solid rgba(var(--title), 0.5);
 }
 
+hr {
+  max-width: 20%;
+  border: 0;
+  border-top: 1px solid rgba(var(--title), 0.1);
+  border-bottom: 1px solid transparent;
+  margin: 1rem auto;
+}
+
 /* Overall layout */
 
 body {
