@@ -854,9 +854,9 @@ li.note .retags {
   margin-bottom: 0;
 }
 
-/* Group members */
+/* Secondary sidebar */
 
-#group-members h1 {
+aside.secondary h1 {
   font-size: 1.3125rem;
   font-weight: 700;
   line-height: 1.2;
@@ -867,23 +867,36 @@ li.note .retags {
   margin-bottom: .625rem;
 }
 
-#group-members ul {
+aside.secondary ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#group-members a {
+aside.secondary a {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  color: rgb(var(--title));
-  font-size: .875rem;
-  padding: .625rem;
+  align-items: center;
+  color: inherit;
 }
 
-#group-members a:hover {
+aside.secondary a:hover {
   background-color: rgba(var(--title), .07);
+}
+
+aside.secondary a[target="_blank"]::after {
+  content: "\EA01";
+  color: rgba(var(--title), .65);
+  font-family: "optica-icons";
+  font-size: 12px;
+  margin-left: auto;
+}
+
+/* Group members */
+
+#group-members a {
+  font-size: .875rem;
+  padding: .625rem;
 }
 
 #group-members img {
@@ -901,6 +914,12 @@ li.note .retags {
 
 .group-member-info span {
   opacity: 0.65;
+}
+
+/* Twitter */
+
+#twitter a {
+  padding: .3125rem .625rem;
 }
 
 /* Credit link */

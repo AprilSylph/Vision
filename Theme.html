@@ -2,6 +2,7 @@
 {block:Options}
     <meta name="image:Background" content="">
     <meta name="if:Show group members" content="0">
+    <meta name="if:Show Twitter username" content="0">
     <meta name="if:Sidebar Pagination" content="0">
     <meta name="text:Widget Code" content="">
 {/block:Options}
@@ -17,7 +18,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/7GSqrz3ne/vision_core.css">
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/hwyqrz6m0/vision_core.css">
         <link rel="stylesheet" type="text/css" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
         {NewPostStyles}
         <noscript>
@@ -215,7 +216,13 @@
                             </div>
                         </a></li>{/block:GroupMember}
                     </ul>
-                </section>{/block:GroupMembers}{/block:IfShowGroupMembers}
+                </section>{/block:GroupMembers}{/block:IfShowGroupMembers}{block:IfShowTwitterUsername}{block:Twitter}
+                <section id="twitter">
+                    <h1>{lang:Follow on Twitter}</h1>
+                    <ul>
+                        <li><a href="https://twitter.com/{TwitterUsername}" {Target}>@{TwitterUsername}</a></li>
+                    </ul>
+                </section>{/block:Twitter}{/block:IfShowTwitterUsername}
             </aside>
         </div>
         <a id="credit" href="https://www.tumblr.com/theme/40627" {Target}>
