@@ -50,7 +50,7 @@ body {
   background-attachment: fixed;
 
   color: rgb(var(--title));
-  font-family: var(--font-family);
+  font-family: "Favorit", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
 }
 
 #base-container {
