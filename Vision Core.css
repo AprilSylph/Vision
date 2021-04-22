@@ -860,6 +860,10 @@ li.note .retags {
 
 /* Secondary sidebar */
 
+aside.secondary section {
+  padding-bottom: var(--post-vertical-spacing);
+}
+
 aside.secondary h1 {
   font-size: 1.3125rem;
   font-weight: 700;
@@ -868,7 +872,6 @@ aside.secondary h1 {
   padding-top: 0;
   border-bottom: 2px solid rgba(var(--title), .13);
   margin: 0;
-  margin-bottom: .625rem;
 }
 
 aside.secondary ul {
@@ -898,6 +901,10 @@ aside.secondary a[target="_blank"]::after {
 
 /* Group members */
 
+#group-members h1 {
+  margin-bottom: .625rem;
+}
+
 #group-members a {
   font-size: .875rem;
   padding: .625rem;
@@ -920,9 +927,10 @@ aside.secondary a[target="_blank"]::after {
   opacity: 0.65;
 }
 
-/* Twitter */
+/* Twitter, RSS */
 
-#twitter a {
+#twitter a,
+#rss a {
   padding: .3125rem .625rem;
 }
 

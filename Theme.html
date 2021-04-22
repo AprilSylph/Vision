@@ -3,6 +3,7 @@
     <meta name="image:Background" content="">
     <meta name="if:Show group members" content="0">
     <meta name="if:Show Twitter username" content="0">
+    <meta name="if:Show RSS link" content="0">
     <meta name="if:Sidebar Pagination" content="0">
     <meta name="text:Widget Code" content="">
 {/block:Options}
@@ -222,7 +223,13 @@
                     <ul>
                         <li><a href="https://twitter.com/{TwitterUsername}" {Target}>@{TwitterUsername}</a></li>
                     </ul>
-                </section>{/block:Twitter}{/block:IfShowTwitterUsername}
+                </section>{/block:Twitter}{/block:IfShowTwitterUsername}{block:IfShowRSSLink}
+                <section id="rss">
+                    <h1>{lang:RSS feed}</h1>
+                    <ul>
+                        <li><a href="{RSS}" {Target}>{lang:Subscribe via RSS}</a></li>
+                    </ul>
+                </section>{/block:IfShowRSSLink}
             </aside>
         </div>
         <a id="credit" href="https://www.tumblr.com/theme/40627" {Target}>
