@@ -1,0 +1,11 @@
+#blog-card {
+  margin-top: 0;
+}
+
+#blog-card, article {
+  border-radius: 0;
+}
+
+#pagination {
+  padding: 0 var(--post-padding);
+}
