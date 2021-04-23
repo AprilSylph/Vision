@@ -375,6 +375,7 @@ nav a {
 /* Posts */
 
 article {
+  color: rgb(var(--title));
   background-color: rgb(var(--background));
   word-wrap: break-word;
   padding: var(--post-vertical-spacing) var(--post-padding);

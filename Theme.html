@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 {block:Options}
     <meta name="image:Background" content="">
+    <meta name="select:Posts palette" content="data:text/css," title="Themed">
+    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/VdHqs1280/vision_light.css" title="Light">
+    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/t62qs128a/vision_dark.css" title="Dark">
     <meta name="if:Show group members" content="0">
     <meta name="if:Show Twitter username" content="0">
     <meta name="if:Show RSS link" content="0">
@@ -19,7 +22,8 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/lB4qs1173/vision_core.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/syZqs12at/vision_core.css">
+        <link rel="stylesheet" href="{select:Posts palette}">
         <link rel="stylesheet" media="(max-width: 540px)" href="https://static.tumblr.com/2wliono/ksuqs103p/vision_mobile.css">
         <link rel="stylesheet" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
         {NewPostStyles}
