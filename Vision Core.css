@@ -403,15 +403,6 @@ article header a {
   vertical-align: sub;
 }
 
-.timestamp {
-  display: block;
-}
-
-.timestamp a {
-  font-weight: normal;
-  text-decoration: underline;
-}
-
 /* Post legacy media */
 
 article section.media:first-child:not(:empty) {

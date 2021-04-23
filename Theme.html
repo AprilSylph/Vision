@@ -19,7 +19,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/wh6qs0yav/vision_core.css">
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/w7cqs0z3s/vision_core.css">
         <link rel="stylesheet" type="text/css" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
         {NewPostStyles}
         <noscript>
@@ -100,9 +100,6 @@
                     <header>
                         <a class="permalink" href="{Permalink}">{PostAuthorName}</a>{block:RebloggedFrom}
                         &#32;<span class="reblog-icon" title="{lang:Reblogged}"></span>&nbsp;<a href="{ReblogParentURL}" title="{ReblogParentTitle}">{ReblogParentName}</a>{/block:RebloggedFrom}
-                        <time class="timestamp" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}.{Beats}">
-                            {12Hour}:{Minutes}{AmPm}&ensp;•&ensp;{block:PermalinkPage}<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/" title="{lang:Show all posts made on this day}">{/block:PermalinkPage}{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}{block:PermalinkPage}</a>{/block:PermalinkPage}&ensp;•&ensp;{TimeAgo}
-                        </time>
                     </header>{/block:Date}
                     <section class="media">{block:Text}{block:Title}
                         <h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
