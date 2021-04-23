@@ -24,10 +24,6 @@ Replaces the generated page background colour with an image of your choice.
 
 Selects the page font.
 
-**Theme options: Sidebar Pagination**
-
-Moves the pagination controls from the post column to the sidebar.
-
 **Theme options: Widget Code**
 
 Inserts any HTML you like into the bottom of the sidebar.
