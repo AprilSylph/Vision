@@ -68,6 +68,10 @@ body {
   font-family: "Favorit", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
 }
 
+.iframe-controls--phone-mobile {
+  border-bottom: 1px solid rgba(var(--title), .13);
+}
+
 #base-container {
   display: flex;
   flex-direction: row;
