@@ -19,7 +19,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/FdKqrz84y/vision_core.css">
+        <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/2wliono/wh6qs0yav/vision_core.css">
         <link rel="stylesheet" type="text/css" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
         {NewPostStyles}
         <noscript>
@@ -180,8 +180,9 @@
                       {block:English}Submitted by <a href="{SubmitterURL}">{Submitter}</a>{/block:English}{block:German}Eingereicht von <a href="{SubmitterURL}">{Submitter}</a>{/block:German}{block:French}Proposé par <a href="{SubmitterURL}">{Submitter}</a>{/block:French}{block:Italian}Postato da <a href="{SubmitterURL}">{Submitter}</a>{/block:Italian}{block:Japanese}送信者: <a href="{SubmitterURL}">{Submitter}</a>{/block:Japanese}{block:Turkish}<a href="{SubmitterURL}">{Submitter}</a> tarafından gönderildi{/block:Turkish}{block:Spanish}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:Spanish}{block:Russian}Отправил(а): <a href="{SubmitterURL}">{Submitter}</a>{/block:Russian}{block:Polish}Przesłane przez <a href="{SubmitterURL}">{Submitter}</a>{/block:Polish}{block:PortuguesePT}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortuguesePT}{block:PortugueseBR}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortugueseBR}{block:Dutch}Bijgedragen door <a href="{SubmitterURL}">{Submitter}</a>{/block:Dutch}{block:Korean}<a href="{SubmitterURL}">{Submitter}</a>님이 제출함{/block:Korean}{block:ChineseSimplified}提交者：<a href="{SubmitterURL}">{Submitter}</a>{/block:ChineseSimplified}{block:ChineseTraditional}由 <a href="{SubmitterURL}">{Submitter}</a> 投稿{/block:ChineseTraditional}{block:ChineseHK}由 <a href="{SubmitterURL}">{Submitter}</a> 提交{/block:ChineseHK}{block:Indonesian}Dikirimkan oleh <a href="{SubmitterURL}">{Submitter}</a>{/block:Indonesian}{block:Hindi}<a href="{SubmitterURL}">{Submitter}</a> ने सबमिट किया{/block:Hindi}
                     </section>{/block:Submission}
                     <section class="tags">{block:PinnedPostLabel}<span class="pinned-post-label"><svg viewBox="18 13 12 21" width="16" height="16"><path fill-rule="evenodd" d="M26.252 27.266l-2.078 7.592c-.052.19-.296.19-.348 0l-2.078-7.592h4.504zM29.512 14c.268 0 .488.241.488.536v1.746a.554.554 0 01-.255.47l-1.698 1.193v4.009l1.787 1.257-.034.006c.128.107.2.264.199.43v1.744c0 .296-.22.537-.488.537H18.488c-.268 0-.488-.241-.488-.537v-1.743a.555.555 0 01.255-.47l1.698-1.195v-4.008l-1.787-1.258.034-.006a.554.554 0 01-.199-.43v-1.745c0-.295.22-.536.488-.536h11.023z"></path></svg>{PinnedPostLabel}</span>{/block:PinnedPostLabel}{block:HasTags}{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}{/block:HasTags}</section>{block:Date}
-                    <footer>
-                        <a class="note-count" href="{Permalink}#notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</a>
+                    <footer>{block:NoteCount}
+                        <a class="note-count" href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+                        <a class="timestamp" href="{Permalink}" title="{lang:Posted TimeAgo}">{ShortMonth} {DayOfMonth}, {Year}</a>
                         <div class="controls">
                             {ReblogButton size="28"}
                             {LikeButton size="28"}

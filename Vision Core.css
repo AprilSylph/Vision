@@ -738,6 +738,12 @@ article footer a {
 
 .note-count {
   font-weight: bold;
+  margin-right: var(--post-padding);
+}
+
+.timestamp {
+  font-size: .875rem;
+  margin-right: auto;
 }
 
 .controls {
