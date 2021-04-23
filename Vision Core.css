@@ -325,6 +325,9 @@ nav a {
 }
 
 #page-number {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
   text-shadow: 0 0 1px rgb(var(--background));
 }
 
