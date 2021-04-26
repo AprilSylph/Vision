@@ -705,14 +705,14 @@ section.tags a.tag:hover {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  color: rgba(var(--accent));
+  color: rgb(var(--accent));
   filter: hue-rotate(-61deg);
   font-weight: bold;
   margin-right: 1ch;
 }
 
 .pinned-post-label svg {
-  fill: rgba(var(--accent));
+  fill: rgb(var(--accent));
   margin-right: 0.5ch;
 }
 
