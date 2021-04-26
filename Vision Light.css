@@ -3,3 +3,16 @@ article {
   --title: 0, 0, 0;
   --accent: 0, 184, 255;
 }
+
+.pinned-post-label {
+  color: #00cf35;
+  filter: none;
+}
+
+.pinned-post-label svg {
+  fill: #00cf35;
+}
+
+.controls .like_button.liked::before {
+  color: #ff492f;
+}
