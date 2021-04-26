@@ -714,7 +714,6 @@ section.tags a.tag:hover {
 .pinned-post-label svg {
   fill: rgba(var(--accent));
   margin-right: 0.5ch;
-  vertical-align: bottom;
 }
 
 
