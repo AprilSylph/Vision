@@ -386,6 +386,9 @@ article {
 /* Post header */
 
 article header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: rgba(var(--title), 0.65);
   font-size: .875rem;
   margin-bottom: var(--post-vertical-spacing);
@@ -398,17 +401,48 @@ article header a {
   white-space: nowrap;
 }
 
-.permalink {
+.post-author-portrait {
+  display: none;
+  height: 3em;
+  width: 3em;
+  border-radius: 3px;
+  margin-right: 1ch;
+}
+
+.post-author-name {
   color: rgb(var(--title));
 }
 
-.reblog-icon::before {
+.post-attribution {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1ch;
+}
+
+.reblog-parent-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reblog-parent-name:first-child {
+  margin-left: -5px;
+}
+
+.reblog-parent-name::before {
   content: "\EA09";
   font-size: 1.5rem;
   font-weight: normal;
   font-family: "optica-icons";
-  line-height: 1rem;
-  vertical-align: sub;
+  line-height: .875rem;
+}
+
+.post-action {
+  color: rgb(var(--background));
+  background-color: rgb(var(--accent));
+  padding: 0.5ch 1ch;
+  border-radius: 3px;
+  margin-left: auto;
 }
 
 /* Post legacy media */

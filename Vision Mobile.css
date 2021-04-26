@@ -9,3 +9,15 @@
 #pagination {
   padding: 0 var(--post-padding);
 }
+
+.post-author-portrait:not([hidden]) {
+  display: unset;
+}
+
+.post-attribution {
+  flex-direction: column;
+}
+
+.reblog-parent-name {
+  margin-left: -5px;
+}
