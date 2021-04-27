@@ -971,9 +971,11 @@ aside.secondary a[target="_blank"]::after {
   position: fixed;
   right: 5px;
   bottom: 5px;
+  z-index: -1;
   display: flex;
   flex-direction: row;
   align-items: center;
+  line-height: 1;
   padding: 1ch;
   border-radius: calc(1em + 2ch);
 }
@@ -990,10 +992,4 @@ aside.secondary a[target="_blank"]::after {
 
 #credit:not(:hover) span {
   display: none;
-}
-
-@media (max-width: /* --post-width + (--post-margin * 2) + 32px = */ 592px) {
-  #credit {
-    display: none;
-  }
 }
