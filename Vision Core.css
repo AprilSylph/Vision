@@ -636,41 +636,30 @@ article.post div.npf_row {
 
 /* Reblog trail */
 
-section.body .reblog .user {
-  margin: 10px 0;
-}
-
-section.body .reblog .user a {
-  color: rgb(var(--title));
-  text-decoration: none;
-}
-
-section.body .reblog .user + * {
-  margin-top: 10px;
-}
-
-section.body .reblog .user .avatar {
-  height: 25px;
-  vertical-align: middle;
-  border-radius: 2px;
-}
-
-section.body .reblog .user .username {
-  font-size: .875rem;
-  vertical-align: middle;
-}
-
-section.body .reblog:hover .user .username.deactivated::after {
-  content: "deactivated";
-  opacity: 0.5;
-  margin-left: 1ch;
-}
-
-section.body .reblog + .reblog {
+.trail-item {
+  padding-top: var(--post-vertical-spacing);
   border-top: 1px solid rgba(var(--title), .13);
+  margin-top: var(--post-vertical-spacing);
 }
 
-section.body .reblog + .original {
+.trail-blog {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(var(--title));
+  font-size: .875rem;
+  text-decoration: none;
+  margin-bottom: var(--post-vertical-spacing);
+}
+
+.trail-blog .avatar {
+  height: 25px;
+  width: 25px;
+  border-radius: 3px;
+  margin-right: 1ch;
+}
+
+.trail-item + .post-content {
   display: none;
 }
 
