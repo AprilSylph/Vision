@@ -580,6 +580,12 @@ article figure {
   margin: 0 0 4px;
 }
 
+figure.tmblr-full, div.npf_row {
+  max-width: calc(100% + (var(--post-padding) * 2));
+  margin-left: calc(0px - var(--post-padding));
+  margin-right: calc(0px - var(--post-padding));
+}
+
 figure img {
   display: block;
   height: auto;
@@ -589,11 +595,6 @@ figure.tmblr-full img {
   width: 100%;
 }
 
-article.post div.npf_row {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .tmblr-lightbox .lightbox-image {
   max-width: none;
 }
@@ -601,6 +602,7 @@ article.post div.npf_row {
 .tmblr-attribution {
   display: flex;
   justify-content: flex-end;
+  padding: 0 var(--post-padding);
   margin-top: .5rem;
 }
 
