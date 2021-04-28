@@ -498,6 +498,10 @@ article.chat section.body {
   display: none;
 }
 
+article.audio section.media {
+  padding: 0;
+}
+
 iframe.tumblr_audio_player {
   max-height: 85px;
 }
