@@ -155,6 +155,7 @@ aside > section {
   background-color: rgb(var(--background));
   padding-bottom: var(--sidebar-padding);
   border-radius: 3px;
+  box-shadow: 0 0 1px rgba(var(--title), .13);
   overflow: hidden;
 }
 
@@ -381,6 +382,7 @@ article {
   padding: var(--post-vertical-spacing) var(--post-padding);
   margin-top: var(--post-margin);
   border-radius: 3px;
+  box-shadow: 0 0 1px rgba(var(--title), .13);
 }
 
 /* Post header */
@@ -665,7 +667,7 @@ section.body .reblog:hover .user .username.deactivated::after {
 }
 
 section.body .reblog + .reblog {
-  border-top: 1px solid rgba(var(--title), 0.1);
+  border-top: 1px solid rgba(var(--title), .13);
 }
 
 section.body .reblog + .original {
