@@ -379,7 +379,7 @@ article {
   color: rgb(var(--title));
   background-color: rgb(var(--background));
   word-wrap: break-word;
-  padding: var(--post-vertical-spacing) var(--post-padding);
+  padding: var(--post-vertical-spacing) 0;
   margin-top: var(--post-margin);
   border-radius: 3px;
   box-shadow: 0 0 1px rgba(var(--title), .13);
@@ -393,6 +393,7 @@ article header {
   align-items: center;
   color: rgba(var(--title), 0.65);
   font-size: .875rem;
+  padding: 0 var(--post-padding);
   margin-bottom: var(--post-vertical-spacing);
 }
 
@@ -448,6 +449,10 @@ article header a {
 }
 
 /* Post legacy media */
+
+article section.media {
+  padding: 0 var(--post-padding);
+}
 
 article section.media:first-child:not(:empty) {
   margin-top: -15px;
@@ -637,7 +642,6 @@ article.post div.npf_row {
 /* Reblog trail */
 
 .trail-item {
-  padding-top: var(--post-vertical-spacing);
   border-top: 1px solid rgba(var(--title), .13);
   margin-top: var(--post-vertical-spacing);
 }
@@ -649,7 +653,8 @@ article.post div.npf_row {
   color: rgb(var(--title));
   font-size: .875rem;
   text-decoration: none;
-  margin-bottom: var(--post-vertical-spacing);
+  padding: 0 var(--post-padding);
+  margin: var(--post-vertical-spacing) 0;
 }
 
 .trail-blog .avatar {
@@ -657,6 +662,10 @@ article.post div.npf_row {
   width: 25px;
   border-radius: 3px;
   margin-right: 1ch;
+}
+
+.trail-content, .post-content {
+  padding: 0 var(--post-padding);
 }
 
 .trail-item + .post-content {
@@ -667,6 +676,7 @@ article.post div.npf_row {
 
 section.source {
   color: rgba(var(--title), 0.65);
+  padding: 0 var(--post-padding);
   margin-top: .625rem;
 }
 
@@ -683,6 +693,7 @@ section.source a:hover {
 
 section.submitter {
   color: rgba(var(--title), 0.65);
+  padding: 0 var(--post-padding);
   margin-top: .625rem;
 }
 
@@ -702,6 +713,7 @@ section.tags {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 0 var(--post-padding);
   margin-top: .625rem;
 }
 
@@ -751,6 +763,7 @@ article footer {
   align-items: center;
   min-height: 28px;
   color: rgba(var(--title), 0.65);
+  padding: 0 var(--post-padding);
   margin-top: .75rem;
 }
 
