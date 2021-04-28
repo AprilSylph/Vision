@@ -856,14 +856,19 @@ article footer a {
 /* Notes */
 
 #notes {
+  max-height: 75vh;
   color: rgb(var(--title));
   background-color: rgb(var(--background));
   border-radius: 3px;
   margin-top: var(--post-margin);
   box-shadow: 0 0 1px rgba(var(--title), .13);
+  overflow: auto;
 }
 
 #notes > h3 {
+  position: sticky;
+  top: 0;
+  background-color: inherit;
   font-size: 1rem;
   text-align: center;
   padding: var(--post-vertical-spacing) var(--post-padding);
