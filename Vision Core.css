@@ -822,21 +822,31 @@ article footer a {
 /* Notes */
 
 #notes {
-  width: 100%;
-  max-height: 75vh;
-  font-size: .875rem;
-  margin-top: var(--post-vertical-spacing);
-  overflow-x: hidden;
-  overflow-y: auto;
+  color: rgb(var(--title));
+  background-color: rgb(var(--background));
+  border-radius: 3px;
+  margin-top: var(--post-margin);
+  box-shadow: 0 0 1px rgba(var(--title), .13);
+}
+
+#notes > h3 {
+  font-size: 1rem;
+  text-align: center;
+  padding: var(--post-vertical-spacing) var(--post-padding);
+  border-bottom: 1px solid rgba(var(--title), .13);
+  margin: 0;
 }
 
 ol.notes {
   display: flex;
   flex-direction: column-reverse;
+  align-items: stretch;
+  list-style-type: none;
   color: rgba(var(--title), 0.65);
+  background-color: rgba(var(--title), .07);
+  font-size: .875rem;
   padding: 0;
   margin: 0;
-  list-style-type: none;
 }
 
 ol.notes a {
@@ -847,11 +857,7 @@ ol.notes a {
 
 li.note {
   flex: none;
-  padding: 5px 0;
-}
-
-li.note:not(.more_notes_link_container) {
-  max-width: 465px;
+  padding: 1ch 1.5ch;
 }
 
 li.note a.more_notes_link {
@@ -860,14 +866,18 @@ li.note a.more_notes_link {
 
 li.note .avatar_frame {
   display: inline-block;
-  height: 16px;
-  width: 16px;
-  vertical-align: bottom;
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
   margin-right: 1ch;
 }
 
 li.note .avatar {
   border-radius: 2px;
+}
+
+li.note span.action {
+  vertical-align: middle;
 }
 
 li.note span.action a:first-of-type {
@@ -882,7 +892,7 @@ li.note blockquote,
 li.note .answer_content {
   padding-left: 10px;
   border-left: 3px solid rgba(var(--title), .25);
-  margin: 10px calc(16px + 1ch) 5px;
+  margin: 10px calc(1.5rem + 1ch) 5px;
 }
 
 li.note blockquote a,

@@ -2,8 +2,8 @@
 {block:Options}
     <meta name="image:Background" content="">
     <meta name="select:Posts palette" content="data:text/css," title="Themed">
-    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/iiTqs6bkx/vision_light.css" title="Light">
-    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/Mfiqs6bl2/vision_dark.css" title="Dark">
+    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/zGPqs9xyu/vision_light.css" title="Light">
+    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/YZ6qs9xyx/vision_dark.css" title="Dark">
     <meta name="if:Show post authors" content="0">
     <meta name="if:Show group members" content="0">
     <meta name="if:Show Twitter username" content="0">
@@ -23,7 +23,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/BHBqs8u0k/vision_core.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/VvSqs9yf7/vision_core.css">
         <link rel="stylesheet" href="{select:Posts palette}">
         <link rel="stylesheet" media="(max-width: 540px)" href="https://static.tumblr.com/2wliono/uuJqs6e9m/vision_mobile.css">
         <link rel="stylesheet" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
@@ -194,10 +194,7 @@
                             {ReblogButton size="28"}
                             {LikeButton size="28"}
                         </div>
-                    </footer>{/block:Date}{block:PostNotes}
-                    <section id="notes">
-                        {PostNotes-16}
-                    </section>{/block:PostNotes}
+                    </footer>{/block:Date}
                 </article>{/block:Posts}{block:IfNotSidebarPagination}{block:Pagination}
                 <div id="pagination">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
@@ -211,7 +208,11 @@
                 <div id="pagination">
                     <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
                     <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
-                </div>{/block:DayPagination}{/block:IfNotSidebarPagination}
+                </div>{/block:DayPagination}{/block:IfNotSidebarPagination}{block:PostNotes}
+                <div id="notes">
+                    <h3>{block:Posts}{NoteCountWithLabel}{/block:Posts}</h3>
+                    {PostNotes-64}
+                </div>{/block:PostNotes}
             </main>
             <aside class="secondary">{block:IfShowGroupMembers}{block:GroupMembers}
                 <section id="group-members">
