@@ -23,7 +23,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/xoAqsa1b3/vision_core.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/xT6qsa2kt/vision_core.css">
         <link rel="stylesheet" href="{select:Posts palette}">
         <link rel="stylesheet" media="(max-width: 540px)" href="https://static.tumblr.com/2wliono/uuJqs6e9m/vision_mobile.css">
         <link rel="stylesheet" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
@@ -114,9 +114,8 @@
                     <section class="media">{block:Text}{block:Title}
                         <h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
                         <figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
-                            {LinkOpenTag}
-                                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-                            {LinkCloseTag}
+                            <a href="/image/{PostID}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{block:LinkURL}
+                            <a class="link-url" href="{LinkURL}" {Target}>{LinkURL}</a>{/block:LinkURL}
                         </figure>{/block:Photo}{block:Panorama}
                         <figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
                             {LinkOpenTag}

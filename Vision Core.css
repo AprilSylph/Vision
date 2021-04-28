@@ -466,6 +466,23 @@ article.photo section.media img {
   margin: auto;
 }
 
+article.photo section.media .link-url {
+  display: block;
+  height: 1.5rem;
+  color: rgba(var(--title), .4);
+  background-color: rgba(var(--title), .07);
+  font-size: .875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  padding: 0 var(--post-padding);
+}
+
+article.photo section.media .link-url:hover {
+  color: rgb(var(--accent));
+}
+
 article.quote p.npf_quote[data-quote-length="short"] {
   font-size: 2.125rem;
 }
