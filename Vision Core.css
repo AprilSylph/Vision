@@ -329,13 +329,6 @@ nav a {
   margin-top: var(--post-margin);
 }
 
-#page-number {
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
-  text-shadow: 0 0 1px rgb(var(--background));
-}
-
 #previous-link, #next-link {
   padding: 1ch;
   line-height: 1;
