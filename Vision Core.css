@@ -612,7 +612,8 @@ figure img {
   height: auto;
 }
 
-figure.tmblr-full img {
+figure.tmblr-full img,
+figure.tmblr-full audio {
   width: 100%;
 }
 
