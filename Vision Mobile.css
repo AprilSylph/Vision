@@ -21,3 +21,7 @@
 .reblog-parent-name {
   margin-left: -5px;
 }
+
+#credit {
+  display: none;
+}

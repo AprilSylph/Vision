@@ -1033,7 +1033,6 @@ aside.secondary a[target="_blank"]::after {
   position: fixed;
   right: 5px;
   bottom: 5px;
-  z-index: -1;
   display: flex;
   flex-direction: row;
   align-items: center;
