@@ -453,6 +453,10 @@ article section.media {
   padding: 0 var(--post-padding);
 }
 
+article.photo section.media figure.tmblr-full {
+  margin-bottom: 0;
+}
+
 article.photo section.media img {
   margin: auto;
 }
