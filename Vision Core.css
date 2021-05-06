@@ -474,6 +474,12 @@ article.photo section.media .link-url:hover {
   color: rgb(var(--accent));
 }
 
+article.photo section.media .html_photoset {
+  max-width: calc(100% + (var(--post-padding) * 2));
+  margin-left: calc(0px - var(--post-padding));
+  margin-right: calc(0px - var(--post-padding));
+}
+
 article.quote p.npf_quote[data-quote-length="short"] {
   font-size: 2.125rem;
 }
@@ -491,12 +497,17 @@ article.chat section.body {
   display: none;
 }
 
-article.audio section.media {
+article.audio section.media,
+article.video section.media {
   padding: 0;
 }
 
 iframe.tumblr_audio_player {
   max-height: 85px;
+}
+
+iframe.tumblr_video_iframe {
+  width: 100%;
 }
 
 .ask-item {
