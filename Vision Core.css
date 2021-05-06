@@ -670,6 +670,10 @@ figure.tmblr-full audio {
   margin-top: var(--post-vertical-spacing);
 }
 
+.trail-item:first-child {
+  margin-top: 0;
+}
+
 .trail-blog {
   display: flex;
   flex-direction: row;
