@@ -2,14 +2,15 @@
 {block:Options}
     <meta name="image:Background" content="">
     <meta name="select:Posts palette" content="data:text/css," title="Themed">
-    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/zGPqs9xyu/vision_light.css" title="Light">
-    <meta name="select:Posts palette" content="https://static.tumblr.com/2wliono/YZ6qs9xyx/vision_dark.css" title="Dark">
+    <meta name="select:Posts palette" content="https://static.tumblr.com/w0daeoc/e7Nqsr4qj/vision_light.css" title="Light">
+    <meta name="select:Posts palette" content="https://static.tumblr.com/w0daeoc/2keqsr4qm/vision_dark.css" title="Dark">
     <meta name="if:Show post authors" content="0">
     <meta name="if:Show group members" content="0">
     <meta name="if:Show Twitter username" content="0">
     <meta name="if:Show RSS link" content="0">
     <meta name="if:Sidebar Pagination" content="0">
     <meta name="text:Widget Code" content="">
+    <meta name='text:Disqus Shortname' content="">
 {/block:Options}
 <html lang="{block:English}en-US{/block:English}{block:German}de-DE{/block:German}{block:French}fr-FR{/block:French}{block:Italian}it-IT{/block:Italian}{block:Japanese}ja-JP{/block:Japanese}{block:Turkish}tr-TR{/block:Turkish}{block:Spanish}es-ES{/block:Spanish}{block:Russian}ru-RU{/block:Russian}{block:Polish}pl-PL{/block:Polish}{block:PortuguesePT}pt-PT{/block:PortuguesePT}{block:PortugueseBR}pt-BR{/block:PortugueseBR}{block:Dutch}nl-NL{/block:Dutch}{block:Korean}ko-KR{/block:Korean}{block:ChineseSimplified}zh-CN{/block:ChineseSimplified}{block:ChineseTraditional}zh-TW{/block:ChineseTraditional}{block:ChineseHK}zh-HK{/block:ChineseHK}{block:Indonesian}id-ID{/block:Indonesian}{block:Hindi}hi-IN{/block:Hindi}">
     <!--Theme: "Vision" by April Sylph-->
@@ -23,7 +24,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/cZhqsr0ic/vision_core.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/7k0qsr5br/vision_core.css">
         <link rel="stylesheet" href="{select:Posts palette}">
         <link rel="stylesheet" media="(max-width: 540px)" href="https://static.tumblr.com/2wliono/NCgqspc9t/vision_mobile.css">
         <link rel="stylesheet" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
@@ -32,6 +33,9 @@
             <style>
                 #search {
                     visibility: visible !important;
+                }
+                #comments {
+                    display: none;
                 }
             </style>
         </noscript>
@@ -207,7 +211,18 @@
                 <div id="notes">
                     <h3>{block:Posts}{NoteCountWithLabel}{/block:Posts}</h3>
                     <div id="notes-scroller">{PostNotes-64}</div>
-                </div>{/block:PostNotes}
+                </div>{/block:PostNotes}{block:PermalinkPage}{block:IfDisqusShortname}
+                <div id="comments">
+                    <h3>{lang:Blog comments powered by Disqus}</h3>
+                    <div id="disqus_thread"></div>
+                    <script>
+                        document.documentElement.appendChild(Object.assign(document.createElement('script'), {
+                            async: true,
+                            src: '//{text:Disqus Shortname}.disqus.com/embed.js'
+                        }));
+                    </script>
+                    <noscript><a href="https://disqus.com/?ref_noscript={text:Disqus Shortname}">{lang:Blog comments powered by Disqus}</a></noscript>
+                </div>{/block:IfDisqusShortname}{/block:PermalinkPage}
             </main>
             <aside class="secondary">{block:IfShowGroupMembers}{block:GroupMembers}
                 <section id="group-members">

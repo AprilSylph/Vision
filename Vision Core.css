@@ -970,6 +970,36 @@ li.note .retags {
   margin-bottom: 0;
 }
 
+/* Disqus comments */
+
+#comments {
+  color: rgb(var(--title));
+  background-color: rgb(var(--background));
+  border-radius: 3px;
+  margin-top: var(--post-margin);
+  box-shadow: 0 0 1px rgba(var(--title), .13);
+  overflow: hidden;
+}
+
+#comments > h3 {
+  background-color: inherit;
+  font-size: 1rem;
+  text-align: center;
+  padding: var(--post-vertical-spacing) var(--post-padding);
+  border-bottom: 1px solid rgba(var(--title), .13);
+  margin: 0;
+}
+
+#disqus_recommendations, #disqus_thread {
+  background-color: white;
+  padding: 0 var(--post-padding);
+  margin: 0 !important;
+}
+
+#disqus_recommendations {
+  padding-top: var(--post-vertical-spacing);
+}
+
 /* Secondary sidebar */
 
 aside.secondary section {
