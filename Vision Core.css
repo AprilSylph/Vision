@@ -869,18 +869,15 @@ article footer a {
 /* Notes */
 
 #notes {
-  max-height: 75vh;
   color: rgb(var(--title));
   background-color: rgb(var(--background));
   border-radius: 3px;
   margin-top: var(--post-margin);
   box-shadow: 0 0 1px rgba(var(--title), .13);
-  overflow: auto;
+  overflow: hidden;
 }
 
 #notes > h3 {
-  position: sticky;
-  top: 0;
   background-color: inherit;
   font-size: 1rem;
   text-align: center;
@@ -889,13 +886,20 @@ article footer a {
   margin: 0;
 }
 
+#notes-scroller {
+  color: rgba(var(--title), 0.65);
+  background-color: rgba(var(--title), .07);
+  max-height: 75vh;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--title),.4) rgba(var(--background),.1);
+}
+
 ol.notes {
   display: flex;
   flex-direction: column-reverse;
   align-items: stretch;
   list-style-type: none;
-  color: rgba(var(--title), 0.65);
-  background-color: rgba(var(--title), .07);
   font-size: .875rem;
   padding: 0;
   margin: 0;
@@ -912,8 +916,16 @@ li.note {
   padding: 1ch 1.5ch;
 }
 
+li.note.more_notes_link_container {
+  font-size: 1rem;
+}
+
 li.note a.more_notes_link {
   color: rgb(var(--accent));
+}
+
+li.note span.notes_loading {
+  user-select: none;
 }
 
 li.note .avatar_frame {
