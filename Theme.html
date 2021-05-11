@@ -8,7 +8,6 @@
     <meta name="if:Show group members" content="0">
     <meta name="if:Show Twitter username" content="0">
     <meta name="if:Show RSS link" content="0">
-    <meta name="if:Sidebar Pagination" content="0">
     <meta name="text:Widget Code" content="">
     <meta name="text:Disqus Shortname" content="">
 {/block:Options}
@@ -83,19 +82,7 @@
                         <a href="/likes">{lang:Likes}</a>{/block:Likes}{block:HasPages}{block:Pages}
                         <a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
                     </nav>
-                </section>{block:IfSidebarPagination}{block:Pagination}
-                <section id="pagination">
-                    <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
-                    <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
-                </section>{/block:Pagination}{block:PermalinkPagination}
-                <section id="pagination">
-                    <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
-                    <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
-                </section>{/block:PermalinkPagination}{block:DayPagination}
-                <section id="pagination">
-                    <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
-                    <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
-                </section>{/block:DayPagination}{/block:IfSidebarPagination}{block:IfWidgetCode}
+                </section>{block:IfWidgetCode}
                 <section id="widget">
                     {text:Widget Code}
                 </section>{/block:IfWidgetCode}
@@ -195,7 +182,7 @@
                             {LikeButton size="28"}
                         </div>
                     </footer>{/block:Date}
-                </article>{/block:Posts}{block:IfNotSidebarPagination}{block:Pagination}
+                </article>{/block:Posts}{block:Pagination}
                 <div id="pagination">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
                     <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
@@ -207,7 +194,7 @@
                 <div id="pagination">
                     <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
                     <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
-                </div>{/block:DayPagination}{/block:IfNotSidebarPagination}{block:PostNotes}
+                </div>{/block:DayPagination}{block:PostNotes}
                 <div id="notes">
                     <h3>{block:Posts}{NoteCountWithLabel}{/block:Posts}</h3>
                     <div id="notes-scroller">{PostNotes-64}</div>
