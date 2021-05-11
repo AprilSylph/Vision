@@ -20,13 +20,33 @@ For group blogs, if the blog has "Show author portraits" enabled in its blog set
 
 Replaces the generated page background colour with an image of your choice.
 
-**Theme options: Font**
+**Theme options: Posts palette**
 
-Selects the page font.
+Selects which colour scheme to use for posts.
+
+**Theme options: Show post authors**
+
+Toggle showing post author usernames on posts. Does not affect reblog attribution.
+
+**Theme options: Show group members**
+
+Toggle listing a sideblog's members in the secondary sidebar.
+
+**Theme options: Show Twitter username**
+
+Toggle listing a link to your Twitter profile in the secondary sidebar.
+
+**Theme options: Show RSS link**
+
+Toggle listing a link to your blog's RSS feed in the secondary sidebar.
 
 **Theme options: Widget Code**
 
-Inserts any HTML you like into the bottom of the sidebar.
+Inserts any HTML you like into the bottom of the main sidebar.
+
+**Theme options: Disqus Shortname**
+
+Your [disqus.com](https://disqus.com/) shortname to enable comments on posts.
 
 **Advanced: Use default mobile theme**
 
