@@ -36,26 +36,25 @@ ol,
   margin: var(--post-vertical-spacing) 0;
 }
 
-small {
-  font-size: small;
-}
+iframe { display: block; }
+small { font-size: small; }
 
 a {
   color: rgb(var(--accent));
   text-decoration: none;
 }
 
-pre {
-  overflow-x: scroll;
-}
-
-iframe {
-  display: block;
-}
-
 blockquote {
   padding-left: var(--post-padding);
   border-left: 3px solid rgba(var(--title), 0.5);
+}
+
+pre {
+  overflow-x: scroll;
+  padding: 1ch;
+
+  background-color: rgba(var(--title), 0.1);
+  line-height: normal;
 }
 
 hr {
