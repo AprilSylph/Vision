@@ -249,5 +249,10 @@
         if (robots === null || robots.content !== 'noindex') {
             search.classList.add('search-enabled');
         }
+
+        [...document.querySelectorAll('iframe.photoset')].forEach(iframe => {
+            iframe.removeAttribute('onload');
+            iframe.style.height = '';
+        });
     </script>
 </html>
