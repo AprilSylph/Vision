@@ -182,19 +182,7 @@
                             {LikeButton size="28"}
                         </div>
                     </footer>{/block:Date}
-                </article>{/block:Posts}{block:Pagination}
-                <div id="pagination">
-                    <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
-                    <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
-                </div>{/block:Pagination}{block:PermalinkPagination}
-                <div id="pagination">
-                    <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
-                    <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
-                </div>{/block:PermalinkPagination}{block:DayPagination}
-                <div id="pagination">
-                    <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
-                    <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
-                </div>{/block:DayPagination}{block:PostNotes}
+                </article>{/block:Posts}{block:PostNotes}
                 <div id="notes">
                     <h3>{block:Posts}{NoteCountWithLabel}{/block:Posts}</h3>
                     <div id="notes-scroller">{PostNotes-64}</div>
@@ -209,7 +197,19 @@
                         }));
                     </script>
                     <noscript><a href="https://disqus.com/?ref_noscript={text:Disqus Shortname}">{lang:Blog comments powered by Disqus}</a></noscript>
-                </div>{/block:IfDisqusShortname}{/block:PermalinkPage}
+                </div>{/block:IfDisqusShortname}{/block:PermalinkPage}{block:Pagination}
+                <div id="pagination">
+                    <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
+                    <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
+                </div>{/block:Pagination}{block:PermalinkPagination}
+                <div id="pagination">
+                    <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
+                    <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
+                </div>{/block:PermalinkPagination}{block:DayPagination}
+                <div id="pagination">
+                    <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
+                    <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
+                </div>{/block:DayPagination}
             </main>
             <aside class="secondary">{block:IfShowGroupMembers}{block:GroupMembers}
                 <section id="group-members">
