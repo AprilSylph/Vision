@@ -21,7 +21,18 @@
   max-width: 100%;
 }
 
-p, h2, h1, blockquote, ul, ol, #ask_form, #submit_form {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+ol,
+#ask_form,
+#submit_form {
   margin: var(--post-vertical-spacing) 0;
 }
 
@@ -329,7 +340,8 @@ nav a {
   margin-top: var(--post-margin);
 }
 
-#previous-link, #next-link {
+#previous-link,
+#next-link {
   padding: 1ch;
   line-height: 1;
   color: rgb(var(--background));
@@ -351,7 +363,8 @@ nav a {
   margin-left: 1ch;
 }
 
-#previous-link::before, #next-link::after {
+#previous-link::before,
+#next-link::after {
   font-family: "optica-icons";
   content: "\EA01";
   display: inline-block;
@@ -554,7 +567,6 @@ article h5,
 article h6 {
   font-size: 1rem;
   font-weight: normal;
-  margin: var(--post-vertical-spacing) 0;
 }
 
 article h2 {
@@ -616,7 +628,8 @@ article figure {
   margin: 0 0 4px;
 }
 
-figure.tmblr-full, div.npf_row {
+figure.tmblr-full,
+div.npf_row {
   max-width: calc(100% + (var(--post-padding) * 2));
   margin-left: calc(0px - var(--post-padding));
   margin-right: calc(0px - var(--post-padding));
@@ -990,7 +1003,8 @@ li.note .retags {
   margin: 0;
 }
 
-#disqus_recommendations, #disqus_thread {
+#disqus_recommendations,
+#disqus_thread {
   background-color: white;
   padding: 0 var(--post-padding);
   margin: 0 !important;
