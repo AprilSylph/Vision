@@ -1,58 +1,43 @@
-# Vision
 A modern Tumblr theme designed to be familiar.
 
-## Features
+# Features
 
-- Single column of posts
-- Left-hand sidebar for blog info
-- Obeys all global appearance options
-- Looks great on both desktop and mobile
-- Modern reblog layout and post buttons
-- Chronological post notes
+- Dashboard-like posts to make you feel right at home
+- Synchronises with your global appearance settings
+- Responsive layout makes the best use of any screen size
+- Chronological post notes 
 
-## Usage
+# Usage
 
-**Group blog control**
+Most of _Vision_ is configured via your blog's "Appearance options", which also synchronise across the dashboard and mobile apps. If you're not interested in any extra bells or whistles, the process of setting up this theme ends at the "Install" button.
 
-For group blogs, if the blog has "Show author portraits" enabled in its blog settings (not configurable from the Edit Theme page), _Vision_ will display posts as belonging to the individual group members. Otherwise, the group blog's name is shown on posts.
+## Theme options
 
-**Theme options: Background Image**
+**Background Image**: Use any backdrop you like for your blog.
 
-Replaces the generated page background colour with an image of your choice.
+**Posts palette**: Themed, Light, or Dark; whichever fits best.
 
-**Theme options: Posts palette**
+**Show post authors**: Show post author usernames on posts.
 
-Selects which colour scheme to use for posts.
+**Show group members**: List a sideblog's member(s) automatically.
 
-**Theme options: Show post authors**
+**Show Twitter username**: Link to your Twitter profile easily.
 
-Toggle showing post author usernames on posts. Does not affect reblog attribution.
+**Show RSS link**: Encourage your readers to subscribe via RSS.
 
-**Theme options: Show group members**
+**Widget Code**: Insert any HTML you like below your blog card.
 
-Toggle listing a sideblog's members in the secondary sidebar.
+**Disqus Shortname**: Enable [Disqus](https://disqus.com/) comments on posts with no hassle.
 
-**Theme options: Show Twitter username**
+## Advanced options
 
-Toggle listing a link to your Twitter profile in the secondary sidebar.
+**Use default mobile theme**: Disable this option to show _Vision_ to visitors on mobile devices.
 
-**Theme options: Show RSS link**
+## Blog Settings
 
-Toggle listing a link to your blog's RSS feed in the secondary sidebar.
+**Show author portraits**: Enable to credit posts to individual group members, rather than the blog itself.
 
-**Theme options: Widget Code**
+# Credit
 
-Inserts any HTML you like into the bottom of the main sidebar.
-
-**Theme options: Disqus Shortname**
-
-Your [disqus.com](https://disqus.com/) shortname to enable comments on posts.
-
-**Advanced: Use default mobile theme**
-
-Disable this option to show _Vision_ to visitors on mobile devices.
-
-## Credit
-
-- Numerous design aspects taken from [the Tumblr dashboard](https://www.tumblr.com/dashboard)
-- Name inspiration from [Tumblr Official](https://www.tumblr.com/theme/37310)'s previous name, "Optica"
+- Most design aspects inspired directly by [the Tumblr dashboard](https://www.tumblr.com/dashboard)
+- Name inspiration taken from [Tumblr Official](https://www.tumblr.com/theme/37310)'s previous name, "Optica"
