@@ -74,7 +74,7 @@
                     <div id="top-photos" aria-label="{lang:Top Photos}">{block:HighlightedPosts}
                         <a href="{Permalink}"><img src="{PhotoURL-250}" alt="{PostType}"></a>{/block:HighlightedPosts}
                     </div>{/block:HasHighlightedPosts}
-                    <nav>
+                    <nav aria-label="{lang:Navigate}">
                         <a href="/">{lang:Home}</a>{block:AskEnabled}
                         <a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}
                         <a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
@@ -198,15 +198,15 @@
                     </script>
                     <noscript><a href="https://disqus.com/?ref_noscript={text:Disqus Shortname}">{lang:Blog comments powered by Disqus}</a></noscript>
                 </div>{/block:IfDisqusShortname}{/block:PermalinkPage}{block:Pagination}
-                <div id="pagination" role="navigation">
+                <div id="pagination" role="navigation" aria-label="{lang:Pages}">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
                     <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
                 </div>{/block:Pagination}{block:PermalinkPagination}
-                <div id="pagination" role="navigation">
+                <div id="pagination" role="navigation" aria-label="{lang:Pages}">
                     <a id="previous-link" {block:PreviousPost} href="{PreviousPost}" {/block:PreviousPost}>{lang:Previous post}</a>
                     <a id="next-link" {block:NextPost} href="{NextPost}" {/block:NextPost}>{lang:Next post}</a>
                 </div>{/block:PermalinkPagination}{block:DayPagination}
-                <div id="pagination" role="navigation">
+                <div id="pagination" role="navigation" aria-label="{lang:Pages}">
                     <a id="previous-link" {block:PreviousDayPage} href="{PreviousDayPage}" {/block:PreviousDayPage}>{lang:Previous day}</a>
                     <a id="next-link" {block:NextDayPage} href="{NextDayPage}" {/block:NextDayPage}>{lang:Next day}</a>
                 </div>{/block:DayPagination}
