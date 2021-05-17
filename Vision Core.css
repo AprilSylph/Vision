@@ -669,10 +669,13 @@ figure.tmblr-full audio {
 }
 
 .tmblr-attribution {
+  margin-top: .5rem;
+}
+
+figure.tmblr-full .tmblr-attribution {
   display: flex;
   justify-content: flex-end;
   padding: 0 var(--post-padding);
-  margin-top: .5rem;
 }
 
 .tmblr-attribution a {
