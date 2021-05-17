@@ -66,13 +66,13 @@
                         <input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
                     </form>
                     <a href="{BlogURL}">{block:ShowHeaderImage}
-                        <img id="header" src="{HeaderImage}" class="{block:NoStretchHeaderImage}no-{/block:NoStretchHeaderImage}stretch">{/block:ShowHeaderImage}{block:ShowAvatar}
-                        <img id="avatar" src="{PortraitURL-64}" class="{AvatarShape}">{/block:ShowAvatar}{block:ShowTitle}
+                        <img id="header" src="{HeaderImage}" class="{block:NoStretchHeaderImage}no-{/block:NoStretchHeaderImage}stretch" aria-hidden="true">{/block:ShowHeaderImage}{block:ShowAvatar}
+                        <img id="avatar" src="{PortraitURL-64}" class="{AvatarShape}" aria-hidden="true">{/block:ShowAvatar}{block:ShowTitle}
                         <h1 id="title">{Title}</h1>{/block:ShowTitle}
                     </a>{block:ShowDescription}
                     <div id="description">{Description}</div>{/block:ShowDescription}{block:HasHighlightedPosts}
                     <div id="top-photos" aria-label="{lang:Top Photos}">{block:HighlightedPosts}
-                        <a href="{Permalink}"><img src="{PhotoURL-250}"></a>{/block:HighlightedPosts}
+                        <a href="{Permalink}"><img src="{PhotoURL-250}" alt="{PostType}"></a>{/block:HighlightedPosts}
                     </div>{/block:HasHighlightedPosts}
                     <nav>
                         <a href="/">{lang:Home}</a>{block:AskEnabled}
@@ -94,7 +94,7 @@
                 <h3>{lang:This minimalist Tumblr has no posts}</h3>{/block:NoPosts}{block:Posts inlineMediaWidth="540"}
                 <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post">{block:Date}
                     <header>{block:IfShowPostAuthors}
-                        <img class="post-author-portrait" src="{PostAuthorPortraitURL-64}" alt="" aria-hidden="true" {block:Submission}hidden{/block:Submission}>{/block:IfShowPostAuthors}
+                        <img class="post-author-portrait" src="{PostAuthorPortraitURL-64}" aria-hidden="true" {block:Submission}hidden{/block:Submission}>{/block:IfShowPostAuthors}
                         <div class="post-attribution">{block:IfShowPostAuthors}
                             <a class="post-author-name" href="{PostAuthorURL}" {Target} title="{PostAuthorTitle}" aria-label="{lang:Posted by PostAuthorName}" {block:Submission}hidden{/block:Submission}>{PostAuthorName}</a>{/block:IfShowPostAuthors}{block:RebloggedFrom}
                             <a class="reblog-parent-name" href="{ReblogParentURL}" {Target} title="{ReblogParentTitle}" aria-label="{lang:Reblogged from ReblogParentName}">{ReblogParentName}</a>{/block:RebloggedFrom}
@@ -138,20 +138,20 @@
                                 <span class="user">{lang:Asker asked 2}:</span>
                                 <blockquote>{Question}</blockquote>
                             </div>
-                            <img class="avatar" src="{AskerPortraitURL-40}" alt="">
+                            <img class="avatar" src="{AskerPortraitURL-40}" aria-hidden="true">
                         </div>{block:Answerer}
                         <div class="ask-item">
                             <div>
                                 <span class="user">{Answerer} answered:</span>
                                 <blockquote>{Answer}</blockquote>
                             </div>
-                            <img class="avatar" src="{AnswererPortraitURL-40}" alt="">
+                            <img class="avatar" src="{AnswererPortraitURL-40}" aria-hidden="true">
                         </div>{/block:Answerer}{/block:Answer}
                     </section>
                     <section class="body">{block:Reblogs}
                         <div class="trail-item">
                             <a class="trail-blog" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink} {Target}>{block:HasAvatar}
-                                <img class="avatar" src="{PortraitURL-64}" alt="">{/block:HasAvatar}
+                                <img class="avatar" src="{PortraitURL-64}" aria-hidden="true">{/block:HasAvatar}
                                 <strong class="username">{Username}</strong>
                             </a>
                             <div class="trail-content">{Body}</div>
@@ -173,7 +173,7 @@
                     <section class="submitter">
                       {block:English}Submitted by <a href="{SubmitterURL}">{Submitter}</a>{/block:English}{block:German}Eingereicht von <a href="{SubmitterURL}">{Submitter}</a>{/block:German}{block:French}Proposé par <a href="{SubmitterURL}">{Submitter}</a>{/block:French}{block:Italian}Postato da <a href="{SubmitterURL}">{Submitter}</a>{/block:Italian}{block:Japanese}送信者: <a href="{SubmitterURL}">{Submitter}</a>{/block:Japanese}{block:Turkish}<a href="{SubmitterURL}">{Submitter}</a> tarafından gönderildi{/block:Turkish}{block:Spanish}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:Spanish}{block:Russian}Отправил(а): <a href="{SubmitterURL}">{Submitter}</a>{/block:Russian}{block:Polish}Przesłane przez <a href="{SubmitterURL}">{Submitter}</a>{/block:Polish}{block:PortuguesePT}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortuguesePT}{block:PortugueseBR}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortugueseBR}{block:Dutch}Bijgedragen door <a href="{SubmitterURL}">{Submitter}</a>{/block:Dutch}{block:Korean}<a href="{SubmitterURL}">{Submitter}</a>님이 제출함{/block:Korean}{block:ChineseSimplified}提交者：<a href="{SubmitterURL}">{Submitter}</a>{/block:ChineseSimplified}{block:ChineseTraditional}由 <a href="{SubmitterURL}">{Submitter}</a> 投稿{/block:ChineseTraditional}{block:ChineseHK}由 <a href="{SubmitterURL}">{Submitter}</a> 提交{/block:ChineseHK}{block:Indonesian}Dikirimkan oleh <a href="{SubmitterURL}">{Submitter}</a>{/block:Indonesian}{block:Hindi}<a href="{SubmitterURL}">{Submitter}</a> ने सबमिट किया{/block:Hindi}
                     </section>{/block:Submission}
-                    <section class="tags">{block:PinnedPostLabel}<span class="pinned-post-label"><svg viewBox="18 13 12 21" width="16" height="16"><path fill-rule="evenodd" d="M26.252 27.266l-2.078 7.592c-.052.19-.296.19-.348 0l-2.078-7.592h4.504zM29.512 14c.268 0 .488.241.488.536v1.746a.554.554 0 01-.255.47l-1.698 1.193v4.009l1.787 1.257-.034.006c.128.107.2.264.199.43v1.744c0 .296-.22.537-.488.537H18.488c-.268 0-.488-.241-.488-.537v-1.743a.555.555 0 01.255-.47l1.698-1.195v-4.008l-1.787-1.258.034-.006a.554.554 0 01-.199-.43v-1.745c0-.295.22-.536.488-.536h11.023z"></path></svg>{PinnedPostLabel}</span>{/block:PinnedPostLabel}{block:HasTags}{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}{/block:HasTags}</section>{block:Date}
+                    <section class="tags">{block:PinnedPostLabel}<span class="pinned-post-label"><svg viewBox="18 13 12 21" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M26.252 27.266l-2.078 7.592c-.052.19-.296.19-.348 0l-2.078-7.592h4.504zM29.512 14c.268 0 .488.241.488.536v1.746a.554.554 0 01-.255.47l-1.698 1.193v4.009l1.787 1.257-.034.006c.128.107.2.264.199.43v1.744c0 .296-.22.537-.488.537H18.488c-.268 0-.488-.241-.488-.537v-1.743a.555.555 0 01.255-.47l1.698-1.195v-4.008l-1.787-1.258.034-.006a.554.554 0 01-.199-.43v-1.745c0-.295.22-.536.488-.536h11.023z"></path></svg>{PinnedPostLabel}</span>{/block:PinnedPostLabel}{block:HasTags}{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}{/block:HasTags}</section>{block:Date}
                     <footer>{block:NoteCount}
                         <a class="note-count" href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
                         <a class="timestamp" href="{Permalink}" title="{lang:Posted TimeAgo}">{ShortMonth} {DayOfMonth}, {Year}</a>
@@ -216,7 +216,7 @@
                     <h1>{lang:Group members}</h1>
                     <ul>{block:GroupMember}
                         <li><a href="{GroupMemberURL}" {Target}>
-                            <img src="{GroupMemberPortraitURL-64}" alt="">
+                            <img src="{GroupMemberPortraitURL-64}" aria-hidden="true">
                             <div class="group-member-info">
                                 <strong>{GroupMemberName}</strong>
                                 <span>{GroupMemberTitle}</span>
@@ -240,7 +240,7 @@
         </div>
         <a id="credit" href="https://www.tumblr.com/theme/40627" {Target}>
             <span>{lang:Install this theme}</span>
-            <img src="https://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" alt="">
+            <img src="https://static.tumblr.com/2wliono/2E5oic9yz/tiny.png" aria-hidden="true">
         </a>
     </body>
     <script>
