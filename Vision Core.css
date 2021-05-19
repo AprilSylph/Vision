@@ -46,7 +46,7 @@ a {
 
 blockquote {
   padding-left: var(--post-padding);
-  border-left: 3px solid rgba(var(--title), 0.5);
+  border-left: 3px solid rgba(var(--title), 0.07);
 }
 
 pre {
