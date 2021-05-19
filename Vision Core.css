@@ -541,7 +541,7 @@ iframe.tumblr_audio_player {
   max-height: 85px;
 }
 
-iframe.tumblr_video_iframe {
+article.video section.media iframe {
   width: 100%;
 }
 
