@@ -657,6 +657,10 @@ div.npf_row {
   margin-right: calc(0px - var(--post-padding));
 }
 
+a.post_media_photo_anchor {
+  cursor: pointer;
+}
+
 figure img {
   display: block;
   height: auto;
