@@ -79,6 +79,9 @@ body {
 
 .iframe-controls--phone-mobile {
   border-bottom: 1px solid rgba(var(--title), .13);
+
+  background-color: rgb(var(--background));
+  background-clip: border-box;
 }
 
 #base-container {
