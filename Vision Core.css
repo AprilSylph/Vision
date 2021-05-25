@@ -1012,7 +1012,7 @@ li.note blockquote,
 li.note .answer_content {
   padding-left: 10px;
   border-left: 3px solid rgba(var(--title), .25);
-  margin: 10px calc(1.5rem + 1ch) 5px;
+  margin: 0.5ch calc(1.5rem + 1ch) 0;
 }
 
 li.note blockquote a,
