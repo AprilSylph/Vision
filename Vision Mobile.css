@@ -1,3 +1,8 @@
+:root {
+  --post-padding: 15px;
+  --post-margin: 10px;
+}
+
 #blog-card {
   margin-top: 0;
 }
@@ -7,7 +12,7 @@
 }
 
 #pagination {
-  padding: 0 var(--post-padding);
+  padding: 0 var(--post-margin);
 }
 
 .post-author-portrait:not([hidden]) {
