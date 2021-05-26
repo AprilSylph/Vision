@@ -659,6 +659,12 @@ body div.npf_row {
   margin-right: calc(0px - var(--post-padding));
 }
 
+.post-content div.npf_row .npf_col figure,
+.post div.npf_row .npf_col figure,
+body div.npf_row .npf_col figure {
+  padding-bottom: 100%;
+}
+
 .post-content div.npf_row .npf_col,
 .post-content div.npf_row figure.tmblr-full,
 .post div.npf_row .npf_col,
