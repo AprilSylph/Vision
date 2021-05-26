@@ -646,15 +646,27 @@ a.tmblr-truncated-link {
   text-align: center;
 }
 
-article figure {
+figure {
   margin: 0 0 4px;
 }
 
 figure.tmblr-full,
-div.npf_row {
-  max-width: calc(100% + (var(--post-padding) * 2));
+.post-content div.npf_row,
+.post div.npf_row,
+body div.npf_row {
+  max-width: none;
   margin-left: calc(0px - var(--post-padding));
   margin-right: calc(0px - var(--post-padding));
+}
+
+.post-content div.npf_row .npf_col,
+.post-content div.npf_row figure.tmblr-full,
+.post div.npf_row .npf_col,
+.post div.npf_row figure.tmblr-full,
+body div.npf_row .npf_col,
+body div.npf_row figure.tmblr-full {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 a.post_media_photo_anchor {
