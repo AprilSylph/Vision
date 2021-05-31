@@ -650,6 +650,30 @@ figure {
   margin: 0 0 4px;
 }
 
+.post-content div.npf_row,
+.post div.npf_row,
+body div.npf_row {
+  align-items: stretch;
+}
+
+.post-content div.npf_row .npf_col,
+.post div.npf_row .npf_col,
+body div.npf_row .npf_col {
+  display: flex;
+}
+
+.post-content div.npf_row .npf_col figure,
+.post div.npf_row .npf_col figure,
+body div.npf_row .npf_col figure {
+  padding-bottom: 0;
+}
+
+.post-content div.npf_row .npf_col figure img,
+.post div.npf_row .npf_col figure img,
+body div.npf_row .npf_col figure img {
+  position: static;
+}
+
 figure.tmblr-full,
 .post-content div.npf_row,
 .post div.npf_row,
@@ -657,12 +681,6 @@ body div.npf_row {
   max-width: none;
   margin-left: calc(0px - var(--post-padding));
   margin-right: calc(0px - var(--post-padding));
-}
-
-.post-content div.npf_row .npf_col figure,
-.post div.npf_row .npf_col figure,
-body div.npf_row .npf_col figure {
-  padding-bottom: 100%;
 }
 
 .post-content div.npf_row .npf_col,
