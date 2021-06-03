@@ -37,6 +37,10 @@ Most of _Vision_ is configured via your blog's "Appearance options", which also 
 
 **Show author portraits**: Enable to credit posts to individual group members, rather than the blog itself.
 
+# Support
+
+Something not look right? [Open a GitHub issue](https://github.com/AprilSylph/Vision/issues/new).
+
 # Credit
 
 - Most design aspects inspired directly by [the Tumblr dashboard](https://www.tumblr.com/dashboard)
