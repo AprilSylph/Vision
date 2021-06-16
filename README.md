@@ -9,7 +9,7 @@ A modern Tumblr theme designed to be familiar.
 
 # Usage
 
-Most of _Vision_ is configured via your blog's "Appearance options", which also synchronise across the dashboard and mobile apps. If you're not interested in any extra bells or whistles, the process of setting up this theme ends at the "Install" button.
+Most of this theme is configured via your blog's "Appearance options", which also synchronise across the dashboard and mobile apps. If you're not interested in any extra bells or whistles, the process of setting up this theme ends at the "Install" button.
 
 ## Theme options
 
@@ -31,7 +31,7 @@ Most of _Vision_ is configured via your blog's "Appearance options", which also 
 
 ## Advanced options
 
-**Use default mobile theme**: Disable this option to show _Vision_ to visitors on mobile devices.
+**Use default mobile theme**: Disable this option to show this theme to visitors on mobile devices.
 
 ## Blog Settings
 
