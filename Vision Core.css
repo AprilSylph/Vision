@@ -754,8 +754,12 @@ figure.tmblr-full .tmblr-attribution {
   margin-top: 1rem;
 }
 
+.npf-link-block .bottom .description:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
 .npf-link-block .bottom .site-name {
-  margin-top: .5rem;
+  margin-top: 0;
 
   color: rgba(var(--title), 0.65);
   font-size: .78125rem;
