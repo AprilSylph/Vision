@@ -1,6 +1,8 @@
 :root {
   --post-padding: 15px;
   --post-margin: 10px;
+
+  scroll-padding-top: 55px;
 }
 
 #blog-card {
