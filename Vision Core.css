@@ -1034,7 +1034,8 @@ li.note span.notes_loading {
   user-select: none;
 }
 
-li.note .avatar_frame {
+li.note .avatar_frame,
+li.note > .avatar {
   vertical-align: middle;
 
   display: inline-block;
@@ -1045,6 +1046,10 @@ li.note .avatar_frame {
 
 li.note .avatar {
   border-radius: 2px;
+}
+
+li.note > .avatar {
+  margin-right: calc(1ch - 0.25rem);
 }
 
 li.note span.action {
