@@ -509,7 +509,8 @@ article.photo section.media .link-url {
   white-space: nowrap;
 }
 
-article.photo section.media .link-url:hover {
+article.photo section.media .link-url:hover,
+article.photo section.media .link-url:focus {
   color: rgb(var(--accent));
 }
 
@@ -819,7 +820,8 @@ section.source a {
   text-decoration: none;
 }
 
-section.source a:hover {
+section.source a:hover,
+section.source a:focus {
   text-decoration: underline;
 }
 
@@ -868,7 +870,8 @@ section.tags a.tag::before {
   content: "#";
 }
 
-section.tags a.tag:hover {
+section.tags a.tag:hover,
+section.tags a.tag:focus {
   text-decoration: underline;
 }
 
@@ -1149,7 +1152,8 @@ aside.secondary a {
   color: inherit;
 }
 
-aside.secondary a:hover {
+aside.secondary a:hover,
+aside.secondary a:focus {
   background-color: rgba(var(--title), .07);
 }
 
@@ -1205,7 +1209,8 @@ aside.secondary a[target="_blank"]::after {
   line-height: 1;
 }
 
-#credit:hover {
+#credit:hover,
+#credit:focus {
   background-color: rgb(var(--background));
 }
 
@@ -1216,6 +1221,6 @@ aside.secondary a[target="_blank"]::after {
   font-weight: bold;
 }
 
-#credit:not(:hover) span {
+#credit:not(:hover):not(:focus) span {
   display: none;
 }
