@@ -1007,7 +1007,7 @@ ol.notes {
   display: flex;
   flex-direction: column-reverse;
   align-items: stretch;
-  padding: 0;
+  padding: 0.5ch 0;
   margin: 0;
 
   font-size: .875rem;
