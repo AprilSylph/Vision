@@ -1187,6 +1187,18 @@ aside.secondary a[target="_blank"]::after {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  min-width: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+  margin-right: 1ch;
+}
+
+.group-member-info strong,
+.group-member-info span {
+  max-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .group-member-info span {
