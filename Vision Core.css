@@ -152,6 +152,13 @@ main > h3 {
   text-shadow: 0 0 1px rgb(var(--background));
 }
 
+main > h3:only-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+
 main a {
   color: rgb(var(--title));
   text-decoration: underline;
