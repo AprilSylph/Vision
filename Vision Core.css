@@ -204,7 +204,7 @@ aside > section {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .3) 0, transparent);
 }
 
-#search:not(.search-enabled),
+#search[hidden],
 body.tmblr-iframe-pushdown #search {
   visibility: hidden;
 }
