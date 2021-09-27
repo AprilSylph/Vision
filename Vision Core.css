@@ -150,6 +150,7 @@ main > h3 {
 
   text-align: center;
   text-shadow: 0 0 1px rgb(var(--background));
+  overflow-wrap: break-word;
 }
 
 main > h3:only-child {
