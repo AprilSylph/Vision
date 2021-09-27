@@ -31,9 +31,7 @@ h6,
 p,
 blockquote,
 ul,
-ol,
-#ask_form,
-#submit_form {
+ol {
   margin: var(--post-vertical-spacing) 0;
 }
 
@@ -422,6 +420,10 @@ article:not([id]) {
   padding: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+}
+
+article section.body iframe {
+  margin: var(--post-vertical-spacing) 0;
 }
 
 /* Post header */
