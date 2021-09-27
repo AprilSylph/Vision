@@ -422,6 +422,11 @@ article {
   overflow-wrap: break-word;
 }
 
+article:focus {
+  box-shadow: 0 0 10px 1px rgb(var(--accent));
+  outline: none;
+}
+
 article:not([id]) {
   padding: 0;
   border-top: 1px solid transparent;
