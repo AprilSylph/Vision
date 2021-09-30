@@ -633,13 +633,6 @@ p.npf_quote {
   font-size: 1.4375rem;
 }
 
-blockquote.npf_indented {
-  padding-top: .625rem;
-  padding-bottom: .625rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 article ul,
 article ol {
   padding-left: var(--post-padding);
