@@ -8,13 +8,13 @@
 
     switch (key) {
       case 'j': {
-        const targetNode = [...posts].find(childNode => Math.round(childNode.getBoundingClientRect().y) > scrollPaddingTop);
+        const targetNode = [...posts].find(childNode => Math.floor(childNode.getBoundingClientRect().y) > scrollPaddingTop);
         targetNode?.scrollIntoView();
         targetNode?.focus();
         break;
       }
       case 'k': {
-        const targetNode = [...posts].reverse().find(childNode => Math.round(childNode.getBoundingClientRect().y) < scrollPaddingTop);
+        const targetNode = [...posts].reverse().find(childNode => Math.floor(childNode.getBoundingClientRect().y) < scrollPaddingTop);
         targetNode?.scrollIntoView();
         targetNode?.focus();
         break;
