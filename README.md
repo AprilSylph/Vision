@@ -5,7 +5,8 @@ A modern Tumblr theme designed to be familiar.
 - Dashboard-like posts to make you feel right at home
 - Synchronises with your global appearance settings
 - Responsive layout makes the best use of any screen size
-- Chronological post notes 
+- J/K keyboard navigation
+- Chronological post notes
 
 # Usage
 
@@ -36,6 +37,8 @@ Most of this theme is configured via your blog's "Appearance options", which als
 ## Blog Settings
 
 **Show author portraits**: Enable to credit posts to individual group members, rather than the blog itself.
+
+**Twitter**: Connect the Twitter account you wish to link to.
 
 # Support
 
