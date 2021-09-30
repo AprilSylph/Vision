@@ -720,6 +720,7 @@ body div.npf_row figure.tmblr-full {
 }
 
 a.post_media_photo_anchor {
+  flex: 1;
   cursor: pointer;
 }
 
