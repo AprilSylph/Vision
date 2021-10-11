@@ -14,7 +14,7 @@
         break;
       }
       case 'k': {
-        const targetNode = [...posts].reverse().find(childNode => Math.floor(childNode.getBoundingClientRect().y) < scrollPaddingTop);
+        const targetNode = [...posts].reverse().find(childNode => Math.ceil(childNode.getBoundingClientRect().y) < scrollPaddingTop);
         targetNode?.scrollIntoView();
         targetNode?.focus();
         break;
