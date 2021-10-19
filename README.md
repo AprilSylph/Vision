@@ -5,7 +5,7 @@ A modern Tumblr theme designed to be familiar.
 - Dashboard-like posts to make you feel right at home
 - Synchronises with your global appearance settings
 - Responsive layout makes the best use of any screen size
-- J/K keyboard navigation
+- J/K keyboard navigation between posts
 - Chronological post notes
 
 # Usage
