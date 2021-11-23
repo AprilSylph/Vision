@@ -164,11 +164,6 @@ main > h3:only-child {
   color: rgba(var(--title), 0.65);
 }
 
-main a {
-  color: rgb(var(--title));
-  text-decoration: underline;
-}
-
 /* Sidebar */
 
 aside > section {
@@ -431,6 +426,11 @@ article:not([id]) {
   padding: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+}
+
+article a {
+  color: rgb(var(--title));
+  text-decoration: underline;
 }
 
 article section.body iframe {
@@ -1149,11 +1149,11 @@ li.note .retags {
 
 /* Secondary sidebar */
 
-aside.secondary section {
+aside.secondary > section {
   padding-bottom: var(--post-vertical-spacing);
 }
 
-aside.secondary h1 {
+aside.secondary > section > h1 {
   padding: .625rem;
   padding-top: 0;
   border-bottom: 2px solid rgba(var(--title), .13);
@@ -1164,14 +1164,14 @@ aside.secondary h1 {
   line-height: 1.2;
 }
 
-aside.secondary ul {
+aside.secondary > section > ul {
   padding: 0;
   margin: 0;
 
   list-style-type: none;
 }
 
-aside.secondary a {
+aside.secondary > section > ul a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1180,12 +1180,12 @@ aside.secondary a {
   color: inherit;
 }
 
-aside.secondary a:hover,
-aside.secondary a:focus {
+aside.secondary > section > ul a:hover,
+aside.secondary > section > ul a:focus {
   background-color: rgba(var(--title), .07);
 }
 
-aside.secondary a[target="_blank"]::after {
+aside.secondary > section > ul a[target="_blank"]::after {
   margin-left: auto;
 
   content: "\EA01";
@@ -1231,6 +1231,30 @@ aside.secondary a[target="_blank"]::after {
 
 .group-member-info span {
   opacity: 0.65;
+}
+
+/* Recently Liked */
+
+#liked article {
+  --post-padding: 10px;
+  --post-vertical-spacing: 10px;
+  --post-margin: 10px;
+
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#liked .post-author-portrait:not([hidden]) {
+  display: unset;
+}
+
+#liked .post-attribution {
+  flex-direction: column;
+}
+
+#liked .reblog-parent-name {
+  margin-left: -5px;
 }
 
 /* Credit link */

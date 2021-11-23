@@ -8,6 +8,7 @@
     <meta name="if:Show group members" content="0">
     <meta name="if:Show Twitter username" content="0">
     <meta name="if:Show RSS link" content="0">
+    <meta name='if:Show recently liked' content="0">
     <meta name="text:Widget Code" content="">
     <meta name="text:Disqus Shortname" content="">
 {/block:Options}
@@ -23,7 +24,7 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/lMVr1ooas/vision_core.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/t3Nr30xh9/vision_core.css">
         <link rel="stylesheet" href="{select:Posts palette}">
         <link rel="stylesheet" media="(max-width: 540px)" href="https://static.tumblr.com/2wliono/984qvrvji/vision_mobile.css">
         <link rel="stylesheet" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
@@ -194,6 +195,7 @@
                             src: '//{text:Disqus Shortname}.disqus.com/embed.js'
                         }));
                     </script>
+                    <noscript><a href="https://disqus.com/?ref_noscript={text:Disqus Shortname}">{lang:Blog comments powered by Disqus}</a></noscript>
                 </div>{/block:IfDisqusShortname}{/block:PermalinkPage}{block:Pagination}
                 <div id="pagination" role="navigation" aria-label="{lang:Pages}">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
@@ -232,7 +234,100 @@
                     <ul>
                         <li><a href="{RSS}" {Target}>{lang:Subscribe via RSS}</a></li>
                     </ul>
-                </section>{/block:IfShowRSSLink}
+                </section>{/block:IfShowRSSLink}{block:IfShowRecentlyLiked}{block:HasLikedPosts}
+                <section id="liked">
+                    <h1>{lang:Recently Liked}</h1>{block:LikedPosts inlineMediaWidth="280" limit="1"}
+                    <article id="{PostID}" class="{PostType} post" tabindex="-1">
+                        <header>
+                            <img class="post-author-portrait" src="{PostBlogPortraitURL-64}" aria-hidden="true">
+                            <div class="post-attribution">
+                                <a class="post-author-name" href="{Permalink}" {Target}>{PostBlogName}</a>{block:RebloggedFrom}
+                                <a class="reblog-parent-name" href="{ReblogParentURL}" {Target} title="{ReblogParentTitle}" aria-label="{lang:Reblogged from ReblogParentName}">{ReblogParentName}</a>{/block:RebloggedFrom}
+                            </div>{block:Actions}
+                            <a class="post-action" href="{URL}" {Target}>{Text}</a>{/block:Actions}
+                        </header>
+                        <section class="media">{block:Text}{block:Title}
+                            <h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
+                            <figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
+                                <a href="https://{PostBlogName}.tumblr.com/image/{PostID}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{block:LinkURL}
+                                <a class="link-url" href="{LinkURL}" {Target}>{LinkURL}</a>{/block:LinkURL}
+                            </figure>{/block:Photo}{block:Panorama}
+                            <figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
+                                {LinkOpenTag}
+                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                                {LinkCloseTag}
+                            </figure>{/block:Panorama}{block:Photoset}
+                            {Photoset}{/block:Photoset}{block:Quote}
+                            <p class="npf_quote" data-quote-length="{Length}">{Quote}</p>{block:Source}
+                            <p>{Source}</p>{/block:Source}{/block:Quote}{block:Link}
+                            <div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
+                                <a href="{URL}" {Target}>{block:Thumbnail}
+                                    <div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
+                                        <div class="title">{Name}</div>{block:Thumbnail}
+                                    </div>{/block:Thumbnail}
+                                    <div class="bottom">{block:Excerpt}
+                                        <div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
+                                        <div class="site-name">{Host}</div>{/block:Host}
+                                    </div>
+                                </a>
+                            </div>{/block:Link}{block:Chat}{block:Title}
+                            <h1>{Title}</h1>{/block:Title}{block:Lines}
+                            <p class="npf_chat">{block:Label}
+                                <b>{Label}</b>{/block:Label}
+                                {Line}
+                            </p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
+                            {AudioEmbed-640}{/block:AudioEmbed}{/block:Audio}{block:Video}
+                            {VideoEmbed-500}{/block:Video}{block:Answer}
+                            <div class="ask-item">
+                                <div>
+                                    <span class="user">{lang:Asker asked 2}:</span>
+                                    <blockquote>{Question}</blockquote>
+                                </div>
+                                <img class="avatar" src="{AskerPortraitURL-40}" aria-hidden="true">
+                            </div>{block:Answerer}
+                            <div class="ask-item">
+                                <div>
+                                    <span class="user">{Answerer} answered:</span>
+                                    <blockquote>{Answer}</blockquote>
+                                </div>
+                                <img class="avatar" src="{AnswererPortraitURL-40}" aria-hidden="true">
+                            </div>{/block:Answerer}{/block:Answer}
+                        </section>
+                        <section class="body">{block:Reblogs}
+                            <div class="trail-item">
+                                <a class="trail-blog" {block:HasPermalink}href="{Permalink}"{/block:HasPermalink} {Target}>{block:HasAvatar}
+                                    <img class="avatar" src="{PortraitURL-64}" aria-hidden="true">{/block:HasAvatar}
+                                    <strong class="username">{Username}</strong>
+                                </a>
+                                <div class="trail-content">{Body}</div>
+                            </div>{/block:Reblogs}{block:NotReblog}
+                            <div class="post-content">{block:Text}
+                                {Body}{/block:Text}{block:Photo}{block:Caption}
+                                {Caption}{/block:Caption}{/block:Photo}{block:Panorama}{block:Caption}
+                                {Caption}{/block:Caption}{/block:Panorama}{block:Photoset}{block:Caption}
+                                {Caption}{/block:Caption}{/block:Photoset}{block:Link}{block:Description}
+                                {Description}{/block:Description}{/block:Link}{block:Audio}{block:Caption}
+                                {Caption}{/block:Caption}{/block:Audio}{block:Video}{block:Caption}
+                                {Caption}{/block:Caption}{/block:Video}{block:Answer}
+                                {Answer}{/block:Answer}
+                            </div>{/block:NotReblog}
+                        </section>{block:ContentSource}
+                        <section class="source">
+                            {lang:Source}: <a href="{SourceURL}" {Target}>{SourceTitle}</a>
+                        </section>{/block:ContentSource}{block:Submission}
+                        <section class="submitter">
+                          {block:English}Submitted by <a href="{SubmitterURL}">{Submitter}</a>{/block:English}{block:German}Eingereicht von <a href="{SubmitterURL}">{Submitter}</a>{/block:German}{block:French}Proposé par <a href="{SubmitterURL}">{Submitter}</a>{/block:French}{block:Italian}Postato da <a href="{SubmitterURL}">{Submitter}</a>{/block:Italian}{block:Japanese}送信者: <a href="{SubmitterURL}">{Submitter}</a>{/block:Japanese}{block:Turkish}<a href="{SubmitterURL}">{Submitter}</a> tarafından gönderildi{/block:Turkish}{block:Spanish}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:Spanish}{block:Russian}Отправил(а): <a href="{SubmitterURL}">{Submitter}</a>{/block:Russian}{block:Polish}Przesłane przez <a href="{SubmitterURL}">{Submitter}</a>{/block:Polish}{block:PortuguesePT}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortuguesePT}{block:PortugueseBR}Enviado por <a href="{SubmitterURL}">{Submitter}</a>{/block:PortugueseBR}{block:Dutch}Bijgedragen door <a href="{SubmitterURL}">{Submitter}</a>{/block:Dutch}{block:Korean}<a href="{SubmitterURL}">{Submitter}</a>님이 제출함{/block:Korean}{block:ChineseSimplified}提交者：<a href="{SubmitterURL}">{Submitter}</a>{/block:ChineseSimplified}{block:ChineseTraditional}由 <a href="{SubmitterURL}">{Submitter}</a> 投稿{/block:ChineseTraditional}{block:ChineseHK}由 <a href="{SubmitterURL}">{Submitter}</a> 提交{/block:ChineseHK}{block:Indonesian}Dikirimkan oleh <a href="{SubmitterURL}">{Submitter}</a>{/block:Indonesian}{block:Hindi}<a href="{SubmitterURL}">{Submitter}</a> ने सबमिट किया{/block:Hindi}
+                        </section>{/block:Submission}
+                        <section class="tags">{block:PinnedPostLabel}<span class="pinned-post-label"><svg viewBox="18 13 12 21" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M26.252 27.266l-2.078 7.592c-.052.19-.296.19-.348 0l-2.078-7.592h4.504zM29.512 14c.268 0 .488.241.488.536v1.746a.554.554 0 01-.255.47l-1.698 1.193v4.009l1.787 1.257-.034.006c.128.107.2.264.199.43v1.744c0 .296-.22.537-.488.537H18.488c-.268 0-.488-.241-.488-.537v-1.743a.555.555 0 01.255-.47l1.698-1.195v-4.008l-1.787-1.258.034-.006a.554.554 0 01-.199-.43v-1.745c0-.295.22-.536.488-.536h11.023z"></path></svg>{PinnedPostLabel}</span>{/block:PinnedPostLabel}{block:HasTags}{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}{/block:HasTags}</section>{block:Date}
+                        <footer>{block:NoteCount}
+                            <a class="note-count" href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+                            <div class="controls">
+                                {ReblogButton size="28"}
+                                {LikeButton size="28"}
+                            </div>
+                        </footer>{/block:Date}
+                    </article>{/block:LikedPosts}
+                </section>{/block:HasLikedPosts}{/block:IfShowRecentlyLiked}
             </aside>
         </div>
         <a id="credit" href="https://www.tumblr.com/theme/40627" {Target}>
