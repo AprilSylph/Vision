@@ -26,6 +26,8 @@ Most of this theme is configured via your blog's "Appearance options", which als
 
 **Show RSS link**: Encourage your readers to subscribe via RSS.
 
+**Show recently liked**: Display your most recently liked post, radar-style.
+
 **Widget Code**: Insert any HTML you like below your blog card.
 
 **Disqus Shortname**: Enable [Disqus](https://disqus.com/) comments on posts with no hassle.
@@ -38,7 +40,9 @@ Most of this theme is configured via your blog's "Appearance options", which als
 
 **Show author portraits**: Enable to credit posts to individual group members, rather than the blog itself.
 
-**Twitter**: Connect the Twitter account you wish to link to.
+**Share posts you like**: Required for the "Show recently liked" option to take effect.
+
+**Twitter**: Connect the Twitter account you wish to link to with the "Show Twitter username" option.
 
 # Support
 
