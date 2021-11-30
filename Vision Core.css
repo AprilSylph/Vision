@@ -1057,6 +1057,12 @@ li.note {
   padding: 1ch 1.5ch;
 }
 
+li.note:not(.more_notes_link_container) {
+  position: relative;
+
+  padding-left: calc(1.5ch + 1.5rem + 1ch);
+}
+
 li.note.more_notes_link_container {
   font-size: 1rem;
 }
@@ -1069,8 +1075,14 @@ li.note span.notes_loading {
   user-select: none;
 }
 
-li.note .avatar_frame {
-  position: relative;
+li.note .avatar_frame,
+li.note > .avatar {
+  position: absolute;
+  left: 1.5ch;
+
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 li.note .avatar_frame::after {
@@ -1096,16 +1108,6 @@ li.note.reblog .avatar_frame::after { content: "\EA08"; background-color: #00cf3
 li.note.reply .avatar_frame::after { content: "\EA0A"; background-color: #00b8ff; }
 li.note.original_post .avatar_frame::after { display: none; }
 
-li.note .avatar_frame,
-li.note > .avatar {
-  vertical-align: middle;
-
-  display: inline-block;
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-right: 1ch;
-}
-
 li.note .avatar {
   border-radius: 2px;
 }
@@ -1130,7 +1132,7 @@ li.note blockquote,
 li.note .answer_content {
   padding-left: 10px;
   border-left: 3px solid rgba(var(--title), .25);
-  margin: 0.5ch calc(1.5rem + 1ch) 0;
+  margin: 0.5ch 0 0;
 }
 
 li.note blockquote a,
