@@ -472,6 +472,10 @@ article header a {
 .post-attribution {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
   margin-right: 1ch;
 }
 
@@ -1251,6 +1255,7 @@ aside.secondary > section > ul a[target="_blank"]::after {
 
 #liked .post-attribution {
   flex-direction: column;
+  margin-right: 0;
 }
 
 #liked .reblog-parent-name {
