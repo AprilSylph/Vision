@@ -189,13 +189,7 @@
                 <div id="comments">
                     <h3>{lang:Blog comments powered by Disqus}</h3>
                     <div id="disqus_thread"></div>
-                    <script>
-                        document.documentElement.appendChild(Object.assign(document.createElement('script'), {
-                            async: true,
-                            src: '//{text:Disqus Shortname}.disqus.com/embed.js'
-                        }));
-                    </script>
-                    <noscript><a href="https://disqus.com/?ref_noscript={text:Disqus Shortname}">{lang:Blog comments powered by Disqus}</a></noscript>
+                    <script src="//{text:Disqus Shortname}.disqus.com/embed.js" defer></script>
                 </div>{/block:IfDisqusShortname}{/block:Date}{/block:Posts}{/block:PermalinkPage}{block:Pagination}
                 <div id="pagination" role="navigation" aria-label="{lang:Pages}">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
