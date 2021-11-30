@@ -185,7 +185,7 @@
                 <div id="notes">
                     <h3>{block:Posts}{NoteCountWithLabel}{/block:Posts}</h3>
                     <div id="notes-scroller">{PostNotes-64}</div>
-                </div>{/block:PostNotes}{block:PermalinkPage}{block:IfDisqusShortname}
+                </div>{/block:PostNotes}{block:PermalinkPage}{block:Posts}{block:Date}{block:IfDisqusShortname}
                 <div id="comments">
                     <h3>{lang:Blog comments powered by Disqus}</h3>
                     <div id="disqus_thread"></div>
@@ -196,7 +196,7 @@
                         }));
                     </script>
                     <noscript><a href="https://disqus.com/?ref_noscript={text:Disqus Shortname}">{lang:Blog comments powered by Disqus}</a></noscript>
-                </div>{/block:IfDisqusShortname}{/block:PermalinkPage}{block:Pagination}
+                </div>{/block:IfDisqusShortname}{/block:Date}{/block:Posts}{/block:PermalinkPage}{block:Pagination}
                 <div id="pagination" role="navigation" aria-label="{lang:Pages}">
                     <a id="previous-link" {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage}>{lang:Back}</a>
                     <a id="next-link" {block:NextPage} href="{NextPage}" {/block:NextPage}>{lang:Next}</a>
