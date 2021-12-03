@@ -1,5 +1,6 @@
 {
-  const posts = document.getElementsByTagName('article');
+  const mainElement = document.querySelector('main');
+  const posts = mainElement.getElementsByTagName('article');
 
   document.documentElement.addEventListener('keydown', ({ currentTarget, key, target }) => {
     if (target.value !== undefined) return;
