@@ -465,10 +465,6 @@ article header a {
   margin-right: 1ch;
 }
 
-.post-author-name {
-  color: rgb(var(--title));
-}
-
 .post-attribution {
   display: flex;
   flex-direction: row;
@@ -479,13 +475,15 @@ article header a {
   margin-right: 1ch;
 }
 
+.post-author-name {
+  color: rgb(var(--title));
+  margin-right: 5px;
+}
+
 .reblog-parent-name {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.reblog-parent-name:first-child {
   margin-left: -5px;
 }
 
@@ -1285,10 +1283,6 @@ aside.secondary > section > ul a[target="_blank"]::after {
 #liked .post-attribution {
   flex-direction: column;
   margin-right: 0;
-}
-
-#liked .reblog-parent-name {
-  margin-left: -5px;
 }
 
 /* Credit link */
