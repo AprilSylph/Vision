@@ -482,19 +482,17 @@ article header a {
   margin-right: 5px;
 }
 
-.reblog-parent-name {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: -5px;
-}
-
 .reblog-parent-name::before {
+  vertical-align: sub;
+
+  display: inline-block;
+  margin-left: -5px;
+
   content: "\EA09";
+  font-family: "optica-icons";
   font-size: 1.5rem;
   font-weight: normal;
-  font-family: "optica-icons";
-  line-height: .875rem;
+  line-height: 1rem;
 }
 
 .post-action {
