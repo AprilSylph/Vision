@@ -429,7 +429,7 @@ article:not([id]) {
 }
 
 article a {
-  color: rgb(var(--title));
+  color: inherit;
   text-decoration: underline;
 }
 
