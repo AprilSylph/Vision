@@ -13,6 +13,10 @@
   border-radius: 0;
 }
 
+#notes {
+  max-height: min(918px, calc(100vh - var(--post-margin) - 55px));
+}
+
 #pagination {
   padding: 0 var(--post-margin);
 }
