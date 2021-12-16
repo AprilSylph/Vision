@@ -164,6 +164,14 @@ main > h3:only-child {
   color: rgba(var(--title), 0.65);
 }
 
+main[aria-busy="true"]::after {
+  display: block;
+  margin-top: var(--post-margin);
+
+  color: rgba(var(--title), 0.65);
+  text-align: center;
+}
+
 /* Sidebar */
 
 aside > section {
@@ -367,6 +375,10 @@ nav a {
 
   text-align: center;
   font-weight: bold;
+}
+
+main[aria-busy] #pagination {
+  display: none;
 }
 
 #previous-link,

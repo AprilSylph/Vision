@@ -24,12 +24,13 @@
         <meta name="theme-color" content="{BackgroundColor}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Qdrr3uqv5/vision_core.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/262r4epto/vision_core.css">
         <link rel="stylesheet" href="{select:Posts palette}">
         <link rel="stylesheet" media="(max-width: 540px)" href="https://static.tumblr.com/2wliono/0Dkr3uqzi/vision_mobile.css">
         <link rel="stylesheet" href="https://assets.tumblr.com/fonts/favorit/stylesheet.css?v=1">
         {NewPostStyles}
         <script src="https://static.tumblr.com/2wliono/lImr48089/navigation.js" type="module"></script>
+        <script src="https://static.tumblr.com/2wliono/QHHr481h3/pagination.js" type="module"></script>
         <noscript>
             <style>
                 #comments {
@@ -44,16 +45,19 @@
                 --accent: {RGBAccentColor}; /* {AccentColor} */
                 --title-font: {TitleFont};
                 --title-font-weight: {TitleFontWeight};
-            }
+            }{block:IfBackgroundImage}
+            body {
+                background-image: url('{image:Background}');
+            }{/block:IfBackgroundImage}
             aside nav a[href="/ask"]:empty::before {
                 content: "{block:English}Ask{/block:English}{block:German}Fragen{/block:German}{block:French}Question{/block:French}{block:Italian}Chiedi{/block:Italian}{block:Japanese}質問{/block:Japanese}{block:Turkish}Sor{/block:Turkish}{block:Spanish}Preguntas{/block:Spanish}{block:Russian}Спросить{/block:Russian}{block:Polish}Zapytaj{/block:Polish}{block:PortuguesePT}Perguntar{/block:PortuguesePT}{block:PortugueseBR}Ask{/block:PortugueseBR}{block:Dutch}Vragen{/block:Dutch}{block:Korean}질문{/block:Korean}{block:ChineseSimplified}提问{/block:ChineseSimplified}{block:ChineseTraditional}提問{/block:ChineseTraditional}{block:ChineseHK}提問{/block:ChineseHK}{block:Indonesian}Tanya{/block:Indonesian}{block:Hindi}पूछें{/block:Hindi}";
             }
             aside nav a[href="/submit"]:empty::before {
                 content: "{block:English}Submit{/block:English}{block:German}Einreichen{/block:German}{block:French}Contribution{/block:French}{block:Italian}Invia{/block:Italian}{block:Japanese}送信{/block:Japanese}{block:Turkish}Gönderim{/block:Turkish}{block:Spanish}Colaboraciones{/block:Spanish}{block:Russian}Отправить{/block:Russian}{block:Polish}Prześlij{/block:Polish}{block:PortuguesePT}Enviar{/block:PortuguesePT}{block:PortugueseBR}Enviar{/block:PortugueseBR}{block:Dutch}Bijdragen{/block:Dutch}{block:Korean}전송{/block:Korean}{block:ChineseSimplified}提交{/block:ChineseSimplified}{block:ChineseTraditional}投稿{/block:ChineseTraditional}{block:ChineseHK}提交{/block:ChineseHK}{block:Indonesian}Kirim{/block:Indonesian}{block:Hindi}सबमिट करें{/block:Hindi}";
-            }{block:IfBackgroundImage}
-            body {
-                background-image: url('{image:Background}');
-            }{/block:IfBackgroundImage}
+            }
+            main[aria-busy="true"]::after {
+                content: "{lang:Loading}\2026";
+            }
         </style>
         <style>{CustomCSS}</style>
     </head>
@@ -86,7 +90,7 @@
                     {text:Widget Code}
                 </section>{/block:IfWidgetCode}
             </aside>
-            <main>{block:SearchPage}
+            <main {block:Pagination}role="feed"{/block:Pagination}>{block:SearchPage}
                 <h3>{lang:SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h3>{/block:SearchPage}{block:TagPage}
                 <h3>#{Tag}</h3>{/block:TagPage}{block:DayPage}
                 <h3>{lang:Viewing everything posted on Month DayOfMonth Year}</h3>{/block:DayPage}{block:NoPosts}
