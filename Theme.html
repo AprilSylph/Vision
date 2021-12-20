@@ -9,6 +9,7 @@
     <meta name="if:Show Twitter username" content="0">
     <meta name="if:Show RSS link" content="0">
     <meta name='if:Show recently liked' content="0">
+    <meta name="if:Enable endless scrolling" content="1">
     <meta name="text:Widget Code" content="">
     <meta name="text:Disqus Shortname" content="">
 {/block:Options}
@@ -90,7 +91,7 @@
                     {text:Widget Code}
                 </section>{/block:IfWidgetCode}
             </aside>
-            <main {block:Pagination}role="feed"{/block:Pagination}>{block:SearchPage}
+            <main {block:IfEnableEndlessScrolling}{block:Pagination}role="feed"{/block:Pagination}{/block:IfEnableEndlessScrolling}>{block:SearchPage}
                 <h3>{lang:SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h3>{/block:SearchPage}{block:TagPage}
                 <h3>#{Tag}</h3>{/block:TagPage}{block:DayPage}
                 <h3>{lang:Viewing everything posted on Month DayOfMonth Year}</h3>{/block:DayPage}{block:NoPosts}
