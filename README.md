@@ -28,6 +28,8 @@ Most of this theme is configured via your blog's "Appearance options", which als
 
 **Show recently liked**: Display your most recently liked post, radar-style.
 
+**Enable endless scrolling**: Make pagination automatic and seamless.
+
 **Widget Code**: Insert any HTML you like below your blog card.
 
 **Disqus Shortname**: Enable [Disqus](https://disqus.com/) comments on posts with no hassle.
