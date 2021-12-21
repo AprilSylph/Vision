@@ -10,7 +10,7 @@ const callback = (entries, observer) => {
   mainElement.setAttribute('aria-busy', 'true');
 
   fetch(nextPageUrl)
-    .then(response => response.text())
+    .then(response => response.ok ? response.text() : Promise.reject(new Error(response.statusText)))
     .then(responseText => {
       const responseDocument = parser.parseFromString(responseText, 'text/html');
       const articles = [...responseDocument.querySelectorAll('main > article')];
