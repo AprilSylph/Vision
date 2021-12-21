@@ -17,6 +17,8 @@ const callback = (entries, observer) => {
       const postIds = articles.map(({ id }) => id);
 
       mainElement.append(...articles);
+      history.pushState({}, document.title, nextPageUrl);
+      history.scrollRestoration = 'manual';
       Tumblr.LikeButton.get_status_by_post_ids(postIds);
 
       mainElement.setAttribute('aria-busy', 'false');
