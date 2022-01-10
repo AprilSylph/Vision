@@ -743,11 +743,24 @@ body div.npf_row figure.tmblr-full {
 a.post_media_photo_anchor {
   flex: 1;
   cursor: pointer;
+  text-decoration: none;
 }
 
 figure img {
   display: block;
   height: auto;
+}
+
+figure img::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--post-vertical-spacing) var(--post-padding);
+
+  background-color: rgb(var(--background));
+  background-image: linear-gradient(rgba(var(--title), 0.07), rgba(var(--title), 0.07));
 }
 
 figure.tmblr-full img,
