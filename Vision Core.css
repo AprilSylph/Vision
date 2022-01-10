@@ -54,6 +54,8 @@ pre {
 
   background-color: rgba(var(--title), 0.1);
   line-height: normal;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--title), 0.4) transparent;
 }
 
 hr {
