@@ -2,6 +2,16 @@ const mainElement = document.querySelector('main');
 const getLastPostElement = () => mainElement.querySelector('article:last-of-type');
 const parser = new DOMParser();
 
+const onLightboxAnchorClick = ({
+  currentTarget: {
+    dataset: {
+      bigPhoto: high_res,
+      bigPhotoHeight: height,
+      bigPhotoWidth: width
+    }
+  }
+}) => Tumblr.Lightbox.init([{ high_res, height, width }], 1);
+
 let nextPageUrl = document.getElementById('next-link')?.href;
 
 const callback = (entries, observer) => {
@@ -19,7 +29,11 @@ const callback = (entries, observer) => {
       mainElement.append(...articles);
       history.pushState({}, document.title, nextPageUrl);
       history.scrollRestoration = 'manual';
+
       Tumblr.LikeButton.get_status_by_post_ids(postIds);
+      articles
+        .flatMap(article => [...article.querySelectorAll('[data-big-photo]')])
+        .forEach(anchor => anchor.addEventListener('click', onLightboxAnchorClick));
 
       mainElement.setAttribute('aria-busy', 'false');
       nextPageUrl = responseDocument.getElementById('next-link')?.href;
