@@ -91,8 +91,8 @@
                     {text:Widget Code}
                 </section>{/block:IfWidgetCode}
             </aside>
-            <main {block:IfEnableEndlessScrolling}{block:Pagination}role="feed"{/block:Pagination}{/block:IfEnableEndlessScrolling}>{block:SearchPage}
-                <h3>{lang:SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h3>{/block:SearchPage}{block:TagPage}
+            <main {block:IfEnableEndlessScrolling}{block:Pagination}role="feed"{/block:Pagination}{/block:IfEnableEndlessScrolling}>{block:SearchPage}{block:NoSearchResults}
+                <h3>{lang:No results found}</h3>{/block:NoSearchResults}{/block:SearchPage}{block:TagPage}
                 <h3>#{Tag}</h3>{/block:TagPage}{block:DayPage}
                 <h3>{lang:Viewing everything posted on Month DayOfMonth Year}</h3>{/block:DayPage}{block:NoPosts}
                 <h3>{lang:This Tumblr hasnt made any posts}</h3>{/block:NoPosts}{block:Posts inlineMediaWidth="540"}
