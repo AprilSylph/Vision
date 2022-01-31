@@ -36,7 +36,7 @@ ol {
 }
 
 iframe { display: block; }
-small { font-size: small; }
+small { font-size: 81.25%; }
 
 a {
   color: rgb(var(--accent));
