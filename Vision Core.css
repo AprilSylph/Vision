@@ -1131,6 +1131,7 @@ li.note .avatar_frame::after {
 li.note.like .avatar_frame::after { content: "\EA05"; background-color: #ff492f }
 li.note.reblog .avatar_frame::after { content: "\EA08"; background-color: #00cf35; }
 li.note.reply .avatar_frame::after { content: "\EA0A"; background-color: #00b8ff; }
+li.note.tip .avatar_frame::after { content: "\FF04"; background-color: #ff8a00; }
 li.note.original_post .avatar_frame::after { display: none; }
 
 li.note .avatar {
@@ -1143,6 +1144,10 @@ li.note > .avatar {
 
 li.note span.action {
   vertical-align: middle;
+}
+
+li.note.tip span.action:empty::after {
+  content: "Tipped";
 }
 
 li.note span.action a:first-of-type {
