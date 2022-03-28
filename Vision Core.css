@@ -126,6 +126,7 @@ body.tmblr-iframe-pushdown aside {
 @media (max-width: /* --aside-width + --post-width + (--post-margin * 3) = */ 900px) {
   #base-container {
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
   }
   aside {
