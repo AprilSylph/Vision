@@ -934,25 +934,27 @@ section.tags a.tag:focus {
   text-decoration: underline;
 }
 
-/* Pinned post label */
+/* Recommendation reasons */
 
-.pinned-post-label {
+section.tags span {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1ch;
 
   color: rgb(var(--accent));
-  filter: hue-rotate(-61deg);
   font-weight: bold;
 }
 
-.pinned-post-label svg {
+section.tags span svg {
   margin-right: 0.5ch;
 
-  fill: rgb(var(--accent));
+  fill: currentColor;
 }
 
+section.tags .recently-liked-label {
+  filter: hue-rotate(-61deg);
+}
 
 /* Post footer */
 
@@ -1216,22 +1218,24 @@ li.note .retags {
 /* Secondary sidebar */
 
 aside.secondary > section {
-  padding-bottom: var(--post-vertical-spacing);
+  border-radius: 3px;
+
+  background-color: rgb(var(--background));
+  box-shadow: 0 0 1px rgba(var(--title), .13);
 }
 
 aside.secondary > section > h1 {
-  padding: .625rem;
-  padding-top: 0;
-  border-bottom: 2px solid rgba(var(--title), .13);
+  padding: var(--post-vertical-spacing);
+  border-bottom: 1px solid rgba(var(--title), .13);
   margin: 0;
 
-  font-size: 1.3125rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.333;
 }
 
 aside.secondary > section > ul {
-  padding: 0;
+  padding: .625rem 0;
   margin: 0;
 
   list-style-type: none;
@@ -1241,7 +1245,7 @@ aside.secondary > section > ul a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: .625rem;
+  padding: .625rem var(--post-vertical-spacing);
 
   color: inherit;
 }
@@ -1261,10 +1265,6 @@ aside.secondary > section > ul a[target="_blank"]::after {
 }
 
 /* Group members */
-
-#group-members h1 {
-  margin-bottom: .625rem;
-}
 
 #group-members a {
   font-size: .875rem;
@@ -1305,10 +1305,6 @@ aside.secondary > section > ul a[target="_blank"]::after {
   --post-padding: 10px;
   --post-vertical-spacing: 10px;
   --post-margin: 10px;
-
-  width: calc(100% - 20px);
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 #liked .post-author-portrait:not([hidden]) {
@@ -1331,11 +1327,11 @@ aside.secondary > section > ul a[target="_blank"]::after {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1ex 1em;
-  padding-bottom: 0;
+  padding: 0 1ex;
   margin-top: calc(var(--post-margin) + 1.5em + var(--post-vertical-spacing));
-  margin-left: .625rem;
-  margin-right: .625rem;
 
+  background-color: transparent;
+  box-shadow: none;
   color: rgba(var(--title), 0.65);
   font-size: .78125rem;
 }
