@@ -124,18 +124,27 @@ body.tmblr-iframe-pushdown aside {
 }
 
 @media (max-width: /* --aside-width + --post-width + (--post-margin * 3) = */ 900px) {
+  :root {
+    --aside-width: min(100vw, var(--post-width));
+  }
+
   #base-container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
+
   aside {
     position: static;
 
-    width: var(--post-width);
     padding-bottom: 0;
     margin-left: 0;
   }
+
+  #blog-card {
+    --header-height: calc(var(--aside-width) * (9 / 16));
+  }
+
   #widget {
     display: none;
   }
@@ -187,6 +196,9 @@ aside > section {
 /* Blog Card */
 
 #blog-card {
+  --search-height: calc(1rem + (var(--sidebar-padding) * 2));
+  --header-height: calc(var(--aside-width) / 2);
+
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -255,15 +267,15 @@ aside > section {
 }
 
 #header.stretch {
-  height: 140px;
-  margin-top: calc(-1rem - (var(--sidebar-padding) * 2));
+  height: var(--header-height);
+  margin-top: calc(0px - var(--search-height));
 
   object-fit: cover;
 }
 
 #header.no-stretch {
   box-sizing: border-box;
-  height: calc(140px - 1rem - (var(--sidebar-padding) * 2));
+  height: calc(var(--header-height) - var(--search-height));
   padding: 0 calc(var(--sidebar-padding) * 2);
 
   object-fit: contain;
