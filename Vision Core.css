@@ -804,40 +804,9 @@ figure.tmblr-full .tmblr-attribution {
   font-weight: bold;
 }
 
-.npf-link-block {
-  border-color: rgba(var(--title), 0.25) !important;
-}
-
-.npf-link-block a {
-  color: rgb(var(--title));
-  text-decoration: none;
-}
-
-.npf-link-block .poster {
-  border-bottom: 1px solid rgba(var(--title), 0.25);
-
-  background-clip: content-box;
-}
-
-.npf-link-block .poster .title {
-  font-weight: 400;
-  text-align: center;
-}
-
-.npf-link-block.no-poster .title {
-  margin-top: 1rem;
-}
-
-.npf-link-block .bottom .description:not(:last-child) {
-  margin-bottom: .5rem;
-}
-
-.npf-link-block .bottom .site-name {
-  margin-top: 0;
-
-  color: rgba(var(--title), 0.65);
-  font-size: .78125rem;
-  font-weight: 400;
+div.npf-link-block,
+div.npf-link-block .poster {
+  border-color: rgba(var(--title), 0.25);
 }
 
 /* Reblog trail */
