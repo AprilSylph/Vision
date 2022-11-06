@@ -548,10 +548,12 @@ article.photo section.media img {
 }
 
 article.photo section.media .link-url {
+  box-sizing: border-box;
   display: block;
   overflow: hidden;
   height: 1.5rem;
   padding: 0 var(--post-padding);
+  margin: auto;
 
   background-color: rgba(var(--title), .07);
   color: rgba(var(--title), .4);
