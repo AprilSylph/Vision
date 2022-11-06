@@ -832,6 +832,7 @@ div.npf-link-block .poster {
   color: rgb(var(--title));
   font-size: .875rem;
   text-decoration: none;
+  pointer-events: none;
 }
 
 .trail-blog .avatar {
@@ -839,6 +840,11 @@ div.npf-link-block .poster {
   width: 25px;
   border-radius: 3px;
   margin-right: 1ch;
+}
+
+.trail-blog .avatar,
+.trail-blog .username {
+  pointer-events: auto;
 }
 
 .trail-content, .post-content {
