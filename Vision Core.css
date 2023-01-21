@@ -811,6 +811,33 @@ div.npf-link-block .poster {
   border-color: rgba(var(--title), 0.25);
 }
 
+div.poll-post p.poll-question {
+  font-size: 1.6875rem;
+  line-height: 1.23;
+}
+
+div.poll-post a.poll-row {
+  border: 2px solid rgb(var(--accent));
+
+  background-color: transparent;
+  color: rgb(var(--accent));
+  text-align: center;
+}
+
+div.poll-post a.poll-row:hover,
+div.poll-post a.poll-row:focus {
+  background-color: rgb(var(--accent));
+  color: rgb(var(--background));
+}
+
+div.poll-post a.poll-see-results {
+  display: flex;
+
+  color: rgba(var(--title), 0.65);
+  text-decoration: none;
+  font-size: .78125rem;
+}
+
 /* Reblog trail */
 
 .trail-item {
