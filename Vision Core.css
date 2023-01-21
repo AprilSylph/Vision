@@ -803,7 +803,8 @@ figure.tmblr-full .tmblr-attribution {
 .tmblr-attribution a {
   color: rgba(var(--title), 0.65);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 400;
+  overflow-wrap: anywhere;
 }
 
 div.npf-link-block,
