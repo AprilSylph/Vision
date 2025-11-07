@@ -812,6 +812,11 @@ div.npf-link-block .poster {
   border-color: rgba(var(--title), 0.25);
 }
 
+figure.tmblr-full > .audio-caption {
+  background-color: rgb(var(--accent));
+  color: rgb(var(--background));
+}
+
 div.poll-post p.poll-question {
   font-size: 1.6875rem;
   line-height: 1.23;
