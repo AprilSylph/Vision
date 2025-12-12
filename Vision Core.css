@@ -817,6 +817,10 @@ figure.tmblr-full > .audio-caption {
   color: rgb(var(--background));
 }
 
+.audio-caption > .audio-details:only-child {
+  height: 85px;
+}
+
 div.poll-post p.poll-question {
   font-size: 1.6875rem;
   line-height: 1.23;
